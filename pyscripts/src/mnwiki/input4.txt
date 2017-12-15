@@ -1,0 +1,39 @@
+{{Schema
+|FrameNet frame=Perception_experience
+|Other aliases=Vision
+|Comments=Unlike FrameNet's frame, this frame is specific to vision.
+|Tags=in progress, tentative
+|Type=Cog, Primary
+|Applicability=English, Spanish
+|Entered by=Jisup
+|Roles={{Role
+|Role.Name=See-er
+|Role.Type=Sentient
+|Role.Definition=The person who sees
+}}{{Role
+|Role.Name=Seen object
+|Role.Type=Entity
+|Role.Definition=The thing seen
+}}{{Role
+|Role.Name=Eyes
+}}
+|Related schemas={{Related schema
+|Related schema.Name=Perceiving
+|Related schema.Description=This is an isa relation of type D
+}}
+|Bindings={{Binding
+|Binding.Local role=See-er
+|Binding.Bound role=Perceiving.perceiver
+}}{{Binding
+|Binding.Local role=Eyes
+|Binding.Bound role=Perceiving.faculty
+}}
+|Inferences={{Inference
+|Inference.Description=When you see something you see it
+|Inference.Type=image schema
+}}
+|Relevant LUs={{LUs
+|LUs.Language=English
+|LUs.Lemmas=see.v, light.n, viewpoint.n
+}}
+}}

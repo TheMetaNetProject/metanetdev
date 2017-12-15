@@ -1,0 +1,14 @@
+# groups to assign people into
+Jhong:analyst
+Collinb:sysop,bureaucrat
+Oana:analyst
+EllenDodge:analyst
+Elstickles:analyst
+Eve Sweetser:analyst
+Metabot:bot
+Karie.moorman:analyst
+Aleksandra.Sopina:analyst
+Kristina Despot:analyst
+Snarayan:analyst
+Nchang:analyst
+Feldman:analyst

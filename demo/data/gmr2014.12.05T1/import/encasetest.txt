@@ -1,0 +1,10 @@
+../casestudy/Result_christine_blogs_pro_gun_control_08_07_0.json.gz
+../casestudy/Result_christine_blogs_pro_gun_control_08_07_10.json.gz
+../casestudy/Result_christine_blogs_pro_gun_control_08_07_11.json.gz
+../casestudy/Result_christine_blogs_pro_gun_control_08_07_12.json.gz
+../casestudy/Result_christine_blogs_pro_gun_control_08_07_13.json.gz
+../casestudy/Result_christine_blogs_pro_gun_rights_08_07_44.json.gz
+../casestudy/Result_christine_blogs_pro_gun_rights_08_07_45.json.gz
+../casestudy/Result_christine_blogs_pro_gun_rights_08_07_46.json.gz
+../casestudy/Result_christine_blogs_pro_gun_rights_08_07_47.json.gz
+../casestudy/Result_christine_blogs_pro_gun_rights_08_07_48.json.gz

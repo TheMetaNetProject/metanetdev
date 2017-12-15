@@ -1,0 +1,200 @@
+Cluster1: retirada retiro suspensión despido destitución expulsión cierre ruptura traslado evacuación
+Cluster2: racha cable árbol oreja
+Cluster3: cumplimiento pago respeto liberación vigencia aplicación entrega transparencia desarme devolución
+Cluster4: exhibición música vista lectura interpretación
+Cluster5: clave factor prioridad novedad herida bastión
+Cluster6: sanción restricción bloqueo arancel barrera veto toque cláusula
+Cluster7: control presencia vigilancia dispositivo presión dominio despliegue protección cobertura defensa coordinación
+Cluster8: fiesta acto desfile celebración ceremonia concierto festejo espectáculo cena misa
+Cluster9: cultura tranquilidad amor ánimo espíritu entusiasmo estilo firmeza
+Cluster10: norte occidente noroeste sur sureste noreste oeste oriente suroeste sudeste este
+Cluster11: caos daño perjuicio interrupción alarma pánico
+Cluster12: revolución régimen década guerra siglo ocupación toma dictadura invasión represión
+Cluster13: vía cuenta marcador puerta espacio camino fuego expediente archivo
+Cluster14: política situación actuación actitud conducta manejo calidad comportamiento desempeño
+Cluster15: aviso premio noticia galardón advertencia amenaza tratamiento trato instrucción llamada
+Cluster16: secreto calma silencio
+Cluster17: educación desarrollo integración ampliación lucha construcción recuperación establecimiento puesta transición fortalecimiento reestructuración promoción renovación reconstrucción reactivación mantenimiento
+Cluster18: diario periódico matutino editorial rotativo revista semanario
+Cluster19: moneda dólar peso sol euro divisa
+Cluster20: xinhua ap afp
+Cluster21: mano rodilla brazo cabeza ojo cara corazón rostro pierna pie
+Cluster22: onu aiea opep ue fed omc otan fmi mercosur oea bid
+Cluster23: cubano venezolano panameño martínez hernández puertorriqueño lanzador novato dominicano bateador
+Cluster24: medio prensa radio emisora cadena canal televisión radioemisor
+Cluster25: escenario video imagen escena grabación vídeo pantalla
+Cluster26: centenar millón ciento mil veintena decena millar
+Cluster27: mercado producción exportación venta cooperación economía intercambio industria inversión comercio importación consumo agricultura negocio turismo cooperacin
+Cluster28: calle carretera avenida alrededor tramo parque ruta metro
+Cluster29: fondo dinero sangre aire agua
+Cluster30: color camiseta traje ropa
+Cluster31: acceso funcionamiento transporte ingreso desplazamiento flujo suministro transmisión comunicación distribución circulación tránsito
+Cluster32: tope registro récord marca
+Cluster33: barril tasa tarifa centavo tono
+Cluster34: crítico fuentes funcionarios horas bogota mexico
+Cluster35: camioneta vehículo autobús auto camión automóvil tren
+Cluster36: jonrón doblete triple hit
+Cluster37: intervención tipo recorte cambio reducción mejora ajuste modificación
+Cluster38: rehén preso afectado inmigrante prisionero refugiado enfermo indocumentado
+Cluster39: devaluación expansión contaminación deterioro fuga escalada contrabando confrontación brote propagación quiebra
+Cluster40: petróleo energía vacuna producto alimento medicina combustible carne gas gasolina medicamento café electricidad uranio
+Cluster41: gasto dependencia emisión brecha déficit costo subsidio desventaja
+Cluster42: cárcel hogar hospital clínica recinto domicilio
+Cluster43: ecuador brasil panamá chile uruguay méxico cuba guatemala argentina perú colombia bolivia nicaragua españa venezuela honduras paraguay
+Cluster44: árbitro justicia fiscal tribunal magistrado juez corte fiscalía sala fifa jurado panel
+Cluster45: ejecutivo aspecto intento generación cero historia foco personaje volcán ahorro personalidad signo exilio
+Cluster46: elección consulta votación licitación comicio referéndum referendo concurso subasta vuelta urna escrutinio
+Cluster47: columna comitiva delegación plantel misión contingente tripulación caravana convoy
+Cluster48: proyecto programa reforma plan enmienda iniciativa borrador paquete propuesta texto presupuesto moción
+Cluster49: bono normalidad mitad totalidad
+Cluster50: terremoto sismo movimiento temblor
+Cluster51: causa identidad origen suerte circunstancia contenido naturaleza alcance paradero verdad
+Cluster52: agencia organismo organizador institución ministerio cancillería autoridad kremlin entidad fuente instituto oficina federación pentágono procuraduría despacho embajada secretaría vaticano nasa
+Cluster53: asistencia servicio colaboración mirada atención ayuda juramento
+Cluster54: labor esfuerzo papel contribución logro aporte tarea rol
+Cluster55: conversación proceso contacto diálogo debate negociación sesión juicio discusión audiencia búsqueda persecución
+Cluster56: incremento desaceleración disminución apreciación alza pérdida aumento crecimiento retroceso descenso ganancia caída contracción variación subida superávit repunte
+Cluster57: gol punto tanto anotación carrera canasta diana
+Cluster58: protesta paro marcha concentración paralización huelga manifestación movilización
+Cluster59: mujer paciente joven niño adolescente animal alumno bebé
+Cluster60: preocupación esperanza solidaridad optimismo condolencia descontento deseo satisfacción indignación alegría
+Cluster61: bomba explosivo carga mina coche artefacto granada
+Cluster62: forma manera lado fútbol inteligencia modo interior
+Cluster63: peligro posibilidad opción probabilidad perspectiva capacidad riesgo potencial
+Cluster64: bloque frente alianza coalición agrupación corriente asociación unión alca
+Cluster65: ala guerrilla auc farc hamas talibanes facción milicia eln eta musulmán serbio talibán
+Cluster66: vuelo actividad mediación ejecución enriquecimiento destrucción clase bombardeo financiación
+Cluster67: mes trimestre promedio semestre comparación lapso
+Cluster68: irak república afganistán haití bagdad kosovo líbano cisjordania franja jerusalén kabul chechenia gaza bosnia
+Cluster69: preferencia tabla llave
+Cluster70: laboratorio planta puente fábrica refinería terminal muro torre central túnel yacimiento
+Cluster71: cine arte idioma teatro inglés internet lengua
+Cluster72: condición panorama ambiente empleo clima atmósfera
+Cluster73: cultivo uso utilización práctica explotación matrimonio aborto tortura
+Cluster74: experto investigador analista observador especialista científico economista profesor corredor autor astronauta inspector ingeniero médico
+Cluster75: expectativa tensión temor duda malestar sentimiento inquietud incertidumbre sospecha
+Cluster76: acuerdo contrato convenio tratado convención pacto protocolo acta decreto tlc tarjeta
+Cluster77: preparativo procedimiento entrenamiento trabajo ciclo campaña recorrido trámite gestión preparación gira
+Cluster78: pueblo población minoría humanidad yugoslavia
+Cluster79: sueño aspiración promesa requisito ambición obligación
+Cluster80: medida ventaja decisión fotografía posesión giro vacaciones foto conciencia relevo represalia descanso rienda
+Cluster81: seguridad vida democracia confianza estabilidad salud finanzas credibilidad competitividad
+Cluster82: secretario ministro viceministro representante jefe coordinador canciller titular comandante asesor embajador enviado director responsable consejero vicepresidente administrador encargado negociador subsecretario comisionado vicecanciller comisario mediador colaborador procurador emisario
+Cluster83: precio bolsa índice indicador acción cotización inflación pib crudo reserva desempleo popularidad recaudación temperatura balanza rendimiento
+Cluster84: comunidad país mundo nación africa sector sociedad región europa estados continente asia centroamérica bando planeta latinoamérica
+Cluster85: posición liderazgo liderato punta
+Cluster86: representación puesto alcaldía cartera plaza lugar banca asiento escaño
+Cluster87: boleto billete cupo clasificación pasaje ascenso pase pasaporte
+Cluster88: expresión crítica palabra voz gesto
+Cluster89: pareja madre padre amigo esposo familia compañero hermano hijo señor dios marido
+Cluster90: jugada episodio entrada quinto capítulo descuento tercero turno inning
+Cluster91: canción obra película filme libro disco novela colección cinta álbum
+Cluster92: local tarde víspera madrugada gmt california maana verano
+Cluster93: visita estancia viaje estadía
+Cluster94: cosa llamamiento comentario aparición realidad presente recuento concesión escala eco énfasis alusión fortuna
+Cluster95: víctima balance desaparecido herido saldo muerto
+Cluster96: nombre inscripción leyenda lema frase consigna
+Cluster97: final fecha ronda cuarto semifinal instancia octavo
+Cluster98: dato prueba elemento alternativa evidencia antecedente garantía indicio facilidad
+Cluster99: visión criterio opinión postura concepto
+Cluster100: cuerpo resto salida caja sobreviviente cadáver fórmula pieza
+Cluster101: función presidencia cargo poder jefatura dirección responsabilidad mando conducción
+Cluster102: extranjero ámbito marco seno materia contra contexto sentido chiapas particular plano vigor
+Cluster103: artículo norma constitución ley regla legislación reglamento código regulación
+Cluster104: partido pelea encuentro juego combate asalto choque debut definición cotejo batalla duelo contienda set
+Cluster105: idea información versión acusación participación rumor especulación afirmación hipótesis implicación
+Cluster106: conferencia declaración comunicado discurso referencia presentación entrevista página rueda inauguración
+Cluster107: estratega entrenador técnico directiva capitán seleccionador
+Cluster108: grupo mafia organización narcotraficante traficante red banda célula cártel cia
+Cluster109: apertura nacimiento fundación arribo llegada regreso partida lanzamiento retorno estreno reanudación
+Cluster110: objetivo intención sede argumento motivo propósito excepción finalidad objeto frecuencia
+Cluster111: nivel magnitud velocidad distancia grado intensidad altura profundidad
+Cluster112: aerolínea productor compañía banco empresa firma fabricante dueño consorcio filial propietario petrolero gigante
+Cluster113: persona piloto palestino pasajero iraquí conductor minero tripulante ocupante israelí
+Cluster114: canje fusión préstamo compra financiamiento donación transferencia contratación incorporación adquisición transacción privatización traspaso
+Cluster115: disculpa extradición anulación perdón explicación asilo
+Cluster116: recurso demanda denuncia caso renuncia dimisión apelación queja documentación síntoma querella
+Cluster117: parte vez computador satélite sigla razón teléfono ultimátum piedra grito
+Cluster118: nombramiento creación nominación envío designación convocatoria formación candidatura extensión realización adopción reelección inclusión levantamiento postulación
+Cluster119: reo pas as segn ao despus adems milisegundo inform reunin
+Cluster120: sistema modelo estrategia técnica mecanismo estructura esquema tecnología máquina método motor instrumento plataforma infraestructura
+Cluster121: mensaje carta nota misiva correo refuerzo copia señal
+Cluster122: cartel bandera pancarta cruz
+Cluster123: embargo precedente
+Cluster124: estadística estudio documento informe examen reporte investigación encuesta sondeo análisis revisión evaluación
+Cluster125: empate eliminación éxito triunfo golpe derrota revés victoria conquista goleada
+Cluster126: congreso comisión comité consejo parlamento gabinete junta senado cámara órgano asamblea
+Cluster127: presidente gobernante mandatario líder gobernador dirigente miembro integrante participante diputado legislador senador congresista alcalde delegado parlamentario político obispo
+Cluster128: residente trabajador indio habitante empleado estudiante maestro campesino agricultor colono poblador gremio activista indígena vecino sindicato obrero
+Cluster129: respuesta voto aprobación reconocimiento apoyo respaldo ratificación autorización adhesión confirmación
+Cluster130: muestra festival cumbre reunión cita feria evento foro exposición seminario mesa
+Cluster131: avión aparato aeronave boeing caza avioneta helicóptero aviación
+Cluster132: fuerza policía tropa guardia ejército soldado militar personal brigada agente armada efectivo unidad bombero marina tanque patrulla fbi casco
+Cluster133: opositor oposición derecha oficialismo izquierda fsln demócrata prd pri arena republicano pt
+Cluster134: título oro presea medalla corona plata trofeo oscar
+Cluster135: rumbo destino
+Cluster136: ex general sospechoso detenido acusado asesino alemán pinochet fujimori sacerdote dictador milosevic montesinos cavallo disidente oviedo zelaya
+Cluster137: invitación pedido solicitud petición oferta planteamiento reclamo pregunta recomendación exigencia observación
+Cluster138: estado alerta cese tregua moratoria culpable emergencia amnistía
+Cluster139: transbordador nave buque barco embarcación
+Cluster140: hallazgo anuncio publicación descubrimiento negativa difusión demora rechazo retraso ausencia fracaso revelación debilidad
+Cluster141: incidente hecho accidente explosión estallido desastre derrumbe suceso enfrentamiento tragedia tiroteo catástrofe
+Cluster142: crisis problema diferencia disputa conflicto tema desacuerdo asunto cuestión controversia diferendo divergencia discrepancia
+Cluster143: agenda nómina lista calendario mapa hoja
+Cluster144: votante elector norteamericano peruano mexicano chileno colombiano ciudadano salvadoreño ecuatoriano boliviano chino costarricense paraguayo uruguayo guatemalteco británico
+Cluster145: directivo empresario colega familiar par dirigencia homólogo cúpula
+Cluster146: disposición necesidad compromiso interés importancia determinación carácter voluntad urgencia
+Cluster147: lluvia tormenta fenómeno huracán recesión sequía inundación viento
+Cluster148: europeo visitante inversionista usuario turista consumidor operador accionista inversor cliente
+Cluster149: cifra número monto valor cantidad suma volumen porcentaje nmero dlares
+Cluster150: misil bala cohete armamento gravedad arma fusil
+Cluster151: mal enfermedad epidemia sida virus cáncer fiebre gripe
+Cluster152: castro papa cantante reina músico actor cineasta rey dama escritor actriz cardenal arzobispo monarca príncipe artista pontífice
+Cluster153: demostración incursión ensayo inspección operación detención maniobra captura operativo arresto aterrizaje allanamiento
+Cluster154: lesión efecto impacto consecuencia molestia hambre dolor escasez fractura
+Cluster155: pelota balón rebote bola
+Cluster156: portero arquero valla arco refugio
+Cluster157: seguimiento bienvenida luz detalle impulso silva sorpresa gama precisión impresión
+Cluster158: atentado ataque desaparición asesinato crimen secuestro delito robo homicidio agresión matanza masacre genocidio
+Cluster159: polonia inglaterra japón italia canadá alemania holanda francia nigeria australia sudáfrica suiza portugal bélgica serbia croacia austria grecia suecia jamaica trinidad
+Cluster160: falla fraude falta error violación exceso irregularidad abuso
+Cluster161: área tierra terreno superficie suelo cancha cielo techo territorio piso campo montaña
+Cluster162: independencia derecho cosecha bosque soberanía especie propiedad depósito patrimonio activo bien memoria
+Cluster163: tigres chicago houston florida texas miami boston atlanta
+Cluster164: hombre terrorista militante delincuente rebelde guerrillero combatiente insurgente miliciano individuo desconocido secuestrador supuesto comando
+Cluster165: cargamento droga sustancia cocaína material kilo
+Cluster166: club selección river conjunto nacional américa equipo boca salvador valencia sevilla tenista barcelona inter escuadra cuadro arsenal juventus chelsea combinado
+Cluster167: escuela museo universidad consulado sección colegio iglesia tienda restaurante
+Cluster168: resultado veredicto resolución fallo sentencia orden pronunciamiento dictamen
+Cluster169: jordania tailandia china india eeuu rusia indonesia turquía marruecos shanghai georgia egipto ucrania kuwait vietnam taiwán
+Cluster170: periodista reportero fotógrafo corresponsal
+Cluster171: irán moscú islamabad washington israel pakistán rpdc pyongyang siria teherán damasco libia belgrado
+Cluster172: previsión pronóstico estimación proyección
+Cluster173: revancha primer relevista convicción abridor espalda exterior balazo yeltsin respecto yanquis pizarra anonimato unanimidad pekín palo foja outs innings sweet setiembre
+Cluster174: tendencia acontecimiento paso curso trayectoria ejemplo pendiente tradición pista evolución
+Cluster175: costa isla puerto aeropuerto línea río mar selva frontera extremo caribe playa pacífico
+Cluster176: penal disparo remate cabezazo tiro
+Cluster177: bush obama clinton sarkozy abbas putin barak sharon powell arafat blair aznar annan chirac berlusconi netanyahu
+Cluster178: pena condena prisión multa castigo
+Cluster179: tributo homenaje honor fruto testimonio
+Cluster180: atacante jugador futbolista volante delantero ronaldo mediocampista maradona defensor astro veterano centrocampista estrella goleador
+Cluster181: relación amistad lazo vínculo conexión nexo vinculación
+Cluster182: instalación edificio palacio sitio base vivienda casa estación mezquita hotel cuartel complejo colonia asentamiento blanco campamento residencia
+Cluster183: béisbol disciplina rubro división modalidad categoría fila deporte atenas rama circuito salto
+Cluster184: competencia edición temporada torneo certamen campeonato liga mundial copa competición sudamericano eliminatoria juegos
+Cluster185: epicentro oportunidad conocimiento experiencia influencia repercusión característica miedo jurisdicción cuidado
+Cluster186: calentamiento terrorismo corrupción pobreza tráfico delincuencia narcotráfico inmigración impunidad lavado
+Cluster187: plazo continuación contrario margen favor parecer
+Cluster188: gente manifestante público seguidor espectador asistente hincha simpatizante multitud aficionado partidario
+Cluster189: francés ruso australiano español argentino brasileño canadiense ciclista holandés portugués compatriota estadounidense italiano suizo sueco
+Cluster190: capital provincia ciudad medellín departamento centro distrito zona poblado municipio localidad balneario valle barrio aldea afueras periferia suburbio
+Cluster191: hu funcionario wen testigo li vocero portavoz abogado diplomático coronel oficial teniente doctor premier gerente
+Cluster192: correa chávez calderón vázquez fernández arias ortega morales flores lagos lula sánchez rodríguez bachelet gómez santos garcía uribe insulza ramírez lópez pérez duhalde gonzález gutiérrez alvarez gaviria kirchner bolaños cardoso toledo fox samper menem pastrana zedillo
+Cluster193: libertad calificación crédito permiso autonomía ciudadanía beneficio nacionalidad estatus estatuto licencia inmunidad facultad
+Cluster194: serie escándalo ola incendio ofensiva violencia reacción polémica disturbio llama oleada rebelión ira
+Cluster195: avance consenso progreso solución paz acercamiento entendimiento arreglo coincidencia igualdad equilibrio
+Cluster196: lima santiago beijing quito madrid bogotá brasilia asunción managua parís santo roma caracas londres berlín bruselas montevideo tokio tegucigalpa viena ginebra
+Cluster197: candidato anfitrión ganador campeón sucesor atleta rival figura aliado aspirante deportista socio adversario potencia enemigo favorito vencedor
+Cluster198: deuda salario impuesto sueldo rescate compensación cuota indemnización soborno
+Cluster199: desafío dificultad obstáculo reto resistencia
+Cluster200: sustitución reemplazo

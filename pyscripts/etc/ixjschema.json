@@ -1,0 +1,326 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "MetaNet Extraction Pipeline JSON Interchange Format",
+    "type": "object",
+    "properties": {
+        "lang": {
+            "description": "Default language for all sentences in the JSON file (unless overridden per document).",
+            "type": "string"
+        },
+        "encoding": {
+            "description": "character encoding of sentences.  Should be UTF-8.",
+            "type": "string"
+        },
+        "jsonschema": {
+            "description": "URI to jsonschema with which to validate this JSON document",
+            "type": "string"
+        },
+        "documents": {
+            "description": "A list of document headers from which the sentences came.",
+            "type": "array",
+            "items": {
+                "title": "Document header",
+                "type": "object",
+                "properties": {
+                    "corpus": {
+                        "description": "Name of the corpus that contains the document.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Name of the document. Should be unique at least to the corpus.",
+                        "type": "string"
+                    },
+                    "provenance": {
+                        "description": "A string that uniquely identifies the document (e.g., a URI).",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "A description of the document.",
+                        "type": "string"
+                    },
+                    "lang": {
+                        "description": "The document's language, esp. if different from the default.",
+                        "type": "string"
+                    },
+                    "size": {
+                        "description": "The number of sentences in the document.",
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "type": {
+                        "description": "The source or genre type of the document.",
+                        "type": "string"
+                    }
+                },
+                "required": ["corpus","name","provenance"]
+            }
+        },
+        "sentences" : {
+            "description": "List of sentences",
+            "type": "array",
+            "items": {
+                "title": "Sentence",
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "description unique id of sentence (e.g. URI)",
+                        "type": "string"
+                    },
+                    "idx": {
+                        "description": "Index of sentence in the array",
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "text": {
+                        "description": "Text of the sentence",
+                        "type": "string"
+                    },
+                    "mtext": {
+                        "description": "Modified text sentence used for pattern matching",
+                        "type": "string"
+                    },
+                    "comment": {
+                        "description": "arbitrary comments to attach to the sentence",
+                        "type": "string"
+                    },
+                    "word": {
+                        "description": "List of words in the sentence with attributes.",
+                        "type": "array",
+                        "items": {
+                            "title": "Word attributes",
+                            "type": "object",
+                            "properties": {
+                                "idx": {
+                                    "description": "Index of word in the array",
+                                    "type": "integer",
+                                    "minimum": 0
+                                },
+                                "n": {
+                                    "description": "External enumeration",
+                                    "type": "string"
+                                },
+                                "form": {
+                                    "description": "Word form",
+                                    "type": "string"
+                                },
+                                "lem": {
+                                    "description": "Lemma",
+                                    "type": "string"
+                                },
+                                "pos": {
+                                    "description": "POS Tag",
+                                    "type": "string"
+                                },
+                                "start": {
+                                    "description": "Start position in the sentence",
+                                    "type": "integer",
+                                    "minimum": 0
+                                },
+                                "end": {
+                                    "description": "End position in the sentence",
+                                    "type": "integer",
+                                    "minimum": 0
+                                }
+                            }
+                        },
+                        "required": ["idx","form","start","end"]
+                    },
+                    "dparse": {
+                        "description": "Dependency parse",
+                        "type": "array",
+                        "items": {
+                            "title": "Dependency Node",
+                            "type": "object",
+                            "properties": {
+                                "grtype": {
+                                    "description": "Grammatical relation type",
+                                    "type": "string"
+                                },
+                                "grsubtype": {
+                                    "description": "Grammatical relation type subtype",
+                                    "type": "string"
+                                },
+                                "head": {
+                                    "description": "Index of head word",
+                                    "type": "string"
+                                },
+                                "dep": {
+                                    "description": "Index of dep word",
+                                    "type": "string"
+                                },
+                                "initgrtype": {
+                                    "description": "Initial grammatical relation type",
+                                    "type": "string"
+                                }
+                            },
+                            "required": ["grtype","head"]
+                        }
+                    },
+                    "lms": {
+                        "description": "List of (extracted) LMs",
+                        "type": "array",
+                        "items": {
+                            "title": "Linguistic Metaphor",
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "description": "Name of LM for display purposes",
+                                    "type": "string"
+                                },
+                                "extractor": {
+                                    "description": "Name of system that extracted this LM",
+                                    "type": "string"
+                                },
+                                "cxn": {
+                                    "description": "Name of cxn used to extract this LM (if relevant)",
+                                    "type": "string"
+                                },
+                                "seed": {
+                                    "description": "Seed, if any, used to find this LM",
+                                    "type": "string"
+                                },
+                                "score": {
+                                    "description": "Numerical score of LM for various purposes",
+                                    "type": "number"
+                                },
+                                "affect": {
+                                    "description": "Affect of the LM (-5 to 5)",
+                                    "type": "integer",
+                                    "minimum": -5,
+                                    "maximum": 5
+                                },
+                                "target": {
+                                    "description": "Target expression",
+                                    "$ref": "#/definitions/expressionpart"
+                                },
+                                "source": {
+                                    "description": "Source expression",
+                                    "$ref": "#/definitions/expressionpart"
+                                },
+                                "comment": {
+                                    "description": "arbitrary comments to attach to the LM",
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "required": ["name","target","source"]
+                    }, 
+                    "semafor_annotation": {
+                        "title": "SEMAFOR Annotation",
+                        "type": "object",
+                        "properties": {
+                            "text": {
+                                "description": "Sentence text",
+                                "type": "string"
+                            },
+                            "annotation_sets": {
+                                "description": "Array of annotation frames for this sentence",
+                                "type": "array",
+                                "items": {
+                                    "title": "Annotation set",
+                                    "type": "object",
+                                    "properties": {
+                                        "framename": {
+                                            "description": "Frame name from FrameNet",
+                                            "type": "string"
+                                        },
+                                        "id": {
+                                            "description": "Unique ID of this annotation set",
+                                            "type": "integer"
+                                        },
+                                        "labels": {
+                                            "description": "Array of frame labels",
+                                            "type": "array",
+                                            "items": {
+                                                "title": "Frame label",
+                                                "type": "object",
+                                                "properties": {
+                                                    "name": {
+                                                        "description": "Label name",
+                                                        "type": "string"
+                                                    },
+                                                    "id": {
+                                                        "description": "Unique ID of this frame label",
+                                                        "type": "integer"
+                                                    },
+                                                    "start": {
+                                                        "description": "Index of the first character of the label in the sentence",
+                                                        "type": "integer"
+                                                    },
+                                                    "end": {
+                                                        "description": "Index of the last character of the label in the sentence",
+                                                        "type": "integer"
+                                                    },
+                                                    "fragment": {
+                                                        "description": "The labeled fragment of the sentence",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": ["name", "id", "start", "end", "fragment"]
+                                            }
+                                        }
+                                    },
+                                    "required": ["framename", "id", "labels"]
+                                }
+                            }
+                        },
+                        "required": ["text", "annotation_sets"]                            
+                    }
+                },
+                "required": ["id", "idx", "text"]
+            }
+        }
+    },
+    "required": ["encoding","jsonschema","lang","documents","sentences"],
+    "definitions": {
+        "expressionpart" : {
+            "description": "Part of a metaphorical expression",
+            "type": "object",
+            "properties": {
+                "form": {
+                    "description": "word form as in the sentence",
+                    "type": "string"
+                },
+                "lemma": {
+                    "description": "lemma or stemmed version",
+                    "type": "string"
+                },
+                "mword": {
+                    "description": "match string used to match this word",
+                    "type": "string"
+                },
+                "rel": {
+                    "description": "grammatical relation of this word relative to its head",
+                    "type": "string"
+                },
+                "wdomain": {
+                    "description": "target domain relevant for this word (even if source)",
+                    "type": "string"
+                },
+                "schema": {
+                    "description": "Name of schema that this word is a LU in",
+                    "type": "string"
+                },
+                "concept": {
+                    "description": "Name of IARPA concept revelant for this word",
+                    "type": "string"
+                },
+                "dimension": {
+                    "description": "Name of IARPA source dimension relevant (source only)",
+                    "type": "string"
+                },
+                "start": {
+                    "description": "starting char position",
+                    "type": "number",
+                    "minimum": 0
+                },
+                "end": {
+                    "description": "ending char position",
+                    "type": "number",
+                    "minimum": 0
+                }
+            },
+            "required": ["form","start","end"]
+        }
+    }
+}

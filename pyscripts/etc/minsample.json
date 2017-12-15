@@ -1,0 +1,37 @@
+{
+    "encoding": "UTF-8",
+    "jsonschema": "https://metaphor.icsi.berkeley.edu/metaphor/ixjschema.json",
+    "lang": "en",
+    "documents": [
+        {
+            "corpus": "CNC",
+            "name": "CNC_A00",
+            "provenance": "CNC_A00",
+            "description": "A document in the CNC",
+            "lang": "en",
+            "size": 10000,
+            "type": "news"
+        },
+        {
+            "corpus": "CNC",
+            "name": "CNC_A01",
+            "provenance": "CNC_A01",
+            "description": "Another document in the CNC",
+            "lang": "en",
+            "size": 10001,
+            "type": "literature"
+        }
+   ],
+   "sentences": [
+        {
+            "id": "CNC_A00:1",
+            "idx": 0,
+            "text": "Tackling poverty is important."
+        },
+        {
+            "id": "CNC_A01:1",
+            "idx": 1,
+            "text": "Poverty kills millions every year."
+        }
+    ]
+}

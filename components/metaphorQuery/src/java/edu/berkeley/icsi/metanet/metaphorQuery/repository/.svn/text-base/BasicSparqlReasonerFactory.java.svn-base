@@ -1,0 +1,14 @@
+package edu.berkeley.icsi.metanet.metaphorQuery.repository;
+
+import edu.berkeley.icsi.metanet.metaphorQuery.SparqlInferenceFactory;
+import edu.berkeley.icsi.metanet.metaphorQuery.SparqlReasoner;
+import org.semanticweb.owlapi.model.OWLOntologyManager;
+
+public class BasicSparqlReasonerFactory implements SparqlInferenceFactory {
+
+	@Override
+	public SparqlReasoner createReasoner(OWLOntologyManager manager) {
+		return new BasicSparqlReasoner(manager);
+	}
+
+}

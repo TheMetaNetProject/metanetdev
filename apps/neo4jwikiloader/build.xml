@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="install" name="neo4jwikiloader">
+
+  <property name = "app"      value = "neo4jwikiloader"/>
+
+  <import file="../appbuild.xml"/>
+
+  <!-- overriding the appbuild file -->
+  <target name = "checklibs">
+     <condition property="libs.found">
+       <and>
+         <available file="${root.lib.dir}/${commons.cli.lib}" type="file"/>
+         <available file="${root.lib.dir}/${neo4j.kernel.lib}" type="file"/>
+       </and>
+     </condition>
+     <path id = "project.classpath">
+       <filelist dir="${root.lib.dir}">
+         <file name="${commons.cli.lib}"/>
+         <file name="${neo4j.kernel.lib}"/>
+       </filelist>
+     </path>
+  </target>
+
+</project>

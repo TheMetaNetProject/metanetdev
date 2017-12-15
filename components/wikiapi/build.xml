@@ -1,0 +1,71 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+
+<project name = "Wiki API" default = "install" basedir = ".">    
+
+    <property file="version.properties"/>
+    <property name="major.version" value="1"/>
+    <property name="minor.version" value="0"/>
+    <property name="micro.version" value="0"/>
+
+   
+    <property name = "root.dir"           location = "../.."/>
+    <property name = "src.dir"            location = "./src/java"/>  
+    <property name = "build.dir"          location = "./build"/>
+    <property name = "classes.dir"        location = "${build.dir}/classes"/>
+    <property name = "dist.dir"           location = "./dist"/>
+    <property name = "manifest"           location = "${build.dir}/manifest.mf"/>
+    <property name = "manifest.src"       location = "./manifest.mf"/>
+    <property name = "dist.jar"           location = "${dist.dir}/wikiapi.jar"/>
+    <property name = "root.dist.dir"      location = "${root.dir}/dist"/>
+
+    <!-- BUILD TARGETS -->
+
+    <target name = "init">
+        <tstamp>
+            <format property="build.time" pattern="yyyy_MM_dd_hhmm"/>
+        </tstamp>
+        <property name="bundle.version"
+               value="${major.version}.${minor.version}.${micro.version}.${build.time}"/>
+        <mkdir dir = "${build.dir}"/>
+        <mkdir dir = "${dist.dir}"/>
+        <mkdir dir = "${classes.dir}"/>
+    </target>  
+
+    <target name="build.manifest" depends="init">
+        <copy tofile="${manifest}" 
+           file="${manifest.src}" overwrite="true"/>
+        <manifest file="${manifest}" 
+               mode = "update">
+            <attribute name="Built-By" value = "${user.name}"/>
+            <attribute name="Bundle-Version" value="${bundle.version}"/>
+        </manifest>
+    </target>
+
+
+    <target name = "compile" depends="init">
+        <javac srcdir = "${src.dir}"
+            source = "1.7"
+            destdir = "${classes.dir}" 
+            debug="on"
+            includeAntRuntime="false">
+        </javac>
+    </target>
+
+    <target name = "jar" depends = "compile, build.manifest">
+        <jar jarfile = "${dist.jar}"
+          basedir = "${classes.dir}" 
+          manifest = "${manifest}"/>
+    </target>
+
+    <target name = "install" depends = "jar">
+      <copy todir="${root.dist.dir}/lib"
+            file="${dist.jar}"/>
+    </target>
+
+    <target name = "clean">
+        <delete dir = "${build.dir}"/>
+        <delete dir = "${dist.dir}"/>
+    </target>
+
+
+</project>

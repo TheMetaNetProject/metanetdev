@@ -1,0 +1,63 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!--
+     Note: this is an exising Protege plugin that has been modified for
+     the MetaNet project.  This should be used instead of the default one.
+-->
+<project name = "MetaNet custom OWL Code Generation" default = "install" basedir = ".">    
+
+  <property name="plugin" value="org.protege.editor.owl.codegeneration"/>
+  <property name="plugin.name" value="codegeneration"/>
+  <property name="plugin.desc" value="MetaNet OWL Code Generation"/>
+
+  <property name = "src.dir"            location = "./src/main/java"/>
+
+  <!-- common plugin build properties and targets -->
+  <import file="../pluginbuild.xml"/>
+
+  <property file="version.properties"/>
+  <property name="major.version" value="2"/>
+  <property name="minor.version" value="0"/>
+  <property name="micro.version" value="0"/>
+
+  <!--
+      Override the build target checklibs to allow for a custom
+      list of libraries
+  -->
+ 
+   <target name = "checklibs">
+     <condition property="libs.found">
+       <and>
+         <available file="${root.lib.dir}/${commons.cli.lib}" type="file"/>
+       </and>
+     </condition>
+     <path id = "project.classpath">
+       <filelist dir="${root.lib.dir}">
+         <file name="${commons.cli.lib}"/>
+       </filelist>
+     </path>
+   </target>
+
+   <!-- override because there are resources that need to be copied -->
+   <target name="copy.resources" depends="checklibs">
+     <copy todir="${classes.dir}">
+       <fileset dir="${src.dir}">
+         <include name="**/*"/>
+         <exclude name="**/*.java"/>
+         <exclude name="**/MANIFEST.MF"/>
+         <exclude name="**/manifest.mf"/>
+       </fileset>
+     </copy>
+     <copy todir="${classes.dir}">
+         <fileset dir="src/main/resources"/>
+     </copy>
+     <copy todir="${classes.dir}">
+       <fileset dir="." includes="*.xml">
+         <exclude name="build.xml"/>
+       </fileset>
+     </copy>
+     <copy todir="${classes.lib.dir}">
+       <path refid="project.classpath"/>
+     </copy>
+   </target>
+
+</project>

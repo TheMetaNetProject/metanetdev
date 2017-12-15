@@ -1,0 +1,84 @@
+<noinclude>
+This is the main "Frame" template, which also embeds the templates for its roles, bindings, related frames, inferences, and lexical units.
+It should be called in the following format:
+<pre>
+{{Frame
+|Description=
+|FrameNet frame=
+|Other aliases=
+|Type=
+|Roles={{Role}}{{Role}}
+|Bindings={{Binding}}{{Binding}}
+|Related Frames={{Related Frame}}{{Related Frame}}
+|Inferences={{Inference}}{{Inference}}
+|Related LUs={{LUs}}{{LUs}}
+}}
+</pre>
+Edit the page to see the template text.
+</noinclude><includeonly>{| class="wikitable"
+|- {{#if:{{{Name gloss|}}}| |style="display:none;"}}
+! Name Gloss
+| {{Printgloss|{{PAGENAME}}|{{{Name gloss|}}}}}{{#set:Frame.Name gloss={{{Name gloss|}}}}}
+|- {{#if:{{{Transcription|}}}| |style="display:none;"}}
+! Transcription
+| [[Frame.Name transcription::{{{Transcription|}}}]]
+|-
+! Description
+| [[Has description::{{{Description|}}}]]
+|-
+! Closest FrameNet Frame(s)
+| {{#arraymap:{{{FrameNet frame|}}}|,|%|[https://framenet2.icsi.berkeley.edu/fnReports/data/frame/%.xml %]}}{{#set:Frame.FrameNet frame={{{FrameNet frame|}}}}}
+|-
+! Other aliases
+| {{#arraymap:{{{Other aliases|}}}|,|x|[[Frame.Alias::x]]}}
+|-
+! Type
+| {{#arraymap:{{{Type|}}}|,|x|[[Frame.Type::x]]}}
+|}
+'''Roles:'''
+{{{Roles}}}
+
+'''Related Frames:'''
+{{{Related frames}}}
+
+'''Bindings:'''
+{{{Bindings}}}
+
+'''Inferences'''
+{{{Inferences}}}
+
+'''Relevant Lexical Units:'''
+{{{Relevant LUs}}}
+
+'''Lexical Units in Related FrameNet Frames:'''
+{{FrameNetLUs|frames={{{FrameNet frame|}}}}}
+
+----
+'''Metaphors that use this frame:'''
+{|class="wikitable"
+! as Target frame
+! as Source frame
+|-
+|{{#ask: [[Category:Metaphor]] [[ Metaphor.Target frame::{{FULLPAGENAME}}]]
+| format=ul
+}}
+|{{#ask: [[Category:Metaphor]] [[ Metaphor.Source frame::{{FULLPAGENAME}}]]
+| format=ul
+}}
+|}
+----
+'''Graph of frame relations:'''
+
+<div class="gviztab">
+{{#relationsgraph:framerelsgrph|{{FULLPAGENAME}}|{{#ask: [[Category:Frame]] [[Related frame:: ?; {{FULLPAGENAME}}; ?]]
+| ?Related frame
+| format = array
+| sep= <SEP>
+}}|{{#ask: [[{{FULLPAGENAME}}]]
+| ?Related frame
+| format=array
+| sep= <SEP>
+}}|gv||Frame}}
+</div>
+[[Category:Frame]]
+</includeonly>

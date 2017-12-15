@@ -1,0 +1,85 @@
+mirto2: 32-core 2.20 GHz Xeon
+mussel1: 24-core 2.40 GHz Xeon
+
+wc -l: 10x 
+   Local
+      (python-2.7.3)[lucag@mirto2 Europarl3]$ time wc -l europarl-v7.es-en.es
+      1965734 europarl-v7.es-en.es
+      real    0m0.324s
+   NFS:
+      (python-2.7.3)[lucag@mussel1 Europarl3]$ time wc -l europarl-v7.es-en.en
+      1965734 europarl-v7.es-en.en
+      real    0m3.490s
+
+zcat & wc -l: ~
+   local 
+      time zcat c.true.en.gz | wc -l
+      real    0m13.201s
+   NFS:
+      time zcat c.true.en.gz | wc -l
+      real    0m13.490s
+
+ost.py: 
+   Europarl 
+      local
+          time python ~/src/spa-parsing/src/ost.py europarl-v7.es-en.en.split ../../Parsing/Europarl/EN/ 256 1024
+          real    0m35.759s 0m31.918s (c)
+      NFS
+          real    1m59.916s   real    1m58.258s (c)     
+      ----> 3x
+   OpenSubtitles2011
+      local
+         time python ~/src/spa-parsing/src/ost.py c.true.en.gz ../../Parsing/OpenSubtitles2011/EN/ 256 1024 > /dev/null
+         real    5m25.285s
+      NFS:
+         time python ~/src/spa-parsing/src/ost.py c.true.en.gz tmp 256 1024 > /dev/null
+         real    22m35.020s
+      ----> 4x
+   
+edeps.py:
+   OpenSubtitles2011/EN
+      time make -j 32 lemmatized
+         local
+            real    18m28.587s
+         NFS
+            real    16m20.310s
+      ----> low cpu usage
+      time make -j 16 lemmatized
+         local
+            real    16m12.851s
+         NFS
+            real    18m11.040s
+      ----> low cpu usage
+      time make clean
+         local
+            real    4m25.437s
+         NFS
+            real    5m46.289s 
+   OpenSubtitles2011/ES
+      local
+         time make -j 32 lemmatized
+         sar -d 10 25
+            Average:          DEV       tps  rd_sec/s  wr_sec/s  avgrq-sz  avgqu-sz     await     svctm     %util
+            Average:       dev8-5    157.73   1063.29   2094.41     20.02    147.90    935.54      6.34    100.02            
+      NFS
+         time make -j 32 lemmatized
+         real    64m46.487s
+               
+touch ??/*.dep
+   OpenSubtitles/ES
+      local
+         real    0m0.814s      
+      NFS
+         real    4m21.102s
+      ----> 321 x
+      
+make clean
+   OpenSubtitles/ES
+      time make clean      
+         local
+            real    0m4.622s
+         NFS
+            real    5m40.634s
+         ---> 308 x   
+           
+         

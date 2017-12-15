@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/protege/!svn/ver/25924/protege4/plugins/edu.berkeley.icsi.metanet.metaphorQuery/trunk/src/org/protege/editor/owl/rdf
+END
+SparqlReasonerException.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/repos/protege/!svn/ver/24126/protege4/plugins/edu.berkeley.icsi.metanet.metaphorQuery/trunk/src/org/protege/editor/owl/rdf/SparqlReasonerException.java
+END
+SparqlReasoner.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/repos/protege/!svn/ver/24135/protege4/plugins/edu.berkeley.icsi.metanet.metaphorQuery/trunk/src/org/protege/editor/owl/rdf/SparqlReasoner.java
+END
+SparqlQueryView.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/repos/protege/!svn/ver/24146/protege4/plugins/edu.berkeley.icsi.metanet.metaphorQuery/trunk/src/org/protege/editor/owl/rdf/SparqlQueryView.java
+END
+SwingResultModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/repos/protege/!svn/ver/24126/protege4/plugins/edu.berkeley.icsi.metanet.metaphorQuery/trunk/src/org/protege/editor/owl/rdf/SwingResultModel.java
+END
+SparqlInferenceFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/repos/protege/!svn/ver/24126/protege4/plugins/edu.berkeley.icsi.metanet.metaphorQuery/trunk/src/org/protege/editor/owl/rdf/SparqlInferenceFactory.java
+END
+SparqlResultSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/repos/protege/!svn/ver/24126/protege4/plugins/edu.berkeley.icsi.metanet.metaphorQuery/trunk/src/org/protege/editor/owl/rdf/SparqlResultSet.java
+END

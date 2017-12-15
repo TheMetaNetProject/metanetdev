@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+    <extension id="SparqlQueryView"
+               point="org.protege.editor.core.application.ViewComponent">
+        <label value="SPARQL query"/>
+        <class value="edu.berkeley.icsi.metanet.metaphorQuery.SparqlQueryView"/>
+        <headerColor value="@org.protege.ontologycolor"/>
+        <category value="@org.protege.querycategory"/>
+    </extension>
+    
+        <extension id="SparqlTab"
+               point="org.protege.editor.core.application.WorkspaceTab">
+        <label value="SPARQL Query"/>
+        <class value="org.protege.editor.owl.ui.OWLWorkspaceViewsTab"/>
+        <editorKitId value="OWLEditorKit"/>
+        <index value="Z"/>
+        <defaultViewConfigFileName value="viewconfig.xml"/>
+    </extension>
+    
+</plugin>

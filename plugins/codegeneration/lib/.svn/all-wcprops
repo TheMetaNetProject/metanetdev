@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/protege/!svn/ver/23779/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/lib
+END
+commons-cli-1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/protege/!svn/ver/23779/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/lib/commons-cli-1.2.jar
+END
+testng-5.14.7.jar
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/protege/!svn/ver/22497/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/lib/testng-5.14.7.jar
+END
+log4j.jar
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/repos/protege/!svn/ver/20618/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/lib/log4j.jar
+END

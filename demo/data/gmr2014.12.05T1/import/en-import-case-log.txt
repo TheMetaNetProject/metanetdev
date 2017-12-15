@@ -1,0 +1,18 @@
+No handlers could be found for logger "mnformats.mnconfig"
+2014-12-05T10:06:29Z - Initializing MetaNet Repository instance...
+2014-12-05T10:06:29Z - Loading cached rdf graph...
+2014-12-05T10:06:31Z - loading wiktionary data
+2014-12-05T10:06:38Z - Loading cached LU lookups ...
+2014-12-05T10:06:38Z - Loading sources lookups from cache...
+2014-12-05T10:06:38Z - Initialized in case mode.  Valid concept groups: GUN_OVERSIGHT
+2014-12-05T10:06:38Z - importing /xa/metanet/gmr2014.12.05T1/import/en-20141205T1-mn-case-document.txt
+2014-12-05T10:06:38Z - importing /xa/metanet/gmr2014.12.05T1/import/en-20141205T1-mn-case-sentence.txt
+2014-12-05T10:06:40Z - importing /xa/metanet/gmr2014.12.05T1/import/en-20141205T1-mn-case-LM.txt
+2014-12-05T10:06:40Z - importing /xa/metanet/gmr2014.12.05T1/import/en-20141205T1-mn-case-LM_instance.txt
+2014-12-05T10:06:42Z - importing /xa/metanet/gmr2014.12.05T1/import/en-20141205T1-gmr-case-lm_sentence.txt
+2014-12-05T10:06:42Z - importing /xa/metanet/gmr2014.12.05T1/import/en-20141205T1-gmr-case-lm.txt
+2014-12-05T10:06:42Z - importing /xa/metanet/gmr2014.12.05T1/import/en-20141205T1-gmr-case-lm_property.txt
+2014-12-05T10:06:43Z - importing /xa/metanet/gmr2014.12.05T1/import/en-20141205T1-gmr-case-lm2cm_source.txt
+2014-12-05T10:06:43Z - importing /xa/metanet/gmr2014.12.05T1/import/en-20141205T1-gmr-case-lm2cm_target_case.txt
+2014-12-05T10:06:43Z - importing /xa/metanet/gmr2014.12.05T1/import/en-20141205T1-gmr-case-cm_case.txt
+2014-12-05T10:06:43Z - importing /xa/metanet/gmr2014.12.05T1/import/en-20141205T1-gmr-case-cm_case_property.txt

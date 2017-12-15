@@ -1,0 +1,177 @@
+body {
+	padding: 50px;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+	color: #00B7FF;
+}
+
+body {
+	padding-top: 50px;
+}
+
+.caption {
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: 700;
+	color: #959595;
+	letter-spacing: 1px;
+}
+
+.caption-big {
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: 800;
+	color: #959595;
+	letter-spacing: 2px;
+}
+
+label {
+	font-size: 12px;
+	font-weight: 700;
+	color: #808080;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.result-table {
+	margin: 20px 0;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.result-table td {
+	padding: 8px;
+}
+
+.result-table>tbody>tr>td:first-child {
+	width: 25%;
+	max-width: 300px;
+	text-align: right;
+}
+
+.result-table td table {
+	background-color: lightblue;
+	text-align: right;
+}
+
+.table td {
+	vertical-align: middle;
+}
+
+.pos {
+	font-size: 7pt;
+	vertical-align: -6pt;
+	font-style: italic;
+}
+
+.document-nav {
+	display: block;
+}
+
+.word {
+	font-weight: bold;
+	font-size: large;
+}
+
+ul.sentence {
+	margin: 0;
+	list-style: none;
+	border-bottom: thin;
+	border-color: gray;
+}
+
+ul.lms li {
+	border: thin;
+	display: inline-block;
+	margin: 2pt;
+	font-size: bigger;
+}
+
+.source-word {
+	background-color: #FF6347;
+	border: solid 1px #ff6347;
+	border-radius: 5px;
+}
+
+.target-word {
+	background-color: #00fa9a;
+	border: solid 1px #00fa9a;
+	border-radius: 5px;
+}
+
+/*
+ * SVG for dependency tree
+ */
+svg {
+	overflow: hidden;
+}
+
+.node rect {
+	stroke: #333;
+	stroke-width: 1.5px;
+	fill: #fff;
+}
+
+/*    
+.edgeLabel rect {
+	stroke: #333;
+    stroke-width: .5px;
+ 	fill: #fff;
+	font-size: 8pt;
+}
+ 	*/
+.edgeLabel tspan {
+	font-size: small;
+}
+
+.edgePath {
+	stroke: #333;
+	stroke-width: 1.0px;
+	fill: none;
+}
+
+/* 
+ * Animation 
+
+.slide-animate-container {
+	position: relative;
+	background: white;
+	border: 1px solid black;
+	height: 40px;
+	overflow: hidden;
+}
+
+.slide-animate {
+	padding: 10px;
+}
+
+.slide-animate.ng-enter,.slide-animate.ng-leave {
+	-webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+	transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: block;
+	padding: 10px;
+}
+
+.slide-animate.ng-enter {
+	top: -50px;
+}
+
+.slide-animate.ng-enter.ng-enter-active {
+	top: 0;
+}
+
+.slide-animate.ng-leave {
+	top: 0;
+}
+
+.slide-animate.ng-leave.ng-leave-active {
+	top: 50px;
+}
+ */

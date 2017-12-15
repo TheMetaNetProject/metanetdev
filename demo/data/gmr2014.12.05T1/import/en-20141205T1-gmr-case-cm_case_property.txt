@@ -1,0 +1,224 @@
+300000001,300000001,"mappedSchema","Building",0.162162162162
+300000002,300000001,"mappedSchema","Destroying",0.121951219512
+300000003,300000002,"mappedSchema","Gambling",0.321428571429
+300000004,300000002,"mappedSchema","Game",0.208333333333
+300000005,300000003,"mappedSchema","Upward motion",0.186046511628
+300000006,300000003,"mappedSchema","Caused Upward Motion",0.148148148148
+300000007,300000004,"mappedSchema","Moving forward",0.333333333333
+300000008,300000005,"mappedSchema","Tyranny",0.142857142857
+300000009,300000005,"mappedSchema","Bully",0.111111111111
+300000010,300000006,"mappedSchema","Natural disaster",0.204545454545
+300000011,300000007,"mappedSchema","Living",0.107142857143
+300000012,300000008,"mappedSchema","Being at a Low Location",0.5
+300000013,300000009,"mappedSchema","Downward motion",0.393939393939
+300000014,300000009,"mappedSchema","Aids to downward motion",0.130434782609
+300000015,300000010,"mappedSchema","Protect against contact",0.2
+300000016,300000010,"mappedSchema","Placing in a protected location",0.166666666667
+300000017,300000010,"mappedSchema","Impeding downward motion",0.125
+300000018,300000010,"mappedSchema","Protecting",0.125
+300000019,300000011,"mappedSchema","Moving forward",0.333333333333
+300000020,300000012,"mappedSchema","Plants",0.5
+300000021,300000012,"mappedSchema","Weed",0.111111111111
+300000022,300000013,"mappedSchema","Debt",0.05
+300000023,300000014,"mappedSchema","Being at a High Location",0.454545454545
+300000024,300000015,"mappedSchema","Upward motion",0.186046511628
+300000025,300000015,"mappedSchema","Caused Upward Motion",0.148148148148
+300000026,300000016,"mappedSchema","Machine",0.311111111111
+300000027,300000017,"mappedSchema","Building",0.162162162162
+300000028,300000017,"mappedSchema","Destroying",0.121951219512
+300000029,300000018,"mappedSchema","Vertical position",0.5
+300000030,300000019,"mappedSchema","Downward motion",0.393939393939
+300000031,300000019,"mappedSchema","Aids to downward motion",0.130434782609
+300000032,300000020,"mappedSchema","Vertical position",0.5
+300000033,300000021,"mappedSchema","Excess body weight",0.181818181818
+300000034,300000021,"mappedSchema","Overeating",0.166666666667
+300000035,300000022,"mappedSchema","Constructed Confinement",0.1875
+300000036,300000023,"mappedSchema","Belief",0.285714285714
+300000037,300000023,"mappedSchema","Understanding",0.285714285714
+300000038,300000023,"mappedSchema","Thinking about",0.142857142857
+300000039,300000023,"mappedSchema","Reasoning",0.111111111111
+300000040,300000024,"mappedSchema","Upward motion",0.186046511628
+300000041,300000024,"mappedSchema","Caused Upward Motion",0.148148148148
+300000042,300000025,"mappedSchema","Water Confinement",0.184210526316
+300000043,300000025,"mappedSchema","Fluid motion",0.123456790123
+300000044,300000025,"mappedSchema","Body of water",0.114285714286
+300000045,300000026,"mappedSchema","Self propelled motion",0.172413793103
+300000046,300000026,"mappedSchema","Forced movement",0.121212121212
+300000047,300000027,"mappedSchema","Downward motion",0.393939393939
+300000048,300000027,"mappedSchema","Aids to downward motion",0.130434782609
+300000049,300000028,"mappedSchema","Protect against contact",0.2
+300000050,300000028,"mappedSchema","Placing in a protected location",0.166666666667
+300000051,300000028,"mappedSchema","Impeding downward motion",0.125
+300000052,300000028,"mappedSchema","Protecting",0.125
+300000053,300000029,"mappedSchema","Upward motion",0.186046511628
+300000054,300000029,"mappedSchema","Caused Upward Motion",0.148148148148
+300000055,300000030,"mappedSchema","Pest",0.75
+300000056,300000031,"mappedSchema","Servant",0.2
+300000057,300000032,"mappedSchema","Treating a physical affliction",0.243243243243
+300000058,300000032,"mappedSchema","Disease treatment",0.230769230769
+300000059,300000033,"mappedSchema","Physical combat",0.365853658537
+300000060,300000033,"mappedSchema","Competition",0.142857142857
+300000061,300000034,"mappedSchema","Servitude",0.25
+300000062,300000034,"mappedSchema","Servant",0.151515151515
+300000063,300000034,"mappedSchema","Servitude authority",0.105263157895
+300000064,300000035,"mappedSchema","Closing a portal",0.117647058824
+300000065,300000036,"mappedSchema","Steering a boat",0.142857142857
+300000066,300000036,"mappedSchema","Guided motion",0.125
+300000067,300000036,"mappedSchema","Leadership",0.117647058824
+300000068,300000037,"mappedSchema","Factory",0.333333333333
+300000069,300000038,"mappedSchema","Treating a physical affliction",0.243243243243
+300000070,300000038,"mappedSchema","Disease treatment",0.230769230769
+300000071,300000039,"mappedSchema","Punishment",0.264705882353
+300000072,300000039,"mappedSchema","Crime",0.236842105263
+300000073,300000040,"mappedSchema","Family",0.333333333333
+300000074,300000040,"mappedSchema","Parent",0.2
+300000075,300000040,"mappedSchema","Adoption",0.125
+300000076,300000040,"mappedSchema","Marriage",0.111111111111
+300000077,300000041,"mappedSchema","Steering a boat",0.142857142857
+300000078,300000041,"mappedSchema","Guided motion",0.125
+300000079,300000041,"mappedSchema","Leadership",0.117647058824
+300000080,300000042,"mappedSchema","Gambling",0.321428571429
+300000081,300000042,"mappedSchema","Game",0.208333333333
+300000082,300000043,"mappedSchema","Physical path",0.277777777778
+300000083,300000044,"mappedSchema","Directed vision",0.333333333333
+300000084,300000045,"mappedSchema","Physical path",0.277777777778
+300000085,300000046,"mappedSchema","Living",0.107142857143
+300000086,300000047,"mappedSchema","Living",0.107142857143
+300000087,300000048,"mappedSchema","Being at a High Location",0.454545454545
+300000088,300000049,"mappedSchema","Size",0.166666666667
+300000089,300000050,"mappedSchema","Vertical position",0.5
+300000090,300000051,"mappedSchema","Directed vision",0.333333333333
+300000091,300000052,"mappedSchema","Closing a portal",0.117647058824
+300000092,300000053,"mappedSchema","Physical affliction",0.190476190476
+300000093,300000053,"mappedSchema","Treating a physical affliction",0.153846153846
+300000094,300000053,"mappedSchema","Disease",0.135593220339
+300000095,300000053,"mappedSchema","Disease spread",0.130434782609
+300000096,300000053,"mappedSchema","Diagnosis of affliction",0.116279069767
+300000097,300000054,"mappedSchema","Family",0.333333333333
+300000098,300000054,"mappedSchema","Parent",0.2
+300000099,300000054,"mappedSchema","Adoption",0.125
+300000100,300000054,"mappedSchema","Marriage",0.111111111111
+300000101,300000055,"mappedSchema","Natural disaster",0.204545454545
+300000102,300000056,"mappedSchema","Evil creature",0.194444444444
+300000103,300000057,"mappedSchema","Environmental restraints",0.363636363636
+300000104,300000058,"mappedSchema","Belief",0.285714285714
+300000105,300000058,"mappedSchema","Understanding",0.285714285714
+300000106,300000058,"mappedSchema","Thinking about",0.142857142857
+300000107,300000058,"mappedSchema","Reasoning",0.111111111111
+300000108,300000059,"mappedSchema","Family",0.333333333333
+300000109,300000059,"mappedSchema","Parent",0.2
+300000110,300000059,"mappedSchema","Adoption",0.125
+300000111,300000059,"mappedSchema","Marriage",0.111111111111
+300000112,300000060,"mappedSchema","Wearable disguises",0.375
+300000113,300000060,"mappedSchema","Hiding",0.217391304348
+300000114,300000060,"mappedSchema","Visual obstruction",0.217391304348
+300000115,300000061,"mappedSchema","Natural disaster",0.204545454545
+300000116,300000062,"mappedSchema","Worship",0.181818181818
+300000117,300000062,"mappedSchema","Deity",0.111111111111
+300000118,300000063,"mappedSchema","War",0.514285714286
+300000119,300000064,"mappedSchema","Size",0.166666666667
+300000120,300000065,"mappedSchema","Building",0.162162162162
+300000121,300000065,"mappedSchema","Destroying",0.121951219512
+300000122,300000066,"mappedSchema","Guided motion",0.181818181818
+300000123,300000066,"mappedSchema","Shepherding",0.125
+300000124,300000067,"mappedSchema","Constructed Confinement",0.1875
+300000125,300000068,"mappedSchema","Treating a physical affliction",0.243243243243
+300000126,300000068,"mappedSchema","Disease treatment",0.230769230769
+300000127,300000069,"mappedSchema","Punishment",0.264705882353
+300000128,300000069,"mappedSchema","Crime",0.236842105263
+300000129,300000070,"mappedSchema","Servitude",0.25
+300000130,300000070,"mappedSchema","Servant",0.151515151515
+300000131,300000070,"mappedSchema","Servitude authority",0.105263157895
+300000132,300000071,"mappedSchema","Gambling",0.321428571429
+300000133,300000071,"mappedSchema","Game",0.208333333333
+300000134,300000072,"mappedSchema","Harm to living entity",0.295454545455
+300000135,300000073,"mappedSchema","Living",0.107142857143
+300000136,300000074,"mappedSchema","Physical affliction",0.190476190476
+300000137,300000074,"mappedSchema","Treating a physical affliction",0.153846153846
+300000138,300000074,"mappedSchema","Disease",0.135593220339
+300000139,300000074,"mappedSchema","Disease spread",0.130434782609
+300000140,300000074,"mappedSchema","Diagnosis of affliction",0.116279069767
+300000141,300000075,"mappedSchema","War",0.514285714286
+300000142,300000076,"mappedSchema","Directed vision",0.333333333333
+300000143,300000077,"mappedSchema","Machine",0.311111111111
+300000144,300000078,"mappedSchema","Natural disaster",0.204545454545
+300000145,300000079,"mappedSchema","Closing a portal",0.117647058824
+300000146,300000080,"mappedSchema","Concentration",0.102564102564
+300000147,300000081,"mappedSchema","Competition",0.217391304348
+300000148,300000081,"mappedSchema","Race",0.173913043478
+300000149,300000082,"mappedSchema","Competition",0.217391304348
+300000150,300000082,"mappedSchema","Race",0.173913043478
+300000151,300000083,"mappedSchema","Guided motion",0.181818181818
+300000152,300000083,"mappedSchema","Shepherding",0.125
+300000153,300000084,"mappedSchema","Concentration",0.102564102564
+300000154,300000085,"mappedSchema","Physical affliction",0.190476190476
+300000155,300000085,"mappedSchema","Treating a physical affliction",0.153846153846
+300000156,300000085,"mappedSchema","Disease",0.135593220339
+300000157,300000085,"mappedSchema","Disease spread",0.130434782609
+300000158,300000085,"mappedSchema","Diagnosis of affliction",0.116279069767
+300000159,300000086,"mappedSchema","Family",0.333333333333
+300000160,300000086,"mappedSchema","Parent",0.2
+300000161,300000086,"mappedSchema","Adoption",0.125
+300000162,300000086,"mappedSchema","Marriage",0.111111111111
+300000163,300000087,"mappedSchema","Factory",0.333333333333
+300000164,300000088,"mappedSchema","Excess body weight",0.181818181818
+300000165,300000088,"mappedSchema","Overeating",0.166666666667
+300000166,300000089,"mappedSchema","Zealotry",0.538461538462
+300000167,300000090,"mappedSchema","Physical path",0.277777777778
+300000168,300000091,"mappedSchema","Harm to living entity",0.295454545455
+300000169,300000092,"mappedSchema","Edge",0.125
+300000170,300000093,"mappedSchema","Zealotry",0.538461538462
+300000171,300000094,"mappedSchema","Water Confinement",0.184210526316
+300000172,300000094,"mappedSchema","Fluid motion",0.123456790123
+300000173,300000094,"mappedSchema","Body of water",0.114285714286
+300000174,300000095,"mappedSchema","Physical combat",0.365853658537
+300000175,300000095,"mappedSchema","Competition",0.142857142857
+300000176,300000096,"mappedSchema","War",0.514285714286
+300000177,300000097,"mappedSchema","Insanity",0.153846153846
+300000178,300000098,"mappedSchema","Harm to living entity",0.295454545455
+300000179,300000099,"mappedSchema","Burden",0.234375
+300000180,300000100,"mappedSchema","Punishment",0.264705882353
+300000181,300000100,"mappedSchema","Crime",0.236842105263
+300000182,300000101,"mappedSchema","Guided motion",0.181818181818
+300000183,300000101,"mappedSchema","Shepherding",0.125
+300000184,300000102,"mappedSchema","Self propelled motion",0.172413793103
+300000185,300000102,"mappedSchema","Forced movement",0.121212121212
+300000186,300000103,"mappedSchema","Wearable disguises",0.375
+300000187,300000103,"mappedSchema","Hiding",0.217391304348
+300000188,300000103,"mappedSchema","Visual obstruction",0.217391304348
+300000189,300000104,"mappedSchema","Competition",0.217391304348
+300000190,300000104,"mappedSchema","Race",0.173913043478
+300000191,300000105,"mappedSchema","Physical combat",0.365853658537
+300000192,300000105,"mappedSchema","Competition",0.142857142857
+300000193,300000106,"mappedSchema","Punishment",0.264705882353
+300000194,300000106,"mappedSchema","Crime",0.236842105263
+300000195,300000107,"mappedSchema","Environmental restraints",0.363636363636
+300000196,300000108,"mappedSchema","Edge",0.125
+300000197,300000109,"mappedSchema","Environmental restraints",0.363636363636
+300000198,300000110,"mappedSchema","Physical combat",0.365853658537
+300000199,300000110,"mappedSchema","Competition",0.142857142857
+300000200,300000111,"mappedSchema","Concentration",0.102564102564
+300000201,300000112,"mappedSchema","Self propelled motion",0.172413793103
+300000202,300000112,"mappedSchema","Forced movement",0.121212121212
+300000203,300000113,"mappedSchema","Zealotry",0.538461538462
+300000204,300000114,"mappedSchema","Harm to living entity",0.295454545455
+300000205,300000115,"mappedSchema","Concentration",0.102564102564
+300000206,300000116,"mappedSchema","Building",0.162162162162
+300000207,300000116,"mappedSchema","Destroying",0.121951219512
+300000208,300000117,"mappedSchema","Protect against contact",0.2
+300000209,300000117,"mappedSchema","Placing in a protected location",0.166666666667
+300000210,300000117,"mappedSchema","Impeding downward motion",0.125
+300000211,300000117,"mappedSchema","Protecting",0.125
+300000212,300000118,"mappedSchema","Burden",0.234375
+300000213,300000119,"mappedSchema","Insanity",0.153846153846
+300000214,300000120,"mappedSchema","Self propelled motion",0.172413793103
+300000215,300000120,"mappedSchema","Forced movement",0.121212121212
+300000216,300000121,"mappedSchema","Burden",0.234375
+300000217,300000122,"mappedSchema","Edge",0.125
+300000218,300000123,"mappedSchema","Building",0.162162162162
+300000219,300000123,"mappedSchema","Destroying",0.121951219512
+300000220,300000124,"mappedSchema","Size",0.166666666667
+300000221,300000125,"mappedSchema","Servitude",0.25
+300000222,300000125,"mappedSchema","Servant",0.151515151515
+300000223,300000125,"mappedSchema","Servitude authority",0.105263157895
+300000224,300000126,"mappedSchema","Burden",0.234375

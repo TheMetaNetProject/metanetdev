@@ -1,0 +1,99 @@
+<noinclude>
+This is the "Metaphor" template.  While the name is Metaphor, it is used to display members of the VettedMetaphor category.
+It should be called in the following format:
+<pre>
+{{Metaphor
+|Name gloss=
+|Name transcription=
+|Aliases={{Metaphor.Alias}}
+|Description=
+|Metaphor Level=
+|Metaphor Type=
+|Experiential basis=
+|Source frame=
+|Target frame=
+|Mappings={{Mapping}}
+|Related metaphors={{Related metaphor}}
+|Entailments={{Entailment}}
+|Examples={{Example}}
+}}
+</pre>
+Edit the page to see the template text.
+</noinclude><includeonly>{| class="wikitable"
+|- {{#if:{{{Name gloss|}}}| |style="display:none;"}}
+! Name Gloss
+| {{Printgloss|{{PAGENAME}}|{{{Name gloss|}}}}}{{#set:Metaphor.Name gloss={{{Name gloss|}}}}}
+|- {{#if:{{{Name transcription|}}}| |style="display:none;"}}
+! Name Transcription
+| [[Metaphor.Name transcription::{{{Name transcription|}}}]]
+|-
+! Aliases
+| {{{Aliases}}}
+|-
+! Description
+| [[Has description::{{{Description|}}}]]
+|-
+! Metaphor Level
+| [[Metaphor.Level::{{{Metaphor Level|}}}]]
+|-
+! Metaphor Type
+| {{#arraymap:{{{Metaphor Type|}}}|,|x|[[Metaphor.Type::x]]}}
+|-
+! Experiential Basis
+| [[Metaphor.Experiential basis::{{{Experiential basis|}}}]]
+|}
+{| class="wikitable"
+! Source Frame
+| [[Metaphor.Source frame::Frame:{{{Source frame|}}}|{{{Source frame|}}}]]{{#set:Has source frame=Frame:{{{Source frame|}}}}}{{#ifeq:{{{Source frame|}}}|||{{#info:'''Roles:'''{{#ask: [[Frame:{{{Source frame|}}}]]  [[Role::+]]
+| ?Role= | +index=1
+| mainlabel=-
+| heading=none}}}}}}
+|-
+! Target Frame
+| [[Metaphor.Target frame::Frame:{{{Target frame|}}}|{{{Target frame|}}}]]{{#set:Has target frame=Frame:{{{Target frame|}}}}}{{#ifeq:{{{Target frame|}}}|||{{#info:'''Roles:'''{{#ask: [[Frame:{{{Target frame|}}}]]  [[Role::+]]
+| ?Role= | +index=1
+| mainlabel=-
+| heading=none}}}}}}
+|}
+{{#set:Metaphor.Investigated for={{{Investigated for|}}}}}
+
+'''Mappings:'''
+{{{Mappings}}}
+
+'''Related Metaphors:'''
+{{{Related metaphors}}}
+
+'''Entailments:'''
+{{{Entailments}}}
+
+'''Examples:'''
+{{{Examples}}}
+
+----
+'''Graph of related metaphors:'''
+<div id="metaphorrelationstabs">
+<ul>
+<li>[[#tgframetab|Target frame]]
+<li>[[#metaphortab|Metaphors]]
+<li>[[#srcframetab|Source frame]]
+</ul>
+<div id="tgframetab" class="gviztab">
+{{#relationsgraph:meta4tggrph|Frame:{{{Target frame|}}}|{{GetFrameRelationsForMetaphor|{{FULLPAGENAME}}|Target}}||gv||Frame}}
+</div>
+<div id="metaphortab" class="gviztab">
+{{#relationsgraph:meta4graph|{{FULLPAGENAME}}|{{#ask: [[Category:Metaphor]] [[Related metaphor:: ?; {{FULLPAGENAME}}; ?]]
+| ?Related metaphor
+| format = array
+| sep= <SEP>
+}}|{{#ask: [[{{FULLPAGENAME}}]]
+| ?Related metaphor
+| format=array
+| sep= <SEP>
+}}|gv|shape="box"|Metaphor}}
+</div>
+<div id="srcframetab" class="gviztab">
+{{#relationsgraph:meta4srcgrph|Frame:{{{Source frame|}}}|{{GetFrameRelationsForMetaphor|{{FULLPAGENAME}}|Source}}||gv||Frame}}
+</div>
+</div>
+[[Category:Metaphor]]
+</includeonly>

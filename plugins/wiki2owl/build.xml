@@ -1,0 +1,64 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!-- 
+    Build file for LM to CM Linker Plugin
+-->
+<project name = "Wiki Loader Plugin" default = "install" basedir = ".">    
+
+    <property name="plugin" value="edu.berkeley.icsi.metanet.wiki2owl"/>
+    <property name="plugin.name" value="wiki2owl"/>
+    <property name="plugin.desc" value="Metaphor Wiki Loader"/>
+
+    <!-- common plugin build properties and targets -->
+    <import file="../pluginbuild.xml"/>
+
+    <property file="version.properties"/>
+    <property name="major.version" value="1"/>
+    <property name="minor.version" value="1"/>
+    <property name="micro.version" value="15"/>
+
+    <property name = "exec.script"   value = "wiki2owl"/>
+    <property name = "pluginlib.jar" value="wiki2owl.jar"/>
+  
+    <!--
+        Override the build target checklibs to allow for a custom
+        list of libraries
+    -->
+ 
+    <target name = "checklibs">
+        <condition property="libs.found">
+            <and>
+                <available file="${root.lib.dir}/${commons.cli.lib}" type="file"/>
+                <available file="${root.lib.dir}/${commons.lang3.lib}" type="file"/>
+                <available file="${root.dist.lib.dir}/${wikiapi.lib}" type = "file"/>
+            </and>
+        </condition>
+        <path id = "project.classpath">
+            <filelist dir="${root.lib.dir}">
+                <file name="${commons.cli.lib}"/>
+                <file name="${commons.lang3.lib}"/>
+            </filelist>
+            <filelist dir="${root.dist.lib.dir}">
+                <file name="${wikiapi.lib}"/>
+            </filelist>
+        </path>
+    </target>
+
+    <!-- override the default install, but extend it using depends -->
+    <target name = "install"
+           depends = "pluginbuild.install">
+        <mkdir dir="${root.dist.bin.dir}"/>
+        <copy todir="${root.dist.bin.dir}"
+              file="./${exec.script}"/>
+        <replace file="${root.dist.bin.dir}/${exec.script}" token="@@@DISTDIR@@@" value="${root.dist.dir}"/>
+        <mkdir dir="${root.dist.lib.dir}"/>
+        <copy file="${dist.dir}/${plugin.jar}"
+              tofile="${root.dist.lib.dir}/${pluginlib.jar}"/>
+        <!-- copy dependencies too -->
+        <copy todir="${root.dist.lib.dir}">
+          <path refid="project.classpath"/>
+        </copy>
+        <copy todir="${root.dist.lib.dir}" file="${owl.libpath}"/>
+        <chmod perm="+x" file="${root.dist.bin.dir}/${exec.script}"/>
+    </target>
+    
+</project>

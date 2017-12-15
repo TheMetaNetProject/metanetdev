@@ -1,0 +1,42 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MetaNet LM to CM Linker
+Bundle-SymbolicName: edu.berkeley.icsi.metanet.lmtocmlinker;singleton:=true
+Update-Url: https://metaphor.icsi.berkeley.edu/metaphor/protege/lmtocmlinker/update.properties
+Bundle-Category: protege
+Bundle-Description: LM to CM Linker Plugin for MetaNet project
+Bundle-Vendor: UC Berkeley International Computer Science Institute
+Bundle-DocURL: icsi.berkeley.edu
+Bundle-Version: 1.0.1
+Bundle-Activator: org.protege.editor.core.plugin.DefaultPluginActivator 
+Bundle-ClassPath: .,
+ lib/swingx-all-1.6.4.jar,
+ lib/metanetapi.jar,
+ lib/wikiapi.jar,
+ lib/commons-lang3-3.1.jar
+Require-Bundle: org.protege.editor.owl,
+ org.semanticweb.owl.owlapi,
+ org.protege.editor.core.application,
+ org.protege.editor.owl.codegeneration
+Import-Package: javax.imageio,
+ javax.swing,
+ javax.swing.border,
+ javax.swing.event,
+ javax.swing.filechooser,
+ javax.swing.plaf,
+ javax.swing.plaf.basic,
+ javax.swing.plaf.metal,
+ javax.swing.table,
+ javax.swing.text,
+ javax.swing.text.html,
+ javax.swing.tree,
+ javax.xml,
+ javax.xml.namespace,
+ javax.xml.parsers,
+ javax.xml.stream,
+ javax.xml.stream.events,
+ javax.xml.transform,
+ javax.xml.transform.dom,
+ javax.xml.transform.stream,
+ javax.xml.xpath,
+ org.w3c.dom

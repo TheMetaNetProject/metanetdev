@@ -1,0 +1,28 @@
+
+Explanatio of pyscripts directory structure
+
+/src    all python code
+        subdirectories can be made for modules
+
+        the content of /src will be installed into
+        
+            root/dist/lib/python
+
+        so that they can be found with a single entry
+        added to PYTHONPATH
+
+/etc    misc. non-source code files, e.g. schemas, config
+        files, etc.
+
+/bin    stubs for executing code in /etc from the command
+        line.  These can be shell scripts or python
+        scripts that import and execute code in /src.
+        No application logic should be in these stubs
+        and they should presume that PYTHONPATH will
+        include the content in /src
+
+/test   tests and test data for testing the scripts
+        in /bin, which must run after an 'ant install'
+        Note that pre-install tests should live in
+        test subdirectories under the /src subtree
+

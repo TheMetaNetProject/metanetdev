@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    This is an ant build file to be imported by the build.xml file
+    of metanet protege plugin projects.  Note that all relative
+    paths are inpreted relative to the importing project!!
+
+    Author: Jisup Hong <jhong@icsi.berkeley.edu>
+-->
+<project name="pluginbuild">
+
+  <property file = "local.properties"/>
+  <property name = "root.dir"           location = "../.."/>
+  <property name = "root.dist.dir"      location = "${root.dir}/dist"/>
+  <property name = "root.lib.dir"       location = "${root.dir}/lib"/>
+  <property name = "root.dist.lib.dir"  location = "${root.dist.dir}/lib"/>
+  <property name = "root.dist.bin.dir"  location = "${root.dist.dir}/bin"/>
+  <property name = "src.dir"            location = "./src/java"/>  
+  <property name = "build.dir"          location = "./build"/>
+  <property name = "dist.dir"           location = "./dist"/>
+  <property name = "classes.dir"        location = "${build.dir}/classes"/>
+  <property name = "classes.lib.dir"    location = "${classes.dir}/lib"/>
+  <property name = "genlib.dir"         location = "${build.dir}/lib"/>
+  <property name = "manifest"           location = "${build.dir}/manifest.mf"/>
+
+  <property environment="env"/>
+
+  <!-- if there is a local installation of Protege, use it.  Otherwise
+       use the environment variable -->
+  <condition property="protege.home" value="${root.dist.dir}/protege"
+             else="${env.PROTEGE_HOME}">
+    <available file="${root.dist.dir}/protege" type="dir"/>
+  </condition>
+  <property file = "${protege.home}/build.properties"/>
+
+  <property name = "protege.common"     location = "${protege.home}/bundles"/>
+  <property name = "protege.plugins"    location = "${protege.home}/plugins"/>
+  <property name = "run.config"         location = "${protege.home}/config.xml"/>
+
+  <property name = "plugin.jar" value="${plugin}.jar"/>
+
+  <!-- Common protege libraries -->
+  <property name="equinox.common.libpath" 
+            location="${protege.common}/org.eclipse.equinox.common.jar"/>
+  <property name="equinox.registry.libpath"
+            location="${protege.common}/org.eclipse.equinox.registry.jar"/>
+  <property name="protege.libpath" 
+            location="${protege.common}/org.protege.editor.core.application.jar"/>
+  <property name="common.libpath"
+            location="${protege.common}/org.protege.common.jar"/>
+  <property name="owl.libpath"
+            location="${protege.plugins}/org.semanticweb.owl.owlapi.jar"/>
+  <property name="owl.editor.libpath"
+            location="${protege.plugins}/org.protege.editor.owl.jar"/>
+  <property name="owl.code.libpath"
+            location="${protege.plugins}/org.protege.editor.owl.codegeneration.jar"/>
+   
+  <!-- Common third party libraries -->
+  <property name="commons.cli.lib"
+            value="commons-cli-1.2.jar"/>
+  <property name="commons.lang3.lib"
+            value="commons-lang3-3.1.jar"/>
+  <property name="swingx.lib"
+            value="swingx-all-1.6.4.jar"/>
+
+  <!-- Common metanet libraries -->
+  <property name="wikiapi.lib"
+            value="wikiapi.jar"/>
+  <property name="metanetapi.lib"
+            value="metanetapi.jar"/>
+
+  <!-- ============================================================= -->
+  <!--                      Common Build Targets                     -->
+  <!-- ============================================================= -->
+
+  <target name = "init">
+    <tstamp>
+      <format property="build.time" pattern="yyyy_MM_dd_hhmm"/>
+    </tstamp>
+    <property name="bundle.version"
+              value="${major.version}.${minor.version}.${micro.version}.${build.time}"/>
+    <mkdir dir = "${build.dir}"/>
+    <mkdir dir = "${dist.dir}"/>
+    <mkdir dir = "${classes.dir}"/>
+    <mkdir dir = "${classes.lib.dir}"/>
+    <mkdir dir = "${genlib.dir}"/>
+    <condition property="use.bundlor">
+      <and>
+        <available file="${bundlor.home}"     type = "dir"/>
+        <available file="${manifest.bundlor}" type = "file"/>
+      </and>
+    </condition>
+  </target>
+
+  <target name="checkProtegeLibsAndReport" depends="checkProtegeLibs"
+          unless="protege.libs.found">
+    <echo message="Missing protege libraries.  You need to set "/>
+    <echo message="the PROTEGE_HOME environment variable to a"/>
+    <echo message="protege installation directory where the"/>
+    <echo message="appropriate plugins have been installed."/>
+    <echo message="Alternatively set the jar libs in local.properties (protege.lib=...)"/>
+    <echo message="Use the -v option to ant to see what jars are missing."/>
+    <fail message = "missing protege libraries"/>
+  </target>
+
+  <target name = "checkProtegeLibs" depends="init">
+    <echo message="**********************************************************"/>
+    <echo message="Using Protege Home = ${protege.home}"/>
+    <echo message="Using Java Version = ${ant.java.version}" />
+    <echo message="**********************************************************"/>
+    <condition property="protege.libs.found">
+      <and>
+        <available file="${protege.osgi}" type="file"/>
+        <available file="${protege.libpath}" type="file"/>
+        <available file="${equinox.common.libpath}" type = "file"/>
+        <available file="${equinox.registry.libpath}" type = "file"/>
+        <available file="${owl.editor.libpath}" type = "file"/>
+        <available file="${owl.code.libpath}" type = "file"/>
+        <available file="${owl.libpath}" type="file"/>
+      </and>
+    </condition>
+    <path id = "protege.libs.classpath">
+      <pathelement location="${protege.osgi}"/>
+      <pathelement location="${protege.libpath}"/>
+      <pathelement location="${equinox.common.libpath}"/>
+      <pathelement location="${equinox.registry.libpath}"/>
+      <pathelement location="${owl.editor.libpath}"/>
+      <pathelement location="${owl.code.libpath}"/>
+      <pathelement location="${owl.libpath}"/>
+      <fileset dir="${genlib.dir}"/>
+    </path>
+  </target>
+
+  <!-- this target should be overridden in the main build file -->
+  <target name = "checklibs">
+    <!-- example
+     <condition property="libs.found">
+       <and>
+         <available file="${root.lib.dir}/${commons.cli.lib}" type="file"/>
+         <available file="${root.lib.dir}/${commons.lang3.lib}" type="file"/>
+         <available file="${root.lib.dir}/${swingx.lib}" type = "file"/>
+         <available file="${root.dist.lib.dir}/${metanetapi.lib}" type = "file"/>
+         <available file="${root.dist.lib.dir}/${wikiapi.lib}" type = "file"/>
+       </and>
+     </condition>
+     <path id = "project.classpath">
+       <filelist dir="${root.lib.dir}">
+         <file name="${swingx.lib}"/>
+         <file name="${commons.cli.lib}"/>
+         <file name="${commons.lang3.lib}"/>
+       </filelist>
+       <filelist dir="${root.dist.lib.dir}">
+         <file name="${metanetapi.lib}"/>
+         <file name="${wikiapi.lib}"/>
+       </filelist>
+     </path>
+    -->
+  </target>
+
+   <!-- 
+        The following target only needs to be modified if the
+        developer needs to obtain some jar files that are contained in
+        the Protege bundles.  The contents of these jar files are
+        found when Protege 4 runs but may be needed in order to
+        compile the plugin. 
+     -->
+   <target name = "buildlibs" depends="checkProtegeLibsAndReport">
+     <unjar dest="${build.dir}"
+            src="${common.libpath}">
+       <patternset>
+         <include name = "**/log4j.jar"/>
+         <include name = "**/looks.jar"/>
+       </patternset>
+     </unjar>
+   </target>
+
+   <!-- 
+        Here is the copy.resources target.  It may need modification
+        to copy the right resources into the classes directory.  By
+        default it already copies non-java files found in the source
+        directory, the libraries needed by the project and the
+        viewconfig and the plugin.xml.  This will be sufficient in
+        many cases.
+     -->
+   <target name="copy.resources" depends="checklibs">
+     <copy todir="${classes.dir}">
+       <fileset dir="${src.dir}">
+         <include name="**/*"/>
+         <exclude name="**/*.java"/>
+         <exclude name="**/MANIFEST.MF"/>
+         <exclude name="**/manifest.mf"/>
+       </fileset>
+     </copy>
+     <copy todir="${classes.dir}">
+       <fileset dir="." includes="*.xml">
+         <exclude name="build.xml"/>
+       </fileset>
+     </copy>
+     <copy todir="${classes.lib.dir}">
+       <path refid="project.classpath"/>
+     </copy>
+   </target>
+
+   <target name="use.existing.manifest" depends="init" unless="use.bundlor">
+     <copy tofile="${manifest}" 
+           file="META-INF/MANIFEST.MF" overwrite="true"/>
+     <manifest file="${manifest}" 
+               mode = "update">
+        <attribute name="Built-By" value = "${user.name}"/>
+        <attribute name="Bundle-Version" value="${bundle.version}"/>
+     </manifest>
+   </target>
+
+   <target name="bundlor.manifest" depends="copy.resources, compile" if="use.bundlor">
+      <java classname="org.eclipse.virgo.bundlor.commandline.Bundlor"
+            failonerror="true" fork="true">
+        <classpath>
+          <fileset dir="${bundlor.home}/plugins" includes="*.jar"/>
+        </classpath>
+        <jvmarg value="-Dbundle.version=${bundle.version}"/>
+        <jvmarg value="-Duser.name=${user.name}"/>
+        <jvmarg value="-Dplugin=${plugin}"/>
+        <arg value = "-i"/> <arg value="${classes.dir}"/>
+        <arg value = "-m"/> <arg value="./META-INF/manifest.bundlor"/>
+        <arg value = "-o"/> <arg value = "."/>
+      </java>
+     <copy tofile="${manifest}" 
+           file="META-INF/MANIFEST.MF" overwrite="true"/>
+   </target>
+
+   <target name = "compile" depends = "buildlibs, checklibs">
+     <javac srcdir = "${src.dir}"
+            source = "1.7"
+            destdir = "${classes.dir}" 
+            debug="on"
+            includeAntRuntime="false">
+       <classpath refid = "protege.libs.classpath"/>
+       <classpath refid = "project.classpath"/>
+     </javac>
+   </target>
+
+   <target name = "jar" depends = "compile, copy.resources, use.existing.manifest, bundlor.manifest">
+     <jar jarfile = "${dist.dir}/${plugin.jar}"
+          basedir = "${classes.dir}" 
+          manifest = "${build.dir}/manifest.mf"/>
+   </target>
+
+   <target name = "install" depends = "jar">
+     <!-- flush cache -->
+     <delete dir = "${protege.home}/configuration/org.eclipse.core.runtime"/>
+     <delete dir = "${protege.home}/configuration/org.eclipse.osgi"/>
+     <copy file="${dist.dir}/${plugin.jar}"
+           todir = "${protege.plugins}"
+           overwrite = "true"/>
+   </target>
+
+    <!-- ===================================================================  -->
+    <!-- RUN -->
+    <!-- ===================================================================  -->
+    <target name = "run" depends="install">
+        <java fork = "true" dir = "${protege.home}" 
+              classname = "org.protege.osgi.framework.Launcher">
+            <jvmarg value = "-Dlog4j.configuration=file:log4j.xml"/>
+            <jvmarg value = "-Xmx2000M"/>
+            <jvmarg value = "-Dorg.protege.launch.config=${run.config}"/>
+            <jvmarg value = "-DentityExpansionLimit=1000000"/>
+            <classpath>
+              <pathelement path="${protege.osgi}"/>
+              <pathelement path="${protege.launcher}"/>
+            </classpath>
+        </java>
+    </target>
+
+    <!-- ===================================================================  -->
+    <!-- DEBUG -->
+    <!-- ===================================================================  -->
+    <target name = "debug" depends="init">
+        <java fork = "true" dir = "${protege.home}" 
+              classname = "org.protege.osgi.framework.Launcher">
+            <jvmarg value = "-Dlog4j.configuration=file:log4j.xml"/>
+            <jvmarg value = "-agentlib:jdwp=transport=dt_socket,address=8500,server=y,suspend=y"/>
+            <jvmarg value = "-Xmx1500M"/>
+            <jvmarg value = "-Dorg.protege.launch.config=${run.config}"/>
+            <classpath>
+              <pathelement path="${protege.osgi}"/>
+              <pathelement path="${protege.launcher}"/>
+            </classpath>
+        </java>
+    </target>
+
+	
+   <target name = "clean">
+     <delete dir = "${build.dir}"/>
+     <delete dir = "${dist.dir}"/>
+   </target>
+
+
+   <target name = "usage">
+     <echo message = "To run this script set the PROTEGE_HOME environment"/>
+     <echo message = "variable and use one of the following targets"/>
+     <echo message = "jar - builds the jar (bundle) file for this project"/>
+     <echo message = "install - installs  the bundle into the Protege distribution"/>
+     <echo message = "copy.resources - copyies resources into the classes directory"/>
+     <echo message = "    this can  be useful for ide developers - see the wiki"/>
+     <echo message = "run - runs Protege (requires that Protege has been installed)"/>
+     <echo message = "debug - starts Protege with the debugger using port 8500"/>
+   </target>
+
+   <!-- ===================================================================  -->
+   <!-- Distribution Support - Optional                                      -->
+   <!-- ===================================================================  -->
+
+   <property name="plugin.copypath" value="dosa.icsi.berkeley.edu:/da/metaphor/wiki/protege/${plugin.name}"/>
+   <property name="plugin.url" value="https://metaphor.icsi.berkeley.edu/metaphor/protege/${plugin.name}"/>
+   <property name="plugin.license" value="http://www.gnu.org/licenses/lgpl.html"/>
+   <property name="plugin.author" value="MetaNet Project, ICSI"/>
+   <property name="plugin.readme" value="README.md"/>
+   <property name="plugin.readmefile" location="./${plugin.readme}"/>
+   <property name="plugin.readmelink" value="${plugin.url}/${plugin.readme}"/>
+   <property name="plugin.updatefile" value="update.properties"/>
+   <property name="plugin.dllink" value="${plugin.url}/${plugin.jar}"/>
+   <property name="scpcommand" value="/usr/bin/scp"/>
+
+   <target name = "dist" depends="jar">
+     <echo file="${dist.dir}/${plugin.updatefile}" append="false">
+id=${plugin}
+version=${bundle.version}
+download=${plugin.dllink}
+name=${plugin.desc}
+readme=${plugin.readmelink}
+license=${plugin.license}
+author=${plugin.author}
+     </echo>
+     <copy todir="${dist.dir}" file="${plugin.readmefile}"/>
+     <exec executable="${scpcommand}" dir="${dist.dir}">
+       <arg value="${plugin.readme}"/>
+       <arg value="${plugin.updatefile}"/>
+       <arg value="${plugin.jar}"/>
+       <arg value="${plugin.copypath}"/>
+     </exec>
+   </target>
+
+</project>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+    <VSNode splits="1.0">
+        <CNode>
+            <Component label="LM to CM Linker View Component">
+                <Property id="pluginId" value="edu.berkeley.icsi.metanet.lmtocmlinker.LMtoCMLinkerViewComponent"/>
+            </Component>
+        </CNode>
+    </VSNode>
+</layout>

@@ -1,0 +1,29 @@
+doctype html
+html
+  html(lang='en', ng-app='gmrViewerApp')
+    head
+      meta(charset='utf-8')
+      meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
+      title= title
+      link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.min.css')    
+      link(rel='stylesheet', href='/stylesheets/style.css')
+      link(rel='stylesheet', href='/components/angular-busy/dist/angular-busy.css')
+      script(src='/components/lodash/dist/lodash.js')
+      script(src='/components/jquery/dist/jquery.min.js')
+      script(src='/components/angular/angular.js')
+      script(src='/components/angular-route/angular-route.js')
+      script(src='/components/angular-resource/angular-resource.js')
+      script(src='/components/d3/d3.min.js')
+      script(src='/components/angular-busy/dist/angular-busy.js')
+      script(src='/javascripts/dagre-d3.js')
+      script(src='/javascripts/app.js')
+      script(src='/javascripts/controllers.js')    
+      script(src='/javascripts/services.js')
+      script(src='/javascripts/directives.js')    
+  body
+    nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+      div.navbar-header
+        a.navbar-brand(href='#/docs')= title
+    div.container
+      div(ng-view, class='container-fluid')
+      

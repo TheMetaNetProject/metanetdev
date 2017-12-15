@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:metad="http://www.iarpa.gov/Metaphor/DetectSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.iarpa.gov/Metaphor/DetectSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.1" xml:lang="en">
+	<xs:annotation>
+		<xs:documentation>
+			Metaphor XSD for the LM Detection Test in OY1.
+			Primary Author: Richard Tong (IARPA-SETA)
+			Original Publication Date: 2013-03-17
+			Current Date: 2013-04-07
+			Current Version: 1.1
+		</xs:documentation>
+		<xs:documentation>
+			Change Log (from 1.0):
+			2013-04-07 [rmt]:	Corrects a bug in the definitions of &lt;LmSourceText&gt; and &lt;LmTargetText&gt;
+											
+		</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="LogEntryType">
+		<xs:annotation>
+			<xs:documentation>Type that defines a log entry.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="StartTime" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Time at which processing of the test text started.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EndTime" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Time at which processing of the text text ended.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ProcessingFlag">
+				<xs:annotation>
+					<xs:documentation>An enumerated type. Equal 1 if there is an LM in the test text; 0 if there is no LM; -1 if the system could not determine whether there was an LM or not.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="-1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Comment" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Optional additional processing information.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>ID of the test text for which this is the log entry.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="LogFileType">
+		<xs:annotation>
+			<xs:documentation>Type that defines a complete log file.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TestStartTime" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Timestanp for the overall test start.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LogEntry" type="metad:LogEntryType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Log entry for a specific test text. There should be #count of them.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TestEndTime" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Timestamp for the overall test end.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="testId" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>ID of the test set for which these are the log entries</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="teamId" use="required">
+			<xs:annotation>
+				<xs:documentation>ID of the Performer Team generating the results. One of Albany, CMU, ICSI, IIT, USC-ISI.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Albany"/>
+					<xs:enumeration value="CMU"/>
+					<xs:enumeration value="ICSI"/>
+					<xs:enumeration value="IIT"/>
+					<xs:enumeration value="USC-ISI"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="count" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>Number of results in the results set. Should be equal to the number of test texts in the test set.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="TextType">
+		<xs:annotation>
+			<xs:documentation>Type that defines a test text.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="S" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The sentences that constitute the test text. There should be #count of them.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="id" type="xs:positiveInteger" use="required">
+								<xs:annotation>
+									<xs:documentation>Sentence ID assigned by the Govt. A positive integer.</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Text ID assigned by the Govt.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="lang" use="required">
+			<xs:annotation>
+				<xs:documentation>Language of the text. One of en, es, ru, fa. </xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="en"/>
+					<xs:enumeration value="es"/>
+					<xs:enumeration value="ru"/>
+					<xs:enumeration value="fa"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="count" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>The number of sentences in the test text.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="TestSetType">
+		<xs:annotation>
+			<xs:documentation>Type that defines a set of test texts.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Text" type="metad:TextType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The test texts. There should be #count of them.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="testId" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Test ID assigned by the Govt .</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="count" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>Number of test texts in the test set.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ResultType">
+		<xs:annotation>
+			<xs:documentation>Type that defines the result of processing a test text.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LmFlag">
+				<xs:annotation>
+					<xs:documentation>An enumerated type. Equal 1 if there is an LM in the test text; 0 if there is no LM; -1 if the system could not determine whether there was an LM or not.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="-1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LmSentence" type="xs:positiveInteger" default="999">
+				<xs:annotation>
+					<xs:documentation>The ID of the sentence in which the LM occurs. Should have value 999 if there is no LM or if the system could not determine whether there was an LM or not.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LmTargetText" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Span of text that contains the target of the LM if there is one. Empty otherwise.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LmSourceText" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Span of text that contains the source of the LM if there is one. Empty otherwise.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>ID of the test text for which this is the result.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ResultSetType">
+		<xs:annotation>
+			<xs:documentation>Type that defines the set of results.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Result" type="metad:ResultType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Result for a specific test text. There should be #count of them.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="testId" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>ID of the test set for which these are the results.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="teamId" use="required">
+			<xs:annotation>
+				<xs:documentation>ID of the Performer Team generating the results. One of Albany, CMU, ICSI, IIT, USC-ISI.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Albany"/>
+					<xs:enumeration value="CMU"/>
+					<xs:enumeration value="ICSI"/>
+					<xs:enumeration value="IIT"/>
+					<xs:enumeration value="USC-ISI"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="count" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>Number of results in the results set. Should be equal to the number of test texts in the test set.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<!--Top-level elements-->
+	<xs:element name="TestSet" type="metad:TestSetType"/>
+	<xs:element name="ResultSet" type="metad:ResultSetType"/>
+	<xs:element name="LogFile" type="metad:LogFileType"/>
+</xs:schema>

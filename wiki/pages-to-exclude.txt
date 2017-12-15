@@ -1,0 +1,123 @@
+# All Wikis: remove Vetted/Auto and LM
+Category:AutoMetaphor
+Category:AutoSchema
+Category:VettedSchema
+Category:VettedMetaphor
+Category:LinguisticMetaphor
+Category:SeedMetaphor
+Category:Linguistic metaphor
+Template:AutoMetaphor
+Template:AutoSchema
+Template:CMs with LMs intro
+Template:CMs with LMs outro
+Template:CMs with LMs row
+Template:ExamplesOfLM
+Template:ExamplesOfLM as li
+Template:LM Examples
+Template:LinguisticMetaphorShortSummary
+Template:LinguisticMetaphorShortSummaryIntro
+Template:LinguisticMetaphorShortSummaryOutro
+Template:LinguisticMetaphorSummary
+Template:LinguisticMetaphorSummaryIntro
+Template:LinguisticMetaphorSummaryOutro
+Template:Linguistic metaphor
+Template:Linked schema
+Form:Linguistic metaphor
+Property:Candidate conceptual metaphor
+Property:Candidate source frame
+Property:Candidate source schema
+Property:Candidate target frame
+Property:Candidate target schema
+Property:Has comment
+Property:Linguistic metaphor.Comments
+Property:Linguistic metaphor.Instance of metaphor
+Property:Linguistic metaphor.Name gloss
+Property:Linguistic metaphor.Seed metaphor
+Property:Linguistic metaphor.Source
+Property:Linguistic metaphor.Target
+Property:Linguistic metaphor.Type
+Property:Verification status
+Property:Was found using seed
+# English wiki: remove pages to do with LMs
+ADDRESSING SOCIAL PROBLEMS IS WAR
+CMs with LMs
+CMs with examples
+Candidate linguistic metaphors
+DEVELOPING A PROPERTY IS CULTIVATION
+DIFFERENT MEANS OF ACHIEVING A PURPOSE ARE DIFFERNT PATHS TO A DESTINATION
+Detailed Schema Families
+Elise
+Extracted LMs
+Extracted LMs CMS
+Extracted LMs SBS
+ICLC-12 MetaNet Wiki Demo
+Jisup Hong Test Page
+LM to CM Linking Summary
+Linguistic Metaphors for April Demo
+Linguistic Metaphors in Economic Inequality
+Main Page
+#Map of all metaphors
+MappingSummary
+MetaNet ICSI Demo
+MetaNet Wiki Demo
+Metaphor Lists for Status Reports
+Metaphor Repository (English)
+Program Sources LMs
+Program Sources Metaphors
+Program Sources Schemas
+RELATIONSHIP IS AN OBJECT
+Trust
+WikiHousekeeping
+Wiki Issues
+# Spanish wiki: odd pages
+THINKING IS PERCEIVING
+M.E.
+Esquemas que se refieren a estados
+# Russian wiki: mostly redirect pages
+CПОСОБ ДЕЙСТВИЙ - ЭТО CПОСОБ ДВИЖЕНИЯ
+Cхемы Устав
+Cхемы движения (Motion schemas)
+Cхемы конфликта
+Emotion Schemas
+Entity Schemas
+Well-being Metaphors
+ЖИЗНЬ / ЛЮБОВЬ ЭТО ПУТЕШЕСТВИЕ Каскад (LIFE/LOVE IS A JOURNEY Cascade)
+Метафора структуры события (Event Structure Metaphor)
+Метафора структуры события (Event structure metaphor)
+Метафора структуры события - локация (Location Event Sructure Metaphor)
+Метафора структуры события - локация (Location Event Structure Metaphor)
+Метафоры управления (Governance metaphors)
+Схемы восприятие
+Схемы экономическое неравенство
+# Persian wiki: mostly redirect pages
+ابتذال، فساد است
+احساسات هم
+احساسات همچون گرما
+احساسات، حرارت است
+ارتباط ثیوند است
+بیشتر بالاتر است
+بیشتر همچون بالاتر
+تجربه همچون معلم
+تجربۀ یک حالت، مالکیت یک شیء(جسم) است
+حکومت روانپزشک است
+حکومت همچون حرکت
+دولت همچون جسمی در حال حرکت
+روابط فردی مسافرت است
+زمان
+زندگی سفر است
+سفر
+سکیماهای اقتصادی
+سکیماهای مالیات
+شرایت مکان است
+شرایط همچون جسم
+طرح های موجودات
+طرح واره حاکمیت طرح واره رقابت طرح واره انتخابات
+عمل، حرکت خودکار در راستای مسیر است
+عوض شدن حرکت است
+عوض شدن عوض کردن مکان است
+فساد فساد است
+منبع مسیر هدف
+منتقه محدود
+موسسه حکومت ساختمان هستند
+نظر،شیء است
+وقت

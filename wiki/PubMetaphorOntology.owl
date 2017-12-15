@@ -1,0 +1,1489 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+    <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+]>
+
+
+<rdf:RDF xmlns="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#"
+     xml:base="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasProvenance -->
+
+    <owl:AnnotationProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasProvenance"/>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasProvenancePageNumber -->
+
+    <owl:AnnotationProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasProvenancePageNumber"/>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#wasEnteredBy -->
+
+    <owl:AnnotationProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#wasEnteredBy"/>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#wasLastReviewedBy -->
+
+    <owl:AnnotationProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#wasLastReviewedBy"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#dependsOnMappings -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#dependsOnMappings">
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Mapping"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#supportsEntailments"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#entailsMetaphor -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#entailsMetaphor">
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToMetaphor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasBindings -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasBindings">
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Binding"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isBindingInFrame"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasBoundRole1 -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasBoundRole1">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Binding"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Role"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasBoundRoles"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasBoundRole2 -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasBoundRole2">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Binding"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Role"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasBoundRoles"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasBoundRoles -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasBoundRoles">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Binding"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasEntailment -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasEntailment">
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Entailment"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isEntailmentOfMetaphor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasExample -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasExample">
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Example"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isExampleOfMetaphor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasFrames -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasFrames">
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#FrameFamily"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasInference -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasInference">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Inference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasLexicalUnit -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasLexicalUnit">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#LexicalUnit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasMappings -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasMappings">
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Mapping"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isMappingUsedByMetaphors"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasMetaphors -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasMetaphors">
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#MetaphorFamily"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasRoles -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasRoles">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasSourceFrame -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasSourceFrame">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasSourceInference -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasSourceInference">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Entailment"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Inference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasSourceRole -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasSourceRole">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Mapping"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasTargetFrame -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasTargetFrame">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasTargetInference -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasTargetInference">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Entailment"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Inference"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isTargetInferenceOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasTargetRole -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasTargetRole">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Mapping"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasTransitiveSubpart1Metaphor -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasTransitiveSubpart1Metaphor">
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isTransitiveSubpart1OfMetaphor"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#makesUseOfMetaphor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasTransitiveSubpart2Metaphor -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasTransitiveSubpart2Metaphor">
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isTransitiveSubpart2OfMetaphor"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#makesUseOfMetaphor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#incorporatesFrameAsRole -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#incorporatesFrameAsRole">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#makesUseOfFrame"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isADualOfMetaphor -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isADualOfMetaphor">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToMetaphor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isAMappingWithinMetaphor -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isAMappingWithinMetaphor">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToMetaphor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isAPerspectiveOnFrame -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isAPerspectiveOnFrame">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToFrame"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isBindingInFrame -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isBindingInFrame">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Binding"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isDefinedRelativeToFrame -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isDefinedRelativeToFrame">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#LexicalUnit"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasLexicalUnit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isEntailedByMetaphor -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isEntailedByMetaphor">
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#entailsMetaphor"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToMetaphor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isEntailmentOfMetaphor -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isEntailmentOfMetaphor">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Entailment"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isExampleOfMetaphor -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isExampleOfMetaphor">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Example"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isFrameSubfamilyOf -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isFrameSubfamilyOf">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#FrameFamily"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#FrameFamily"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isFrameSuperfamilyOf -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isFrameSuperfamilyOf">
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#FrameFamily"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#FrameFamily"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isFrameSubfamilyOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isInAScalarOppositionToFrame -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isInAScalarOppositionToFrame">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToFrame"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isInCausalRelationWithFrame -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isInCausalRelationWithFrame">
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#makesUseOfFrame"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isInFrameFamily -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isInFrameFamily">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#FrameFamily"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasFrames"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isInMetaphorFamily -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isInMetaphorFamily">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#MetaphorFamily"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasMetaphors"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isIncorporatedAsRoleByFrame -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isIncorporatedAsRoleByFrame">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#incorporatesFrameAsRole"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isUsedByFrame"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isInferenceOfFrame -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isInferenceOfFrame">
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Inference"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasInference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isInstanceOfMetaphor -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isInstanceOfMetaphor">
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isLinkedToFromFrame -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isLinkedToFromFrame">
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isMappingUsedByMetaphors -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isMappingUsedByMetaphors">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Mapping"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isMetaphorSubfamilyOf -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isMetaphorSubfamilyOf">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#MetaphorFamily"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#MetaphorFamily"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isMetaphorSuperfamilyOf -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isMetaphorSuperfamilyOf">
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#MetaphorFamily"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#MetaphorFamily"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isMetaphorSubfamilyOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToFrame -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToFrame">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToFrame"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToMetaphor -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToMetaphor">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToMetaphor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToMetaphorBySource -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToMetaphorBySource">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToMetaphor"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToMetaphorBySource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToMetaphorByTarget -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToMetaphorByTarget">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToMetaphor"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToMetaphorByTarget"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRoleOfFrame -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRoleOfFrame">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Role"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasRoles"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSourceDomainOfMetaphors -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSourceDomainOfMetaphors">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasSourceFrame"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSourceInferenceOf -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSourceInferenceOf">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Entailment"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Inference"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasSourceInference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSourceSubcaseOfMetaphor -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSourceSubcaseOfMetaphor">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSourceSupercaseOfMetaphor"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSubcaseOfMetaphor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSourceSupercaseOfMetaphor -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSourceSupercaseOfMetaphor">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSupercaseOfMetaphor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSubcaseOfFrame -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSubcaseOfFrame">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToFrame"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSupercaseOfFrame"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSubcaseOfMetaphor -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSubcaseOfMetaphor">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToMetaphor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSubprocessOfFrame -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSubprocessOfFrame">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToFrame"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSupercaseOfFrame -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSupercaseOfFrame">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToFrame"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSupercaseOfMetaphor -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSupercaseOfMetaphor">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToMetaphor"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSubcaseOfMetaphor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSuperprocessOfFrame -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSuperprocessOfFrame">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToFrame"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSubprocessOfFrame"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isTargetDomainOfMetaphors -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isTargetDomainOfMetaphors">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasTargetFrame"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isTargetInferenceOf -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isTargetInferenceOf">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Entailment"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Inference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isTargetSubcaseOfMetaphor -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isTargetSubcaseOfMetaphor">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSubcaseOfMetaphor"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isTargetSupercaseOfMetaphor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isTargetSupercaseOfMetaphor -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isTargetSupercaseOfMetaphor">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isSupercaseOfMetaphor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isTransitiveSubpart1OfMetaphor -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isTransitiveSubpart1OfMetaphor">
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isUsedByMetaphor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isTransitiveSubpart2OfMetaphor -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isTransitiveSubpart2OfMetaphor">
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isUsedByMetaphor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isUsedByFrame -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isUsedByFrame">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToFrame"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isUsedByMetaphor -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isUsedByMetaphor">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToMetaphor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#makesUseOfFrame -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#makesUseOfFrame">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToFrame"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isUsedByFrame"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#makesUseOfMetaphor -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#makesUseOfMetaphor">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isRelatedToMetaphor"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isUsedByMetaphor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#participatesInBinding -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#participatesInBinding">
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Binding"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Role"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasBoundRoles"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#supportsEntailments -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#supportsEntailments">
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Entailment"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Mapping"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#correspondsToFrameElement -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#correspondsToFrameElement">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Role"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#correspondsToFrameNet -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#correspondsToFrameNet">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasAlias -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasAlias">
+        <hasProvenance rdf:datatype="&xsd;string"></hasProvenance>
+        <hasProvenancePageNumber rdf:datatype="&xsd;int">0</hasProvenancePageNumber>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+                    <rdf:Description rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasAnnotation -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasAnnotation">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Example"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasCulturalContent -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasCulturalContent">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasCulturalScope -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasCulturalScope">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+                    <rdf:Description rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasDefinition -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasDefinition">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Role"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasDescription -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasDescription">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasEnglishCorrespondent -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasEnglishCorrespondent">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasExperientialBasis -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasExperientialBasis">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasFrameType -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasFrameType">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first rdf:datatype="&xsd;string">Cog</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first rdf:datatype="&xsd;string">Composed</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first rdf:datatype="&xsd;string">Frame</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdf;List"/>
+                                                <rdf:first rdf:datatype="&xsd;string">Primary</rdf:first>
+                                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasInferenceType -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasInferenceType">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Inference"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasInferentialContent -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasInferentialContent">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Inference"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasLemma -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasLemma">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#LexicalUnit"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasMetaphorFamilyType -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasMetaphorFamilyType">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#MetaphorFamily"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasMetaphorLevel -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasMetaphorLevel">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first rdf:datatype="&xsd;string">General</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first rdf:datatype="&xsd;string">Specific</rdf:first>
+                                <rdf:rest rdf:resource="&rdf;nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasMetaphorType -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasMetaphorType">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first rdf:datatype="&xsd;string">Composed/complex</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first rdf:datatype="&xsd;string">Entailed</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first rdf:datatype="&xsd;string">Primary</rdf:first>
+                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasMetaphoricityScore -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasMetaphoricityScore">
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasName -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasNameGloss -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasNameGloss">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasNameTranscription -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasNameTranscription">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+                    <rdf:Description rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#FrameFamily"/>
+                    <rdf:Description rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+                    <rdf:Description rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#MetaphorFamily"/>
+                    <rdf:Description rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Role"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasPersianCorrespondent -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasPersianCorrespondent">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasProgramAlias -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasProgramAlias">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+                    <rdf:Description rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasRoleType -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasRoleType">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Role"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasRussianCorrespondent -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasRussianCorrespondent">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasSentence -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasSentence">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Example"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasSentenceGloss -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasSentenceGloss">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Example"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasSentenceTranscription -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasSentenceTranscription">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Example"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasSentenceTranslation -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasSentenceTranslation">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Example"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasSpanishCorrespondent -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasSpanishCorrespondent">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasStatus -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasStatus">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasTag -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasTag">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasVerificationStatus -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#hasVerificationStatus">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first rdf:datatype="&xsd;string">confirmed</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first rdf:datatype="&xsd;string">garbage</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first rdf:datatype="&xsd;string">not metaphorical</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdf;List"/>
+                                                <rdf:first rdf:datatype="&xsd;string">questionable</rdf:first>
+                                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isApplicableToLanguage -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isApplicableToLanguage">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first rdf:datatype="&xsd;string">English</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first rdf:datatype="&xsd;string">Persian</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first rdf:datatype="&xsd;string">Russian</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdf;List"/>
+                                                <rdf:first rdf:datatype="&xsd;string">Spanish</rdf:first>
+                                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isFromLanguage -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#isFromLanguage">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Example"/>
+                    <rdf:Description rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#LexicalUnit"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first rdf:datatype="&xsd;string">English</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first rdf:datatype="&xsd;string">Persian</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first rdf:datatype="&xsd;string">Russian</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdf;List"/>
+                                                <rdf:first rdf:datatype="&xsd;string">Spanish</rdf:first>
+                                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#wasInvestigatedFor -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#wasInvestigatedFor">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first rdf:datatype="&xsd;string">English</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first rdf:datatype="&xsd;string">Persian</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first rdf:datatype="&xsd;string">Russian</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdf;List"/>
+                                                <rdf:first rdf:datatype="&xsd;string">Spanish</rdf:first>
+                                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Binding -->
+
+    <owl:Class rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Binding">
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Entailment"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Example"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#FrameFamily"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Inference"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#LexicalUnit"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Mapping"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#MetaphorFamily"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Entailment -->
+
+    <owl:Class rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Entailment">
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Example"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#FrameFamily"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Inference"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#LexicalUnit"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Mapping"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#MetaphorFamily"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Example -->
+
+    <owl:Class rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Example">
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#FrameFamily"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Inference"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#LexicalUnit"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Mapping"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#MetaphorFamily"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Role"/>
+        <hasProvenance rdf:datatype="&xsd;string"></hasProvenance>
+        <hasProvenancePageNumber rdf:datatype="&xsd;int">0</hasProvenancePageNumber>
+    </owl:Class>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame -->
+
+    <owl:Class rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Frame">
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#FrameFamily"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Inference"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#LexicalUnit"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Mapping"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#MetaphorFamily"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#FrameFamily -->
+
+    <owl:Class rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#FrameFamily">
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Inference"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#LexicalUnit"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Mapping"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#MetaphorFamily"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Inference -->
+
+    <owl:Class rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Inference">
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#LexicalUnit"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Mapping"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#MetaphorFamily"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#LexicalUnit -->
+
+    <owl:Class rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#LexicalUnit">
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Mapping"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#MetaphorFamily"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Mapping -->
+
+    <owl:Class rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Mapping">
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#MetaphorFamily"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor -->
+
+    <owl:Class rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Metaphor">
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#MetaphorFamily"/>
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#MetaphorFamily -->
+
+    <owl:Class rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#MetaphorFamily">
+        <owl:disjointWith rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Role -->
+
+    <owl:Class rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/MetaphorOntology.owl#Role"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

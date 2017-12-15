@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/repos/protege/!svn/ver/23696/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/inference
+END
+CodeGenerationInference.java
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/repos/protege/!svn/ver/23675/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/inference/CodeGenerationInference.java
+END
+SimpleInference.java
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/repos/protege/!svn/ver/23696/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/inference/SimpleInference.java
+END
+ReasonerBasedInference.java
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/repos/protege/!svn/ver/23675/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/inference/ReasonerBasedInference.java
+END

@@ -1,0 +1,43 @@
+# =========================================================
+# Subject-Verb construction
+#
+START CXN: T.subj S.verb
+SELECT ?tlemma ?slemma ?sentidx ?tidx ?sidx
+WHERE {
+	?sent rdf:type doc:Sentence .
+	?sent doc:hasIdx ?sentidx .
+	?target rdf:type doc:Word .
+	?target doc:hasIdx ?tidx .
+	?target doc:hasLemma ?tlemma .
+	?source rdf:type doc:Word .
+	?source doc:hasIdx ?sidx .
+	?source doc:hasLemma ?slemma .
+	?target doc:inSentence ?sent .
+	?source doc:inSentence ?sent .
+	?target doc:ncsubj ?source .
+	?source doc:hasPOS ?spos .
+	FILTER regex(?spos, "^V") .
+}
+END CXN
+
+# ==========================================================
+# Verb-Object construction
+#
+START CXN: S.verb T.dobj
+SELECT ?tlemma ?slemma ?sentidx ?tidx ?sidx
+WHERE {
+    ?sent rdf:type doc:Sentence .
+    ?sent doc:hasIdx ?sentidx .
+    ?target rdf:type doc:Word .
+    ?target doc:hasIdx ?tidx .
+    ?target doc:hasLemma ?tlemma .
+    ?source rdf:type doc:Word .
+    ?source doc:hasIdx ?sidx .
+    ?source doc:hasLemma ?slemma .
+    ?target doc:inSentence ?sent .
+    ?source doc:inSentence ?sent .
+    ?target doc:dobj ?source .
+    ?source doc:hasPOS ?spos .
+    FILTER regex(?spos, "^V") .
+}
+END CXN

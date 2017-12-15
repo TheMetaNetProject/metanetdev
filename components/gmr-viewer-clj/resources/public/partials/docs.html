@@ -1,0 +1,199 @@
+
+<div class="row">
+  <h1>Corpus Database</h1>
+</div>
+
+<!-- <div class="row-fluid" d3-bars bar-height="20" bar-padding="5"></div> -->
+
+<div class="row list-group"
+  cg-busy="{
+    promise: queryPromise,
+    templateUrl: templateUrl,
+    message: message,
+    backdrop: backdrop,
+    delay: delay,
+    minDuration: minDuration }">
+  <form class="form-horizontal" role="form" name="searchForm" novalidate
+    ng-submit="submitSearch()" action="">
+
+    <div class="row list-group-item">
+      <div class="form-group">
+        <label class="col-sm-2 control-label" for="lang-select">Collection:</label>
+        <div class="col-sm-10">
+          <select id="lang-select" class="form-control"
+            ng-options="lang.display for lang in languages track by lang.key"
+            ng-model="language">
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row list-group-item">
+
+      <div class="form-group row">
+
+        <div class="text-center col-sm-5 col-sm-offset-2">
+          <label class="caption-big">Target</label>
+        </div>
+        <div class="text-center col-sm-offset-7 col-sm-5 col-sm-offset-0">
+          <label class="caption-big">Source</label>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+
+        <label class="col-sm-2 control-label">Form:</label>
+
+        <div class="col-sm-5">
+          <input ng-model="search.target_form" type="text" class="form-control"
+            placeholder="Search for a target form">
+        </div>
+
+        <div class="col-sm-5">
+          <input ng-model="search.source_form" type="text" class="form-control"
+            placeholder="Search for a source form">
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Lemma:</label>
+        <div class="col-sm-5">
+          <input ng-model="search.target_lemma" type="text" class="form-control"
+            placeholder="Search for a target lemma">
+        </div>
+        <div class="col-sm-5">
+          <input ng-model="search.source_lemma" type="text" class="form-control"
+            placeholder="Search for a source lemma">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Schema:</label>
+        <div class="col-sm-5">
+          <input ng-model="search.target_schemaname" type="text" class="form-control"
+            placeholder="Search for a target schema">
+        </div>
+        <div class="col-sm-5">
+          <input ng-model="search.source_schemanames" type="text" class="form-control"
+            placeholder="Search for a source schema">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Concept:</label>
+        <div class="col-sm-5">
+          <input ng-model="search.target_concept" type="text" class="form-control"
+            placeholder="Search for a target domain">
+        </div>
+        <div class="col-sm-5">
+          <input ng-model="search.source_concepts" type="text" class="form-control"
+            placeholder="Search for a source domain">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Score above:</label>
+        <div class="col-sm-10">
+          <input ng-model="search.score" type="text" class="form-control"
+            placeholder="Search only for LMs above a score">
+        </div>
+      </div>
+    </div>
+
+    <div class="row list-group-item">
+      <p class="col-sm-2 caption">Search criteria:</p>
+      <div class="col-sm-10">
+        <span ng-repeat="(key, value) in searchCriteria()"> {{key}}: {{value}} <span
+          ng-show="key == 'score'">(or above)</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group row list-group-item">
+      <div class="col-sm-10 col-sm-offset-2">
+        <button type="submit" class="btn btn-primary btn-block"
+          ng-disabled="searchForm.$invalid">Search</button>
+      </div>
+    </div>
+  </form>
+
+</div>
+
+<div class="row ng-scope" ng-switch on="docs.length" ng-model="docs">
+
+
+  <div class="row">
+    <h3 class="caption-big">Search Results</h3>
+  </div>
+
+  <div ng-switch-when="0" class="row list-group-item">
+    <p class="lead">
+      <strong>There are no documents in database match your query.</strong>
+    </p>
+  </div>
+
+  <div class="row" ng-switch-default>
+
+    <table class="table table-hover sentence">
+
+      <thead>
+        <tr>
+          <td colspan="3">
+            <div class="navbar-right btn-group ng-scope">
+              <button class="btn btn-primary" ng-click="prevPage()"
+                ng-disabled="pairs.length <= 1">
+                <i class="glyphicon glyphicon-step-backward"></i>
+              </button>
+              <button class="btn btn-primary" ng-click="nextPage()"
+                ng-class="{disabled: page == 'last'}">
+                <i class="glyphicon glyphicon-step-forward"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="lead"><label>Sentence</label></td>
+          <td class="lead"><label>LMs</label></td>
+          <td class="lead"><label>Id</label></td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr ng-repeat-start="doc in docs"></tr>
+        <tr>
+          <td class="lead" ng-click="doc.display = ! doc.display" ng-init="doc.display=false">
+            <div ng-bind-html="highlighted_text(doc) | unsafe"></div>
+          </td>
+          <td><strong>{{doc.lms.filter(match).length}}</strong> / <small>{{doc.lms.length}}</small>
+          </td>
+          <td>{{doc.id}}</td>
+        </tr>
+        <tr ng-show="doc.display">
+          <td colspan="3"><ng-include ng-controller="DocumentItemCtrl"
+              src="'partials/item2.html'"></ng-include></td>
+        </tr>
+        <tr ng-repeat-end></tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td colspan="3">
+            <div class="navbar-right btn-group ng-scope">
+              <button class="btn btn-primary" ng-click="prevPage()"
+                ng-disabled="pairs.length <= 1">
+                <i class="glyphicon glyphicon-step-backward"></i>
+              </button>
+              <button class="btn btn-primary" ng-click="nextPage()">
+                <i class="glyphicon glyphicon-step-forward"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+
+  </div>
+
+</div>

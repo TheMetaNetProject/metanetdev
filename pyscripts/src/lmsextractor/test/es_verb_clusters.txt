@@ -1,0 +1,200 @@
+cluster1:  cometer reparar subsanar rectificar corregir agrandar desnudar remediar
+cluster2:  debilitar socavar restaurar instaurar erosionar instituir minar reinstalar apuntalar perpetuar desgastar tambalear
+cluster3:  eludir deslindar desafiar omitir burlar evadir esquivar
+cluster4:  respaldar financiar costear patrocinar auspiciar apadrinar
+cluster5:  criticar denunciar lamentar justificar calificar cuestionar deplorar censurar fustigar repudiar parir reprochar reprobar desaprobar tildar tachar
+cluster6:  trasladar presentar enviar encargar desplegar recibir retirar transmitir remitir mandar envi
+cluster7:  abrigar desvanecer cifrar esfumar diluir renacer
+cluster8:  restringir limitar prohibir autorizar prohibe prohiben vedar proscribir
+cluster9:  legalizar erradicar reglamentar regularizar fumigar despenalizar
+cluster10:  fabricar dotar equipar abastecer ensamblar calibrar
+cluster11:  paralizar aislar incomunicar caribe anegar amotinar
+cluster12:  celebrar conmemorar organizar preparar convocar preceder programar anteceder boicotear
+cluster13:  prender encender extinguir apagar arder sofocar
+cluster14:  ingresar exportar conmocionar retornar traer conmover fugar mudar amar repatriar salgar visar emigrar contrabandear anexar
+cluster15:  sepultar enterrar descansar velar incinerar yacer reposar exhumar inhumar
+cluster16:  militar contratar nacer entrenar sobresalir incorporar alistar debutar brillar fichar reaparecer alinear desertar reintegrar reincorporar morar enrolar
+cluster17:  aplicar suavizar endurecer levantar aliviar apretar relajar flexibilizar aflojar aligerar
+cluster18:  movilizar caminar transitar circular pasear
+cluster19:  festejar olvidar protagonizar repetir rememorar reeditar improvisar saborear emular
+cluster20:  patrullar trascender habitar cruzar delimitar demarcar militarizar franquear desmilitarizar
+cluster21:  rendir talibán conspirar independizar nortear cunar ejercitar regemir poblar rebelar sublevar
+cluster22:  esconder ocultar camuflar disfrazar acondicionar traficar asfixiar disimular
+cluster23:  jugar disputar presenciar mirar liquidar escenificar pitar finiquitar arbitrar
+cluster24:  reunir sostener conversar hablar entrevistar dialogar desayunar conferenciar cenar reuni reunirn almorzar
+cluster25:  crecer desacelerar experimentar moderar decaer decrecer
+cluster26:  exonerar eximir absolver exculpar sobreseer exceptuar
+cluster27:  advertir invitar llamar instar abogar prometer insistir referir renunciar acusar
+cluster28:  visitar atravesar abandonar gobernar invadir separar recorrer sumir asolar reconstruir sumergir desestabilizar democratizar pacificar
+cluster29:  castigar prescribir sancionar penalizar configurar tipificar multar penar
+cluster30:  secar fluir regar limpiar
+cluster31:  considerar representar haber mencionar ver perfilar acoger aceptar aparecer figurar describir emerger entender asomar existir interpretar denominar percibir catalogar
+cluster32:  costar cotizar acarrear valer arriesgar merecer abolir conllevar referenciar purgar crude
+cluster33:  cumplir satisfacer cubrir atender complementar interponer contentar incumplir acatar suplir desoír
+cluster34:  obsequiar colgar comprar regalar sentar vender repartir robar vendar confeccionar congestionar
+cluster35:  llevar sacar lanzar colocar cargar transportar arrojar tirar echar descargar
+cluster36:  derrocar callar deponer allegar tumbar empuñar
+cluster37:  ensombrecer estropear empañar aguar borrar opacar arruinar salpicar eclipsar manchar teñir desprestigiar
+cluster38:  observar constatar verificar notar comprobar
+cluster39:  preguntar ordenar emitir girar consultar dictar pronunciar interrogar decretar expedir dictaminar reflexionar ironizar legislar
+cluster40:  planear frustrar reivindicar planificar fraguar perpetrar gestar abortar orquestar tramar instigar
+cluster41:  restar tardar aportar bastar ltimos faltar
+cluster42:  asociar cooperar vincular comparar combinar relacionar aliar mezclar confundir comerciar interferir simpatizar solidarizar lidiar
+cluster43:  beneficiar sedar enterar nutrir deshacer alejar desvincular ausentar plagar excluir diferenciar marginar cansar abanderar retractar desmarcar apropiar diputar
+cluster44:  unir agotar coordinar aunar redoblar escatimar empeñar extremar unificar conjugar
+cluster45:  desmovilizar cobijar recapturar decapitar maltratar desarmar aniquilar torturar canjear fusilar amnistiar excarcelar
+cluster46:  lucir vestir pintar iluminar dibujar adornar decorar ataviar
+cluster47:  afectar mantener cambiar restablecer variar alterar modificar interrumpir perturbar reestablecer
+cluster48:  practicar relatar imitar inventar popularizar imaginar perfeccionar distorsionar simular narrar simplificar gustar retratar recrear ensayar liberalizar descifrar copiar revolucionar documentar
+cluster49:  adoptar aprobar apoyar vetar someter votar reformar promulgar redactar enmendar derogar
+cluster50:  compensar mitigar aminorar absorber amortiguar contrarrestar surtir atenuar paliar
+cluster51:  mostrar demostrar exponer grabar exhibir proyectar estrenar evidenciar rodar filmar promocionar
+cluster52:  inaugurar cerrar abrir habilitar bloquear clausurar colapsar reabrir instruir obstruir archivar
+cluster53:  disolver dispersar repeler reprimir rociar
+cluster54:  excavar cavar desenterrar perforar
+cluster55:  ajustar apegar supeditar contraponer atener adherir plegar adaptar sujetar adecuar ceñir
+cluster56:  hacer estar seguir tener convertir vivir pasar llegar regresar salir volver poner ir encontrar quedar venir
+cluster57:  diseñar trazar definir elaborar implementar estructurar esbozar delinear articular instrumentar afinar consensuar develó radicalizar armonizar redefinir idear
+cluster58:  ubicar situar acercar saltar trepar escalar
+cluster59:  agravar arreglar acortar resolver agudizar dirimir solucionar zanjar acentuar solventar acrecentar ahondar limar
+cluster60:  inmolar explotar detonar estallar desactivar activar accionar
+cluster61:  superar romper implantar quebrar batir cortar rozar rotar pulverizar hilvanar estirar
+cluster62:  encabezar dirigir conformar componer crear integrar presidir liderar formar fundar comandar depurar reorganizar engrosar armar reconstituir
+cluster63:  recluir encerrar alojar albergar hospedar dormir pernoctar agasajar atrincherar
+cluster64:  inyectar donar destinar desembolsar canalizar recaudar invertir gastar depositar sustraer ahorrar amasar malversar lavar
+cluster65:  perder tomar conservar recuperar recobrar devolver restituir reponer reconquistar
+cluster66:  ser obligar ayudar constituir poder servir contribuir deber suponer consistir parecer significar tornar depender transformar privar latinar
+cluster67:  viajar participar acudir asistir arribar despedir sorprender acompañar suceder concurrir coronar
+cluster68:  refugiar exiliar asilar
+cluster69:  alquilar derribar fletar tripular pilotar pilotear
+cluster70:  calmar exacerbar avivar tranquilizar aplacar apaciguar acallar amainar atizar
+cluster71:  compartir agrupar dividir convivir englobar reconciliar reencontrar aglutinar reagrupar conciliar
+cluster72:  estacionar concentrar marchar desfilar congregar agolpar converger aglomerar confluir acampar
+cluster73:  inundar llenar abarrotar frecuentar copar colmar atestar saturar vaciar
+cluster74:  aconsejar convencer alentar exhortar ahuyentar urgir presionar desalentar animar disuadir persuadir conminar incitar
+cluster75:  respetar violar violentar quebrantar infringir contravenir transgredir vulnerar
+cluster76:  reportar difundir publicar divulgar citar consignar titular especular imprimir escribir reproducir leer reseñar editar bautizar apodar
+cluster77:  incluir proponer establecer estipular abarcar prever fijar contemplar comprender regir
+cluster78:  aprovechar desperdiciar escapar capitalizar desaprovechar malograr
+cluster79:  empujar remolcar
+cluster80:  contener fallar parar desviar acertar soltar atajar tapar errar conjurar
+cluster81:  gritar corear entonar cantar proferir
+cluster82:  deprimir subsidiar ofertar gravar reajustar elev abaratar encarecer inflar
+cluster83:  escuchar oír resonar sonar
+cluster84:  manifestar expresar reiterar reafirmar exteriorizar expres
+cluster85:  poseer introducir probar utilizar usar proveer emplear relucir
+cluster86:  examinar abordar revisar analizar tratar debatir estudiar evaluar discutir replantear repasar clarificar politizar reexaminar evocar
+cluster87:  enfrascar implicar desembocar derivar involucrar envolver trenzar devenir degenerar
+cluster88:  responder distanciar arremeter contestar maniobrar contraatacar replicar
+cluster89:  sustentar inscribir enmarcar concebir insertar materializar inspirar constar plasmar resumir fundamentar fundir encuadrar sintetizar amparar incluído cristalizar
+cluster90:  sentir sacudir azotar devastar sacudi estremecer remecer
+cluster91:  sesionará sesionar sesionó sesiona deliberar
+cluster92:  aumentar elevar disminuir reducir duplicar ascender recortar sobrepasar triplicar incrementar calcular mermar exceder rebasar doblar
+cluster93:  garantizar defender amenazar perjudicar proteger salvar cuidar preservar resguardar salvaguardar peligrar descuidar
+cluster94:  enriquecer rondar fluctuar oscilar bordear evolucionar infiltrar soplar adentrar
+cluster95:  saludar tributar venerar aplaudir linchar aclamar admirar abuchear ovacionar vitorear
+cluster96:  estabilizar enderezar embarcar enfilar sanear
+cluster97:  creer contactar culpar liberar temer detener identificar sospechar responsabilizar presumir extraditar conjeturar deportar encarcelar
+cluster98:  morder tender atar encadenar amarrar temblar amputar torear
+cluster99:  centrar dedicar enfocar captar acaparar atraer prestar ameritar distraer monopolizar focalizar concitar
+cluster100:  eliminar sustituir reemplazar destronar noquear desbancar flanquear escoltar acompaado relevar remplazar secundar suplantar
+cluster101:  desarrollar ampliar fortalecer impulsar promover reforzar consolidar cimentar expandir dinamizar inhibir fomentar profundizar forjar afianzar estimular potenciar incentivar diversificar priorizar
+cluster102:  telefonear golpear sonreír excusar vió abrazar increpar agredir escupir retar insultar bromear
+cluster103:  varar acariciar retener botar acomodar atrapar
+cluster104:  segn inici pidi iran mencion anunci sealan aadi defendi sealaron respondi conden paquistan decidi rabes panamea suspendi rizar
+cluster105:  investigar ignorar desconocer aclarar determinar conocer especificar saber averiguar esclarecer indagar encubrir desvelar dilucidar
+cluster106:  surgir brotar arreciar multiplicar recrudecer abundar florecer resurgir proliferar llover generalizar aflorar
+cluster107:  enfrentar afrontar sortear soportar resistir encarar confrontar
+cluster108:  desaparecer morir huir resultar sobrevivir fallecer perecer gratar sucumbir ahogar
+cluster109:  contaminar contagiar infectar intoxicar propagar sacrificar enfermar vacunar aviar
+cluster110:  pagar rebajar abonar cobrar adeudar desprender equiparar
+cluster111:  destrabar reavivar reactivar revivir entablar reanimar desbloquear revitalizar reorientar encauzar relanzar encarrilar resucitar torpedear
+cluster112:  obedecer atribuir equivaler consagrar aludir ligar asemejar circunscribir respectar abocar concernir achacar atañer
+cluster113:  von rodrigar charlar jamar air rolar der
+cluster114:  clasificar adueñar rezagar relegar octavar encaramar largar position segundar encumbrar
+cluster115:  saldar reestructurar renegociar refinanciar condonar perdonar reembolsar reprogramar
+cluster116:  conquistar ganar adjudicar despojar agenciar arrebatar revalidar embolsar
+cluster117:  corresponder proceder coincidir basar radicar provenir recaer pertenecer contrastar residir datar
+cluster118:  contabilizar aventajar sufragar escrutar
+cluster119:  esperar pronosticar anticipar predecir vaticinar librar augurar aguardar vislumbrar deparar presagiar habr
+cluster120:  reflejar impactar traducir influenciar repercutir redundar pesar incidir influir
+cluster121:  cautivar bailar encantar seducir vibrar entusiasmar deleitar emocionar asombrar deslumbrar
+cluster122:  arrastrar avanzar desplazar orientar encaminar comportar andar mover tocar
+cluster123:  impedir lograr favorecer dificultar buscar permitir complicar posibilitar facilitar procurar acelerar obstaculizar propiciar condicionar agilizar entorpecer imposibilitar apurar
+cluster124:  correr minimizar cuantificar revestir subestimar relativizar exagerar cerner entrañar
+cluster125:  argumentar apelar objetar alegar aducir invocar recusar argüir esgrimir
+cluster126:  rechazar negar desestimar formular desmentir refutar desechar contradecir descalificar matizar rebatir desautorizar desacreditar desvirtuar corroborar
+cluster127:  intimidar amedrentar aterrorizar hostigar sobornar espiar atemorizar silenciar
+cluster128:  fracasar prosperar estancar tropezar topar empantanar trabar
+cluster129:  defraudar auxiliar discriminar extorsionar indemnizar rehabilitar estafar resarcir socorrer
+cluster130:  sufrir endosar asestar encajar propinar infligir vengar digerir asimilar desquitar
+cluster131:  igualar empatar remontar emparejar desequilibrar voltear equilibrar nivelar redondear
+cluster132:  dudar opinar incurrir abstener rehusar equivocar inclinar molestar apartar apresurar concordar disculpar abusar discrepar vacilar
+cluster133:  postergar atrasar posponer cancelar aplazar demorar diferir retrasar dilatar retardar
+cluster134:  obtener ofrecer dar otorgar brindar entregar conceder reservar asignar denegar suprimir quitar dió conferir
+cluster135:  disponer preocupar disfrutar contar aprestar intentar esforzar necesitar decidir desear pensar carecer desistir comprometer pretender oponer apostar confiar colaborar interesar preferir acceder querer gozar optar aspirar soñar quejar acostumbrar recurrir
+cluster136:  falsificar recoger intercambiar proporcionar recolectar suministrar filtrar centralizar juntar recopilar recabar manipular actualizar compilar estampar
+cluster137:  mediar pactar
+cluster138:  revertir anular impugnar revocar avalar homologar invalidar validar convalidar
+cluster139:  alertar desesperar avisar alarmar engañar sensibilizar inquietar asustar
+cluster140:  elegir escoger seleccionar encomendar expulsar inhabilitar interpelar amonestar comisionar
+cluster141:  pedir recomendar requerir exigir solicitar forzar sugerir demandar reclamar
+cluster142:  construir instalar emplazar erigir enclavar asentar reubicar edificar
+cluster143:  ocupar ejercer alternar asumir heredar ceder retomar transferir ostentar detentar reasumir traspasar delegar
+cluster144:  portar izar blandir ondear enarbolar agitar
+cluster145:  distribuir consumir importar ingerir comer fumar comercializar tragar consumar beber recetar
+cluster146:  desmontar desmantelar desarticular destapar montar desbordar ventilar tejer desbaratar
+cluster147:  condenar delinquir sentenciar procesar imputar juzgar desaforar enjuiciar sindicar inculpar incriminar encausar
+cluster148:  alcanzar acordar negociar firmar suscribir concretar concertar sellar rubricar signar convenir refrendar protocolar acuñar
+cluster149:  reaccionar aguantar amanecer calentar caldear respirar
+cluster150:  primar reinar prevalecer privilegiar anteponer predominar imperar
+cluster151:  lesionar resentir desgarrar lastimar fracturar torcer
+cluster152:  acordonar inspeccionar allanar cercar sitiar rodear evacuar desalojar custodiar
+cluster153:  hospitalizar aquejar internar convalecer
+cluster154:  despertar persistir cultivar disipar plantar sembrar despejar alimentar pisar cundir subsistir
+cluster155:  témpore tempore
+cluster156:  comunicar ratificar notificar gestionar tramitar acreditar formalizar oficializar reconsiderar
+cluster157:  caracterizar agobiar acosar acorralar abrumar arrinconar asediar diezmar
+cluster158:  descartar deslizar plantear explorar insinuar resignar entrever caber barajar sondear
+cluster159:  mejorar deteriorar congelar empeorar envenenar normalizar estrechar guardar enfriar tensar enturbiar distender recomponer degradar
+cluster160:  trabajar funcionar actuar desempeñar permanecer operar laborar
+cluster161:  despegar partir aterrizar bombardear estrellar cazar precipitar volar sobrevolar desintegrar posar accidentar surcar
+cluster162:  navegar hundir naufragar atracar zarpar anclar desembarcar zozobrar acoplar encallar
+cluster163:  atropellar chocar volcar colisionar embestir descarrilar arrollar
+cluster164:  ocurrir causar producir dejar registrar desencadenar desatar generar evitar provocar originar suscitar ocasionar motivar sobrevenir
+cluster165:  padecer contraer prevenir diagnosticar extirpar curar
+cluster166:  protestar congratular felicitar impresionar alegrar decepcionar irritar enfurecer complacer indignar disgustar contrariar incomodar
+cluster167:  intervenir entrar incursionar perseguir penetrar apoderar atentar irrumpir posicionar aproximar
+cluster168:  nombrar reelegir destituir designar jurar juramentar posesionar fungir dimitir investir
+cluster169:  certificar vigilar supervisar monitorear sabotear fiscalizar regular optimizar legitimar viabilizar
+cluster170:  fotografiar llorar ahorcar casar suicidar besar divorciar jubilar apuñalar criar embarazar
+cluster171:  extraer remover almacenar derramar verter bombear
+cluster172:  caer subir descender desplomar declinar bajar retroceder progresar repuntar replegar
+cluster173:  campar perdar consigui cay gan brasileo llev volvi venci
+cluster174:  imponer aplastar derrotar vencer golear guiar apabullar vapulear blanquear doblegar barrer humillar apalear
+cluster175:  descubrir localizar rescatar rastrear detectar pescar interceptar hallar bañar flotar divisar avistar
+cluster176:  confesar atestiguar comparecer mentir testificar testimoniar querellar
+cluster177:  reclutar graduar impartir aprender cursar capacitar enseñar asesorar educar adiestrar
+cluster178:  dañar destruir destrozar derrumbar devorar demoler arrasar desmoronar
+cluster179:  combatir manejar controlar neutralizar dominar administrar frenar
+cluster180:  profesar proclamar simbolizar traicionar autoproclamar pregonar propugnar denotar ilustrar predicar encarnar preconizar
+cluster181:  luchar competir batallar medir pelear postular pugnar adscribir triunfar competer facultar contender rivalizar subordinar
+cluster182:  capar on trasmitir televisora televisar
+cluster183:  asaltar incendiar atacar dinamitar quemar ametrallar emboscar saquear apedrear objetivar
+cluster184:  matar ejecutar secuestrar abatir asesinar ultimar tirotear herir balear masacrar acribillar plagiar degollar
+cluster185:  nominar premiar alzar homenajear distinguir condecorar honrar recompensar galardonar
+cluster186:  extender expirar durar prolongar renovar prorrogar alargar rescindir
+cluster187:  depreciar apreciar valorizar revaluar devaluar
+cluster188:  estarn podrn estn tendrn participarn sern podran haban continan realizarn estan
+cluster189:  adquirir privatizar embargar licitar nacionalizar subastar fusionar modernizar reflotar expropiar
+cluster190:  rebotar clavar incrustar rematar colar cabecear patear anidar
+cluster191:  decir indicar anunciar apuntar asegurar precisar señalar explicar confirmar informar afirmar declarar puntualizar revelar admitir adelantar comentar añadir estimar agregar detallar aseverar acotar
+cluster192:  tolerar esparcir diseminar ponchó maniatar espaciar
+cluster193:  intensificar iniciar realizar efectuar continuar suspender reanudar inciar emprender conducir cesar reiniciar proseguir
+cluster194:  aprehender arrestar capturar decomisar incautar inmovilizar confiscar requisar apresar
+cluster195:  empezar terminar concluir comenzar finalizar transcurrir arrancar acabar culminar completar
+cluster196:  anotar meter conseguir sumar marcar totalizar acumular facturar cosechar descontar promediar encestar
+cluster197:  subrayar recordar enfatizar elogiar destacar resaltar agradecer recalcar valorar reconocer enumerar ponderar remarcar alabar encomiar exaltar ensalzar
+cluster198:  disparar conectar pegar batear despachar empalmar vuelacerca jonroneó
+cluster199:  canonizar bendecir beatificar
+cluster200:  clamar rezar oficiar recitar obrar interceder rogar orar implorar

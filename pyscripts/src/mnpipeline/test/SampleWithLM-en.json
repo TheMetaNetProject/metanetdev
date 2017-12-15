@@ -1,0 +1,94 @@
+{
+  "encoding": "UTF-8", 
+  "jsonschema": "https://metaphor.icsi.berkeley.edu/metaphor/ixjschema.json", 
+  "lang": "en", 
+  "sentences": [
+    {
+      "id": "test01:en02:1", 
+      "text": "Leaders from some of the nation's largest Christian congregations are urging President Obama and members of Congress to find a way to agree on new revenue and spending cuts that will reduce the deficit while protecting the poorest Americans.",
+      "lms": [
+        {
+          "name": "find way",
+          "target":
+            {
+              "lemma": "find.v",
+              "start": 121,
+              "end": 125,
+              "rel": "verb"
+            },
+          "source":
+            {
+              "lemma": "way.n",
+              "start": 128,
+              "end": 131,
+              "rel": "obj"
+            }
+        }
+      ]
+    }, 
+    {
+      "id": "test01:en02:3", 
+      "text": "The letter blames both parties for risking the possibility that more people will slide into poverty.", 
+      "lms": [
+        {
+          "name": "letter blame",
+          "target":
+            {
+              "lemma": "blame.v",
+              "start": 11,
+              "end": 17,
+              "rel": "verb"
+            },
+          "source":
+            {
+              "lemma": "letter.n",
+              "start": 4,
+              "end": 10,
+              "rel": "subj"
+            },
+          "seed": "passage claim"
+        },
+        {
+          "name": "risk possibility",
+          "target":
+            {
+              "lemma": "risk.v",
+              "start": 35,
+              "end": 42,
+              "rel": "verb"
+            },
+          "source":
+            {
+              "lemma": "possibility.n",
+              "start": 47,
+              "end": 58,
+              "rel": "obj"
+            },
+          "seed": "bet chance"
+        },
+        {
+          "name": "slide poverty",
+          "target":
+            {
+              "lemma": "slide.v",
+              "start": 81,
+              "end": 86,
+              "rel": "verb"
+            },
+          "source":
+            {
+              "lemma": "poverty.n",
+              "start": 92,
+              "end": 99,
+              "rel": "obj"
+            },
+          "seed": "fall debt"
+        }
+      ]
+    },
+    {
+      "id": "test01:en02:4", 
+      "text": "\"Moving from one crisis to another has slowed economic recovery and has kept Congress from finding a sound, moral path to fiscal sustainability,\" the letter says."
+    }
+  ]
+}

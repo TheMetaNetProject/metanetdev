@@ -1,0 +1,31 @@
+#!/bin/bash
+
+thisdir="$(dirname $(readlink -f ${0}))"
+basedir="${thisdir}"
+tempdir="${basedir}/temp"
+builddir="${basedir}/build"
+scriptdir="${basedir}/scripts"
+
+if [ ! -d ${basedir} ]; then
+    mkdir "${basedir}/temp"
+fi
+
+sentencesFile="${basedir}/temp/sentence-output"
+lemmasFile="${basedir}/temp/lemma-output"
+
+if [ -f ${sentencesFile} ]; then
+    rm ${sentencesFile}
+fi
+
+if [ -f ${lemmasFile} ]; then
+    rm ${lemmasFile}
+fi
+
+touch ${sentencesFile}
+touch ${lemmasFile}    
+    
+cd ${builddir}    
+java edu.berkeley.icsi.metanet.semaforParser.WikiExtracter "$@" "${sentencesFile}" "${lemmasFile}"
+
+cd ${scriptdir}
+./semafor2json.sh "${sentencesFile}" "${lemmasFile}"

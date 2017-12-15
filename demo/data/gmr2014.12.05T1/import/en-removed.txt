@@ -1,0 +1,4 @@
+../bnc/Result_BNC_A52.json.gz
+../bnc/Result_BNC_B12.json.gz
+see: 
+/n/picnic/xw/metanet/corpora/json/gmryyyy.mm.dd/bnc

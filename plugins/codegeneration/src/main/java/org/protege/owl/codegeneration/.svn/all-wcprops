@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/repos/protege/!svn/ver/26019/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration
+END
+CodeGenerationOptions.java
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/repos/protege/!svn/ver/22580/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/CodeGenerationOptions.java
+END
+SubstitutionVariable.java
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/repos/protege/!svn/ver/23794/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/SubstitutionVariable.java
+END
+JavaCodeGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/repos/protege/!svn/ver/22628/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/JavaCodeGenerator.java
+END
+CodeGenerationPhase.java
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/repos/protege/!svn/ver/22523/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/CodeGenerationPhase.java
+END
+CodeGenerationRuntimeException.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/repos/protege/!svn/ver/22530/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/CodeGenerationRuntimeException.java
+END
+Worker.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/repos/protege/!svn/ver/22628/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/Worker.java
+END
+Utilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/repos/protege/!svn/ver/23692/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/Utilities.java
+END
+WrappedIndividual.java
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/repos/protege/!svn/ver/23695/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/WrappedIndividual.java
+END
+Constants.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/repos/protege/!svn/ver/23685/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/Constants.java
+END
+CodeGenerationFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/repos/protege/!svn/ver/23690/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/CodeGenerationFactory.java
+END
+DefaultWorker.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/repos/protege/!svn/ver/23794/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/DefaultWorker.java
+END
+HandledDatatypes.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/repos/protege/!svn/ver/25099/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/HandledDatatypes.java
+END

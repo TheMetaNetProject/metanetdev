@@ -1,0 +1,15 @@
+../esgw/Result_afp_spa_199405_001.json.gz
+../esgw/Result_afp_spa_199405_002.json.gz
+../esgw/Result_afp_spa_199405_003.json.gz
+../esgw/Result_afp_spa_199405_004.json.gz
+../esgw/Result_afp_spa_199405_005.json.gz
+../esgw/Result_afp_spa_199406_001.json.gz
+../esgw/Result_afp_spa_199406_002.json.gz
+../esgw/Result_afp_spa_199406_003.json.gz
+../esgw/Result_afp_spa_199406_004.json.gz
+../esgw/Result_afp_spa_199406_005.json.gz
+../esgw/Result_afp_spa_199406_006.json.gz
+../esgw/Result_afp_spa_199406_007.json.gz
+../esgw/Result_afp_spa_199406_008.json.gz
+../esgw/Result_afp_spa_199406_009.json.gz
+../esgw/Result_afp_spa_199407_001.json.gz

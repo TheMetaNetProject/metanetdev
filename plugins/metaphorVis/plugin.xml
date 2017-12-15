@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+	<extension id="MetaVisViewComponent"
+				point="org.protege.editor.core.application.ViewComponent">
+		<label value="Metaphor Visualizer View Component" />
+		<class value="edu.berkeley.icsi.metanet.metavisual.MetaVis" />
+		<category value="@org.protege.ontologycategory" />
+	</extension>
+	<extension id="MetaVis"
+				point="org.protege.editor.core.application.WorkspaceTab">
+		<label value="Metaphor Visualizer" />
+		<class value="org.protege.editor.owl.ui.OWLWorkspaceViewsTab" />
+		<index value="X" />
+		<editorKitId value="OWLEditorKit" />
+		<defaultViewConfigFileName value="viewconfig-metavisTab.xml" />
+	</extension>
+</plugin>

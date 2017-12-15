@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="compile" name="semaforParser">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+	
+	<property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+
+	<property name="src.dir" value="src/java"/>
+	<property name="build.dir" value="build"/>
+	<property name="dist.dir" value="dist"/>
+    <property name="root.dir" value="../.."/>
+	<property name="root.lib.dir" value="${root.dir}/lib"/>
+	<property name="root.dist.dir" value="${root.dir}/dist"/>
+	<property name="root.comp.dir" value="${root.dir}/components"/>
+    <path id="semaforParser.classpath">
+        <pathelement path="${buildDir}"/>
+    </path>
+	
+	<target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+	
+	<target name="init" depends="clean">
+		<mkdir dir="${build.dir}"/>
+	</target>
+	
+	<target name="unzip-dependencies" depends="init">
+			<unzip dest="${build.dir}">
+		        <fileset dir="${root.lib.dir}">
+		        	<include name="jackson-core-2.1.1.jar"/>
+		        	<include name="commons-cli-1.2.jar"/>
+				</fileset>
+				<fileset dir="${root.dist.dir}/lib">
+					<include name="wikiapi.jar"/>
+				</fileset>
+				<fileset dir="${root.comp.dir}">
+					<include name="mwtemplateparser/dist/MediaWikiParse.jar"/>
+				</fileset>
+	      	</unzip>
+		</target>
+	
+	<target name="compile" depends="unzip-dependencies">
+    	<javac debug="true" debuglevel="${debuglevel}" destdir="${build.dir}" includeantruntime="false" source="${source}" target="${target}" excludes="**/*Test.java">
+        	<src path="${src.dir}"/>
+        	<classpath refid="semaforParser.classpath"/>
+    	</javac>
+    </target>
+</project>

@@ -1,0 +1,15 @@
+{{Linguistic metaphor
+|Type=extracted
+|Seed=Linguistic metaphor:Confront problem
+|Source=address.v
+|Target=barrier.n
+|Examples={{Example
+|Example.Text=But simply supplying the latest efficient machines, or sending experts to a country for a few months are not long-term answers, and do not address the most intractable barriers to action.
+|Example.Annotation=address.v=pred(Source),barrier.n=dobj(Target)
+|Example.Provenance=BNC
+|Example.Language=English
+}}
+|Comments=
+|Entered by=Metabot
+|Status=auto imported
+}}

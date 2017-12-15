@@ -1,0 +1,51 @@
+{
+  "encoding": "UTF-8", 
+  "jsonschema": "https://metaphor.icsi.berkeley.edu/metaphor/ixjschema.json", 
+  "lang": "en", 
+  "sentences": [
+    {
+      "id": "test01:en01:1", 
+      "text": "Youths from poor and rural families consistently end up paying much higher tuition in China than children from affluent and urban families."
+    }, 
+    {
+      "id": "test01:en01:2", 
+      "text": "Yet they attend considerably worse institutions, education finance specialists say."
+    }, 
+    {
+      "id": "test01:en01:3", 
+      "text": "The reason is that few children from poor families earn top marks on the national exams."
+    }, 
+    {
+      "id": "test01:en01:4", 
+      "text": "So they attend lower-quality schools that receive the smallest government subsidies."
+    }, 
+    {
+      "id": "test01:en01:5", 
+      "text": "Top four-year universities in China have resisted pressure to expand enrollments."
+    }, 
+    {
+      "id": "test01:en01:6", 
+      "text": "So roughly half of all college students now attend less prestigious three-year polytechnics instead."
+    }, 
+    {
+      "id": "test01:en02:1", 
+      "text": "Leaders from some of the nation's largest Christian congregations are urging President Obama and members of Congress to find a way to agree on new revenue and spending cuts that will reduce the deficit while protecting the poorest Americans."
+    }, 
+    {
+      "id": "test01:en02:2", 
+      "text": "In a public letter, to be released on Monday just days before severe budget cuts are scheduled to go into effect, the groups urge that the fiscal debate be about \"moral choices.\""
+    }, 
+    {
+      "id": "test01:en02:3", 
+      "text": "The letter blames both parties for risking the possibility that more people will slide into poverty."
+    }, 
+    {
+      "id": "test01:en02:4", 
+      "text": "\"Moving from one crisis to another has slowed economic recovery and has kept Congress from finding a sound, moral path to fiscal sustainability,\" the letter says."
+    }, 
+    {
+      "id": "test01:en02:5", 
+      "text": "\"Other important issues go unaddressed, all the while increasing cynicism about our political process.\""
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+
+<project name = "MetaNet Repository API" default = "install" basedir = ".">    
+
+  <property file="local.properties"/>
+  <property file="version.properties"/>
+  <property name="major.version" value="1"/>
+  <property name="minor.version" value="0"/>
+  <property name="micro.version" value="0"/>
+ 
+  <property name = "root.dir"           location = "../.."/>
+  <property name = "src.dir"            location = "./src/java"/>  
+  <property name = "build.dir"          location = "./build"/>
+  <property name = "classes.dir"        location = "${build.dir}/classes"/>
+  <property name = "dist.dir"           location = "./dist"/>
+  <property name = "manifest"           location = "${build.dir}/manifest.mf"/>
+  <property name = "manifest.src"       location = "./manifest.mf"/>
+  <property name = "dist.jar"           location = "${dist.dir}/metanetapi.jar"/>
+  <property name = "root.dist.dir"      location = "${root.dir}/dist"/>
+
+  <property environment="env"/>
+  <!-- if there is a local installation of Protege, use it.  Otherwise
+       use the environment variable -->
+  <condition property="protege.home" value="${root.dist.dir}/protege"
+             else="${env.PROTEGE_HOME}">
+    <available file="${root.dist.dir}/protege" type="dir"/>
+  </condition>
+  <property file="${protege.home}/build.properties"/>
+
+  <property name = "protege.common"   location="${protege.home}/bundles"/>
+  <property name = "protege.plugins"  location="${protege.home}/plugins"/>
+
+  <property name="owl.lib"
+            location="${protege.plugins}/org.semanticweb.owl.owlapi.jar"/>
+  <property name="codegeneration.lib"
+            location="${protege.plugins}/org.protege.editor.owl.codegeneration.jar"/>
+
+  <!-- BUILD TARGETS -->
+
+  <target name = "init">
+    <tstamp>
+      <format property="build.time" pattern="yyyy_MM_dd_hhmm"/>
+    </tstamp>
+    <property name="bundle.version"
+              value="${major.version}.${minor.version}.${micro.version}.${build.time}"/>
+    <mkdir dir = "${build.dir}"/>
+    <mkdir dir = "${dist.dir}"/>
+    <mkdir dir = "${classes.dir}"/>
+  </target>  
+
+  <target name = "checkProtegeLibs" depends="init">
+    <echo message="**********************************************************"/>
+    <echo message="Using Protege Home = ${protege.home}"/>
+    <echo message="Using Java Version = ${ant.java.version}" />
+    <echo message="**********************************************************"/>
+    <condition property="libs.found">
+      <and>
+        <available file="${owl.lib}" type="file"/>
+        <available file="${codegeneration.lib}" type="file"/>
+      </and>
+    </condition>
+    <path id = "project.classpath">    
+      <pathelement location="${owl.lib}"/>
+      <pathelement location="${codegeneration.lib}"/>
+    </path>
+  </target>
+
+  <target name="build.manifest" depends="init">
+    <copy tofile="${manifest}" 
+          file="${manifest.src}" overwrite="true"/>
+    <manifest file="${manifest}" 
+              mode = "update">
+      <attribute name="Built-By" value = "${user.name}"/>
+      <attribute name="Bundle-Version" value="${bundle.version}"/>
+    </manifest>
+  </target>
+
+
+  <target name = "compile" depends="checkProtegeLibs">
+    <javac srcdir = "${src.dir}"
+           source = "1.6"
+           destdir = "${classes.dir}" 
+           debug="on"
+           includeAntRuntime="false">
+      <classpath refid = "project.classpath"/>
+    </javac>
+  </target>
+
+  <target name = "jar" depends = "compile, build.manifest">
+    <jar jarfile = "${dist.jar}"
+         basedir = "${classes.dir}" 
+         manifest = "${manifest}"/>
+  </target>
+
+  <target name = "install" depends = "jar">
+    <copy todir="${root.dist.dir}/lib"
+          file="${dist.jar}"/>
+  </target>
+
+  <target name = "clean">
+    <delete dir = "${build.dir}"/>
+    <delete dir = "${dist.dir}"/>
+  </target>
+
+</project>

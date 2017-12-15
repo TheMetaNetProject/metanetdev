@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/repos/protege/!svn/ver/23683/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/property
+END
+JavaPropertyDeclarations.java
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/repos/protege/!svn/ver/23012/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/property/JavaPropertyDeclarations.java
+END
+JavaPropertyDeclarationCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 178
+/repos/protege/!svn/ver/23683/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/property/JavaPropertyDeclarationCache.java
+END
+JavaObjectPropertyDeclarations.java
+K 25
+svn:wc:ra_dav:version-url
+V 180
+/repos/protege/!svn/ver/23015/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/property/JavaObjectPropertyDeclarations.java
+END
+JavaDataPropertyDeclarations.java
+K 25
+svn:wc:ra_dav:version-url
+V 178
+/repos/protege/!svn/ver/23014/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/property/JavaDataPropertyDeclarations.java
+END

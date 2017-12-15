@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metad:TestSet testId="test01" count="2" xsi:schemaLocation="http://www.iarpa.gov/Metaphor/DetectSchema m4detectSchema_10.xsd" xmlns:metad="http://www.iarpa.gov/Metaphor/DetectSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <metad:Text id="en01" lang="en" count="6">
+    <metad:S id="1">Youths from poor and rural families consistently end up paying much higher tuition in China than children from affluent and urban families.</metad:S> 
+    <metad:S id="2">Yet they attend considerably worse institutions, education finance specialists say.</metad:S>
+    <metad:S id="3">The reason is that few children from poor families earn top marks on the national exams.</metad:S>
+    <metad:S id="4">So they attend lower-quality schools that receive the smallest government subsidies.</metad:S>
+    <metad:S id="5">Top four-year universities in China have resisted pressure to expand enrollments.</metad:S>
+    <metad:S id="6">So roughly half of all college students now attend less prestigious three-year polytechnics instead.</metad:S>
+    </metad:Text>
+  <metad:Text id="en02" lang="en" count="5">
+    <metad:S id="1">Leaders from some of the nation&apos;s largest Christian congregations are urging President Obama and members of Congress to find a way to agree on new revenue and spending cuts that will reduce the deficit while protecting the poorest Americans.</metad:S>
+    <metad:S id="2">In a public letter, to be released on Monday just days before severe budget cuts are scheduled to go into effect, the groups urge that the fiscal debate be about &quot;moral choices.&quot;</metad:S>
+    <metad:S id="3">The letter blames both parties for risking the possibility that more people will slide into poverty.</metad:S>
+    <metad:S id="4">&quot;Moving from one crisis to another has slowed economic recovery and has kept Congress from finding a sound, moral path to fiscal sustainability,&quot; the letter says.</metad:S>
+    <metad:S id="5">&quot;Other important issues go unaddressed, all the while increasing cynicism about our political process.&quot;</metad:S>
+    </metad:Text>
+</metad:TestSet>

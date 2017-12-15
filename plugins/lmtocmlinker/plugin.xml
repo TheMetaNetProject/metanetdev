@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+    <extension id="LMtoCMLinkerViewComponent"
+                   point="org.protege.editor.core.application.ViewComponent">
+        <label value="LM to CM Linker View Component" />
+        <class value="edu.berkeley.icsi.metanet.lmtocmlinker.Main" />
+        <category value="@org.protege.ontologycategory" />
+    </extension>
+    <extension id="LMtoCMLinkerWorspaceTab"
+                   point="org.protege.editor.core.application.WorkspaceTab">
+        <label value="LM to CM Linker" />
+        <class value="org.protege.editor.owl.ui.OWLWorkspaceViewsTab" />
+        <index value="X" />
+        <editorKitId value="OWLEditorKit" />
+        <defaultViewConfigFileName value="viewconfig-lmtocmlinker.xml" />
+    </extension>
+</plugin>

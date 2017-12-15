@@ -1,0 +1,18 @@
+#!/bin/bash
+
+cat <<XXX
+<!DOCTYPE html>
+<html>
+<title>Practice Demo Machine Setup</title>
+
+<xmp theme="cerulean" style="display:none;">
+XXX
+
+cat $1
+
+cat <<XXX
+</xmp>
+
+<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+</html>
+XXX

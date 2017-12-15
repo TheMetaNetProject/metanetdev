@@ -1,0 +1,41 @@
+{{Metaphor
+|Aliases={{Metaphor.Alias
+|Metaphor.Alias.Name=MORALITY IS STRAIGHTNESS
+|Metaphor.Alias.Provenance=Master Metaphor List (Lakoff, Espenson & Schwartz 1991)
+|Metaphor.Alias.Page no=185
+}}
+|Comments=This is the generic metaphor that encompasses the morality scale and the straightness scale. See entailments for entailed ends of the scales.
+|Metaphor Level=General
+|Metaphor Type=Primary
+|Investigated for=English
+|Mappings={{Mapping
+|Target=moral_person
+|Source=straight_object
+}}{{Mapping
+|Target=morality
+|Source=property_of_being_straight
+}}
+|Related metaphors={{Related metaphor
+|Related metaphor.Relation type=is in some source relation to
+|Related metaphor.Name=MORALITY IS A STRAIGHT PATH
+}}
+|Entailments={{Entailment
+|Entailment.Target entailment=being moral
+|Entailment.Source inference=being straight
+|Entailment.Entailed metaphors=MORAL IS STRAIGHT
+}}{{Entailment
+|Entailment.Target entailment=being immoral
+|Entailment.Source inference=being crooked
+|Entailment.Entailed metaphors=IMMORAL IS CROOKED
+}}
+|Examples={{Example
+|Example.Language=English
+|Example.Text=Be straight with me.
+}}{{Example
+|Example.Language=English
+|Example.Text=He's a crooked businessman.
+}}
+|Relevant LUs=
+|Entered by=Oana, 
+|Status=in development
+}}

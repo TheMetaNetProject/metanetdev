@@ -1,0 +1,75 @@
+<!-- 
+ <div class="page-header">
+	<h1>Sentence Detail</h1>
+</div>
+ -->
+
+<div class="well well-lg">
+	<span class="word" ng-repeat="w in doc.word"> {{w.form}}<span
+		class="pos">{{w.rpos}}</span>
+	</span>
+</div>
+
+<div class="col-xs-6">
+	<p class="lead">Dependency Tree</p>
+
+	<div class="well well-lg">Will show up here...</div>
+</div>
+
+
+<div class="col-xs-6" ng-show="doc.lms">
+
+	<p class="lead">Metaphors</p>
+
+	<ul class="well well-lg lms" ng-repeat="lm in doc.lms">
+		<li>
+			<dt>Name:</dt>
+			<dd>{{lm.name}}</dd>
+			<hr>
+			<dl>
+				<dt>Source:</dt>
+				<dd>{{lm.source.lemma}} ({{lm.source.lpos}}),
+					[{{lm.source.start}}, {{lm.source.end}}])</dd>
+			</dl>
+			<dl>
+				<dt>Target:</dt>
+				<dd>{{lm.target.lemma}} ({{lm.target.mword}}),
+					[{{lm.target.start}}, {{lm.target.end}}]</dd>
+			</dl>
+			<dl>
+				<dt>Domain:</dt>
+				<dd>{{lm.target.wdomain}}</dd>
+			</dl>
+			<dl>
+				<dt>Schema:</dt>
+				<dd>
+					<a href="{{lm.target.schema}}">
+						<button class="btn btn-default" role="button">Jump to
+							Wiki (not working)</button>
+					</a>
+				</dd>
+			</dl>
+			<dl>
+				<dt>Construction:</dt>
+				<dd>{{lm.cxn}}</dd>
+			</dl>
+			<dl>
+				<dt>Score:</dt>
+				<dd>{{lm.score}}</dd>
+			</dl>
+		</li>
+	</ul>
+
+</div>
+
+<!-- 
+<div class="row">
+	<p>
+		<a href="#/docs" class="btn btn-default" role="button"> <span
+			class="glyphicon glyphicon-arrow-left"></span> Back
+		</a>
+	</p>
+</div>
+ -->
+
+<p>&nbsp;</p>

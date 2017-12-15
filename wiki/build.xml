@@ -1,0 +1,33 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!-- 
+Ant build file for wiki subtree
+-->
+<project name = "wiki" default = "install" basedir = ".">
+
+  <property environment="env"/>
+  <property name="root.dir" location=".."/>
+  <property name="root.dist.dir" location="${root.dir}/dist"/>
+  <property name="root.dist.lib.dir" location="${root.dir}/dist/lib/python"/>
+  <property name="root.dist.bin.dir" location="${root.dir}/dist/bin"/>
+  <property name="root.dist.etc.dir" location="${root.dir}/dist/etc"/>
+  <property name="root.dist.etc.wiki.dir" location="${root.dir}/dist/etc/wiki"/>
+
+  <target name="install"
+          description="Installs wiki scripts and files into root-level dist/etc directory">
+    <!-- copy contents of src to dist/lib/python -->
+    <mkdir dir="${root.dist.etc.wiki.dir}"/>
+    <copy todir="${root.dist.etc.wiki.dir}">
+      <fileset dir=".">
+        <exclude name="build.xml"/>
+      </fileset>
+    </copy>
+    <!-- make python and shell scripts executable -->
+    <chmod dir="${root.dist.etc.wiki.dir}" perm="+x" includes="*.py"/>
+    <chmod dir="${root.dist.etc.wiki.dir}" perm="+x" includes="*.sh"/>
+  </target>
+  <target name="clean"
+          description="Clean out installed wiki files">
+  	<delete dir="${root.dist.etc.wiki.dir}" />
+  </target>
+
+</project>

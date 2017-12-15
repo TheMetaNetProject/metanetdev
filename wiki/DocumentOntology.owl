@@ -1,0 +1,1023 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#"
+     xml:base="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#adj-mod -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#adj-mod">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ncmod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#adjmod -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#adjmod">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ncmod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ador -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ador">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ncmod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#amod -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#amod">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ncmod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#arg -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#arg">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#att -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#att">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#aux -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#aux">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#auxpass -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#auxpass">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#aux"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#cc -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#cc">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ccomp -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ccomp">
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#comp"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#cmod -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#cmod">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#mod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#co-n -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#co-n">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#co-sp -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#co-sp">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#co-v -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#co-v">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#comp -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#comp">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#arg"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#con -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#con">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#conj -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#conj">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#cop -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#cop">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#aux"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#cosp -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#cosp">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#cov -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#cov">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#csubj -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#csubj">
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#subj"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#det -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#det">
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#mod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dobj -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dobj">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#obj"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dprep -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dprep">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dverb -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dverb">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#es -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#es">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#espec -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#espec">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#mod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#expl -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#expl">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#follows -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#follows">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#orderedRelativeTo"/>
+        <owl:inverseOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#precedes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#inDocument -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#inDocument">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Document"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Sentence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#inSentence -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#inSentence">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Sentence"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#iobj -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#iobj">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#obj"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#mod -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#mod">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#modnomatch -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#modnomatch">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#mod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#modnorule -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#modnorule">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#mod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#mos -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#mos">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ncmod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#moz -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#moz">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ncmod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ncmod -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ncmod">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#mod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ncsubj -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ncsubj">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#subj"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#nn -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#nn">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ncmod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#obj -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#obj">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#comp"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#obj-prep -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#obj-prep">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#obj"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#obj2 -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#obj2">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#obj"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#objprep -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#objprep">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#obj"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#orderedRelativeTo -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#orderedRelativeTo">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#partmod -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#partmod">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ncmod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#pcomp -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#pcomp">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#comp"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#pmod -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#pmod">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#mod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#pobj -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#pobj">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#obj"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#poss -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#poss">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ncmod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#possessive -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#possessive">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ncmod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#precedes -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#precedes">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#orderedRelativeTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#predep -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#predep">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#prt -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#prt">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ncmod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#qa-mod -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#qa-mod">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ncmod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#qamod -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#qamod">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ncmod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ref -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ref">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#sdep -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#sdep">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#sn-mod -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#sn-mod">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#mod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#snmod -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#snmod">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#mod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#sp-mod -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#sp-mod">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#mod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#sp-obj -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#sp-obj">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#obj"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#spmod -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#spmod">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#mod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#spobj -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#spobj">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#obj"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#subj -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#subj">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#arg"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#subj-pac -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#subj-pac">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#subj"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#subjpac -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#subjpac">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#subj"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#subord-mod -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#subord-mod">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#mod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#subordmod -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#subordmod">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#mod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ta -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#ta">
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#term -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#term">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#top -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#top">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#vsubord -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#vsubord">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#dep"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#xcomp -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#xcomp">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#comp"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#xmod -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#xmod">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#mod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#xsubj -->
+
+    <owl:ObjectProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#xsubj">
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:range rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+        <rdfs:subPropertyOf rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#subj"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#hasEnd -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#hasEnd">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#hasForm -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#hasForm">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#hasIdx -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#hasIdx">
+        <rdfs:range rdf:resource="&xsd;integer"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Sentence"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#hasLemma -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#hasLemma">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#hasPOS -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#hasPOS">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#hasRLemma -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#hasRLemma">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#hasRPOS -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#hasRPOS">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#hasStart -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#hasStart">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#hasText -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#hasText">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Sentence"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#hasTitle -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#hasTitle">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Document"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#isPassive -->
+
+    <owl:DatatypeProperty rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#isPassive">
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+        <rdfs:domain rdf:resource="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Document -->
+
+    <owl:Class rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Document"/>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Sentence -->
+
+    <owl:Class rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Sentence"/>
+    
+
+
+    <!-- https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word -->
+
+    <owl:Class rdf:about="https://metaphor.icsi.berkeley.edu/metaphor/DocumentOntology.owl#Word"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,1 @@
+SELECT ex.text AS 'LM Sentence', lm.target AS 'LM Target', lm.source AS 'LM Source', lm.tags AS 'Target', lm.sourceCluster AS 'Source Cluster', lm.sourceLabel AS 'Source Label' FROM Example AS ex, LinguisticMetaphor AS lm WHERE ex.lmID=lm.id limit 10;

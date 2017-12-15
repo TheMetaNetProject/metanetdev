@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/protege/!svn/ver/26019/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/test/resources
+END
+CodeGeneration001.owl
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/repos/protege/!svn/ver/22946/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/test/resources/CodeGeneration001.owl
+END
+pizza.owl
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/protege/!svn/ver/23708/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/test/resources/pizza.owl
+END
+unit-tests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repos/protege/!svn/ver/26019/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/test/resources/unit-tests.xml
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/repos/protege/!svn/ver/23689/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/editor/owl/codegeneration
+END
+GenerateCodeCallback.java
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/repos/protege/!svn/ver/22589/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/editor/owl/codegeneration/GenerateCodeCallback.java
+END
+JavaCodeGeneratorPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/repos/protege/!svn/ver/22590/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/editor/owl/codegeneration/JavaCodeGeneratorPanel.java
+END
+ProtegeNames.java
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/repos/protege/!svn/ver/22591/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/editor/owl/codegeneration/ProtegeNames.java
+END
+GenerateProtegeOwlJavaCodeAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 180
+/repos/protege/!svn/ver/23689/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/editor/owl/codegeneration/GenerateProtegeOwlJavaCodeAction.java
+END
+select_folder.gif
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/repos/protege/!svn/ver/22036/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/editor/owl/codegeneration/select_folder.gif
+END

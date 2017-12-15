@@ -1,0 +1,911 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+'''
+
+OBSOLETE: this is the Simple Construction Matching System. Which ran as
+as a post-processing step to the SBS.  This system has been superceded by
+the CMS extractor.
+
+Created on May 10, 2013
+
+@author: jhong
+'''
+import sys, time
+import argparse
+import json
+import codecs
+import re
+import time
+from mnformats import mnjson
+import os
+from mnpipeline.persiantagger import PersianPOSTagger
+
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
+sys.stdout = codecs.getwriter('utf8')(sys.stdout)
+sys.stderr = codecs.getwriter('utf8')(sys.stderr)
+
+CXN_VALUE = 1000000.0
+DOMAIN_VALUE = 100000.0
+TWORD_VALUE = 10000.0
+SWORD_VALUE = 1000.0
+SBS_VALUE = 0.75 * (CXN_VALUE + DOMAIN_VALUE + TWORD_VALUE + SWORD_VALUE)
+TWORD_RAW_VALUE = 10000.0
+
+VERBOSE = False
+EXDIR = '/u/metanet/extraction'
+ANYW = u'[^=\\s]+'
+ANYWNC = u'[^=\\s,]+'
+ANYP = u'[^=\\s]+'
+DOMAIN = "ei"
+TAGGER_LANGNAME = {'en': 'english',
+                   'es': 'spanish',
+                   'ru': 'russian',
+                   'fa': None}
+MATCH_FIELD = {'en': 'form',
+               'es': 'lem',
+               'ru': 'lem',
+               'fa': 'form'}
+REPORT_FIELD = {'en': 'lem',
+                'es': 'lem',
+                'ru': 'lem',
+                'fa': 'form'}
+POS_FIELD = {'en': 'pos',
+             'es': 'pos',
+             'ru': 'pos',
+             'fa': 'pos'}
+
+GEI = u'GENERAL ECONOMIC INEQUALITY'
+
+class SimpleConstructionMatchingSystem:
+    
+    tagger = None
+    exdir = '/u/metanet/extraction'
+    wldir = ''
+    cxndir = ''
+    lang = u''
+    twlist = []
+    twlists = {}
+    swlists = {}
+    # these cxns overridden by cfile
+    cxns = [u'@S@ of @T@',
+            u'@T@ @S@',
+            u'@S@ @T@',
+            u'@S@ @W@:5 @T@',
+            u'@T@ @W@:5 @S@',
+            ]
+    cxn_rankings = {}
+    taggers = {}
+    twlist_by_lang = {}
+    twlists_by_lang = {}
+    swlists_by_lang = {}
+    cxns_by_lang = {}
+    old_twlist_by_lang = {}
+    old_swlist_by_lang = {}
+    tword_rank_by_lang = {}
+    cxn_ranks_by_lang = {}
+    
+    def __init__(self, exdir=None, wldir=None, cxndir=None, verbose=False):
+        global TAGGER_LANGNAME, DOMAIN
+        if 'MNEXTRACTPATH' in os.environ:
+            self.exdir = os.environ['MNEXTRACTPATH']
+        if exdir:
+            self.exdir = exdir
+        self.wldir = self.exdir + '/wordlists'
+        self.cxndir = self.exdir + '/cxns'
+        if wldir:
+            self.wldir = wldir
+        if cxndir:
+            self.cxndir = cxndir
+        self.verbose = verbose
+        
+        # setup taggers for all supported langs
+        # pre-load all wordlists cxn lists
+        for l in TAGGER_LANGNAME:
+            if TAGGER_LANGNAME[l]:
+                self.taggers[l] = mnjson.MNTreeTagger(l)
+            else:
+                self.taggers[l] = None
+            wldir = self.wldir + '/' + l + '/'
+            cxndir = self.cxndir + '/' + l + '/'
+            tfile = wldir+"target."+DOMAIN
+            sfile = wldir+"source."+DOMAIN
+            cfile = cxndir+"cxns."+DOMAIN
+            if os.path.exists(tfile) and os.path.exists(sfile):
+                (dtwlist, dtwlists, dswlists) = self.get_domained_wordlists(tfile, sfile)
+                self.twlist_by_lang[l] = dtwlist
+                self.twlists_by_lang[l] = dtwlists
+                self.swlists_by_lang[l] = dswlists
+                self.old_twlist_by_lang[l] = self.get_wordlist(tfile)
+                self.old_swlist_by_lang[l] = self.get_wordlist(sfile)
+                self.tword_rank_by_lang[l] = self.get_ranked_wordlist(tfile)
+            if os.path.exists(cfile):
+                (dcxns, dcxn_ranking) = self.get_cxns(cfile)
+                self.cxns_by_lang[l] = dcxns
+                self.cxn_ranks_by_lang[l] = dcxn_ranking
+        
+    def post_process(self, jsondoc, logger=None, matchf=None, posf=None, reportf=None, forcetagger=False):
+        """
+        Runs SWS system and assigns scores to LMs
+        """
+        global DOMAIN, TAGGER_LANGNAME, MATCH_FIELD, POS_FIELD, REPORT_FIELD
+        if "lang" not in jsondoc:
+            return jsondoc
+        self.prep_lang_specific_resources(jsondoc['lang'])
+        if matchf:
+            self.matchfield = matchf
+        else:
+            self.matchfield = MATCH_FIELD[self.lang]
+        if posf:
+            self.posfield = posf
+        else:
+            self.posfield = POS_FIELD[self.lang]
+        if reportf:
+            self.reportfield = reportf
+        else:
+            self.reportfield = REPORT_FIELD[self.lang]
+        self.forcetagger = forcetagger
+        if forcetagger:
+            self.wordarrayfield = 'ftword'
+        else:
+            self.wordarrayfield = 'word'
+        # don't bother if there are no sentences in the JSON
+        if ("sentences" not in jsondoc) or (len(jsondoc["sentences"])==0):
+            return jsondoc
+        
+        sentences = jsondoc['sentences']
+        
+        # delete duplicates lm generated by the SBS and score SBS lms
+        self.start_msg("Filtering and ranking existing LMs...")
+        self.delete_duplicate_sbs_lms(sentences)
+        self.score_sbs_lms(sentences)
+        self.end_msg("Done filtering and ranking existing LMs")
+        
+        # sun SWS system
+        self.search_sentences(sentences, logger)
+
+        # reverse sort by score        
+        for sent in sentences:
+            if 'lms' in sent:
+                self.sort_lms_by_score(sent['lms'])
+        
+        return jsondoc
+    def run_cms_only(self, jsondoc, logger=None, matchf=None, posf=None, reportf=None, forcetagger=False):
+        '''
+        Alternate version of post_process method above that runs
+        runs the CMS rather than assuming that it follows after
+        the SBS.
+        '''
+        global DOMAIN, TAGGER_LANGNAME, MATCH_FIELD, POS_FIELD, REPORT_FIELD
+        if "lang" not in jsondoc:
+            return jsondoc
+        self.prep_lang_specific_resources(jsondoc['lang'])
+        
+        if matchf:
+            self.matchfield = matchf
+        else:
+            self.matchfield = MATCH_FIELD[self.lang]
+        if posf:
+            self.posfield = posf
+        else:
+            self.posfield = POS_FIELD[self.lang]
+        if reportf:
+            self.reportfield = reportf
+        else:
+            self.reportfield = REPORT_FIELD[self.lang]
+        self.forcetagger = forcetagger
+        if forcetagger:
+            self.wordarrayfield = 'ftword'
+        else:
+            self.wordarrayfield = 'word'
+            
+        # don't bother if there are no sentences in the JSON
+        if ("sentences" not in jsondoc) or (len(jsondoc["sentences"])==0):
+            return jsondoc
+        
+        sentences = jsondoc['sentences']
+        # sun SWS system
+        self.search_sentences(sentences, logger)
+
+        # reverse sort by score        
+        for sent in sentences:
+            if 'lms' in sent:
+                self.sort_lms_by_score(sent['lms'])
+        
+        return jsondoc
+    
+    def score_sbs_lms(self, sentences):
+        '''
+        Assigns a score to LMs found by the SBS so that they can be 
+        compared.  This is currently a fixed value plus a score
+        based on the target lemma ranking.
+        '''
+        global SBS_VALUE
+        for sent in sentences:
+            if 'lms' not in sent:
+                continue
+            for lm in sent['lms']:
+                lm['score'] = SBS_VALUE + self.get_tword_raw_score(lm['target']['lemma'])
+        
+    def sort_lms_by_score(self, lmlist):
+        lmlist.sort(key=lambda lm: lm['score'],reverse=True)
+
+    def prep_lang_specific_resources(self, lang):
+        global SBS_VALUE
+        self.lang = lang
+        self.tagger = self.taggers[self.lang]
+        self.twlist = self.twlist_by_lang[self.lang]
+        self.twlists = self.twlists_by_lang[self.lang]
+        self.swlists = self.swlists_by_lang[self.lang]
+        self.otwlist = self.old_twlist_by_lang[self.lang]
+        self.oswlist = self.old_swlist_by_lang[self.lang]
+        self.cxns = self.cxns_by_lang[self.lang]
+        self.cxn_rankings = self.cxn_ranks_by_lang[self.lang]
+        
+    def getlmkey(self,lm):
+        return '%s:%d:%s:%d' % (lm['target']['lemma'],lm['target']['start'],
+                                lm['source']['lemma'],lm['source']['start'])
+        
+    def delete_duplicate_sbs_lms(self, sentences):
+        lmindex = {}
+        for sent in sentences:
+            if "lms" not in sent:
+                continue
+            lms = sent["lms"]
+            for lm in lms:
+                lmkey= self.getlmkey(lm)
+                if lmkey in lmindex:
+                    # this lm is a duplicate, delete it
+                    lms.remove(lm)
+                    pstatus(u'Removing duplicate lm:{0}',lm["name"])
+                else:
+                    lmindex[lmkey] = {"sent": sent,"lm": lm }
+
+    def get_domained_wordlists(self, tfile, sfile):
+        '''
+        create wordlist list structures where ultimately each word
+        is represented by a pair (word, domain).
+        twlist is just a list of those pairs
+        swlists is a dictionary (by domain) of lists of those pairs
+        (so there is redundancy in swlists)
+        we also precompute regular expressions for searching
+        '''
+        twlist = []
+        twlists = {}
+        swlists = {}
+        # TARGET WORDS
+        with codecs.open(tfile,'r',encoding='utf-8') as f:
+            for line in f:
+                #print >> sys.stderr, "wl:", line
+                (word, domain) = line.strip().split('\t')
+                pcregexp = re.compile(ur'\b({0})\b'.format(self.get_pattern(word)),flags=re.U|re.I)
+                twlist.append((word,domain,pcregexp))
+                # create here too in case there are no words yet in the source list
+                if domain not in swlists:
+                    swlists[domain] = []
+                if domain not in twlists:
+                    twlists[domain] = []
+                twlists[domain].append((word,domain,pcregexp))
+                pstatus(u'Added Target Word {0} in Domain {1}', word, domain)
+        # SOURCE WORDS
+        with codecs.open(sfile,'r',encoding='utf-8') as f:
+            for line in f:
+                (word, domain) = line.strip().split('\t')
+                pcregexp = re.compile(ur'\b({0})\b'.format(self.get_pattern(word)),flags=re.U|re.I)
+                if domain not in swlists:
+                    swlists[domain] = []
+                swlists[domain].append((word,domain,pcregexp))
+                pstatus(u'Added Source Word {0} in Domain {1}',word,domain)
+        return (twlist, twlists, swlists)
+    
+    def get_cxns(self, cfile):
+        cxns = []
+        cxn_ranking = {}
+        rankables = {}
+        rcount = 0.0
+        with codecs.open(cfile,'r',encoding='utf-8') as f:
+            for line in f:
+                if not line:
+                    # skip blank lines
+                    continue
+                cxnspec = line.strip().split('\t')
+                if len(cxnspec) > 0:
+                    cxn = cxnspec[0].strip()
+                pstatus(u'Added cxn: {0}',cxn)
+                cxns.append(cxn)
+                # this is for automatic weight calculation based on position in the list
+                # we want to treat @T@ @S@ and @S@ @T@ as the same
+                rankable = cxn.replace('@S@','').replace('@T@','')
+                if rankable not in rankables:
+                    rankables[rankable] = rcount
+                    rcount += 1.0
+                # if the row in the cxn file specifies weights, read them
+                if len(cxnspec) > 1:
+                    weight = cxnspec[1].strip()
+                    if weight:
+                        cxn_ranking[cxn] = float(weight)
+        base = len(rankables) + 1.0
+        for cxn in cxns:
+            # use automatic weight if one wasn't given
+            if cxn not in cxn_ranking:
+                rankable = cxn.replace('@S@','').replace('@T@','')
+                cxn_ranking[cxn] = (base - rankables[rankable]) / base
+        return (cxns, cxn_ranking)
+        
+    
+    def get_wordlist(self, wlfile):
+        wlist = []
+        with codecs.open(wlfile,encoding='utf-8') as f:
+            for line in f:
+                w = line.strip().split('\t')[0].strip()
+                wlist.append(w)
+        return wlist
+    
+    def get_ranked_wordlist(self, wlfile):
+        rankedwl = {}
+        with codecs.open(wlfile,encoding='utf-8') as f:
+            lineno = 0
+            for line in f:
+                w = line.strip().split('\t')[0].strip()
+                rankedwl[w] = lineno
+                lineno += 1
+        return rankedwl
+    
+    def start_msg(self,msg):
+        if self.verbose:
+            self.stime = time.time()
+            print >> sys.stderr, msg
+    def end_msg(self,msg):
+        if self.verbose:
+            etime = time.time() - self.stime
+            print >> sys.stderr, msg, " elapsed time:",etime
+            
+    def search_sentences(self, sentences, logger=None):
+        """
+        Edits sentences structure in place
+        """
+        numfound = 0
+        if len(sentences) == 0:
+            return 0
+        
+        # check 1st sentence to see if it has word-level annotation
+        # if it does, then skip POS tagging / lemmatizing; assume
+        # that those tags are already present.
+        if ('word' not in sentences[0]) or self.forcetagger:
+            # tag all sentences at once
+            lemmatize_start_time = time.time()
+            self.lemmatize_sentences(sentences)
+            lemmatize_elapsed_time = time.time() - lemmatize_start_time
+            pstatus("Lemmatize time %fs" % (lemmatize_elapsed_time))
+
+        self.start_msg("Start CMS processing on %d sentences"%(len(sentences)))
+        search_start_time = time.time()
+        sentno = 0
+        lastTestItemId = 'NoPrevious'
+        for sent in sentences:
+            if logger:
+                testItemId = logger.getTestItemId(sent['id'])
+                if lastTestItemId == 'NoPrevious':
+                    logger.start(testItemId)
+                elif testItemId != lastTestItemId:
+                    logger.end(lastTestItemId)
+                    logger.start(testItemId)
+                lastTestItemId = testItemId
+            # don't bother with empty sentences
+            if sent['text']:
+                pstatus("===================================================")
+                pstatus(u'For sentence ({0})',sent['text'])
+                if self.verbose:
+                    sentno += 1
+                    if sentno % 100 == 0:
+                        print >> sys.stderr, "...",sentno
+                if self.search_sentence_lemma(sent):
+                    numfound += 1
+        if logger:
+            if lastTestItemId != 'NoPrevious':
+                logger.end(lastTestItemId)
+        search_elapsed_time = time.time() - search_start_time
+        pstatus("Search time %fs" % (search_elapsed_time))
+        self.end_msg("Done CMS processing.")
+        return numfound
+    
+    def lemmatize_sentences(self, sentences):
+        if self.lang == 'fa':
+            pt = PersianPOSTagger()
+            for sent in sentences:
+                sent['ctext'] = pt.cleanText(sent['text'])
+                tags = pt.run_hmm_tagger(sent['ctext'])
+                #print 'sentence %d: %s\n%s' % (sidx, sent['text'],pprint.pformat(tags))
+                sent['word'] = pt.getWordList(sent['text'], sent['ctext'], tags,
+                                              'pos', 'lem')
+        else:
+            self.tagger.cleanText(sentences)
+            self.tagger.run(sentences)
+            
+    def process_lemmatized_sentence(self, sentence, tagged):
+        '''
+        post-process lemmatized sentence
+        '''
+        # step through tagged output:
+        # - find out corresponding character positions of words in the sentences
+        # - use wordform where no lemma could be found
+        sentpos = 0
+        tsent = []
+        otext = sentence['text']
+        # don't process empty sentences
+        if not otext:
+            return
+        try:
+            for tagset in tagged:
+                if len(tagset)==3:
+                    (word,pos,lemma) = tagset
+                elif len(tagset)==1:
+                    word=tagset[0]
+                    pos='X'
+                    lemma=tagset[0]
+                else:
+                    continue
+                if word=='\'' or word=='"':
+                    # just ignore ' and " since we do substitution on it
+                    tword = {'form':word,
+                             'pos':pos,
+                             'lem':lemma,
+                             'start':None,
+                             'end':None}
+                else:
+                    startindex = otext.find(word,sentpos)
+                    endindex = startindex + len(word)
+                    sentpos = endindex
+                    if lemma=='<unknown>':
+                        lemma = word
+                    if lemma=='@card@':
+                        lemma = word
+                    if self.lang=='es':
+                        if (word==u'impuestos') and (lemma==u'imponer'):
+                            lemma=u'impuesto'
+                            pos=u'NC'
+                    tword = {'form':word,
+                             'pos':pos,
+                             'lem':lemma,
+                             'start':startindex,
+                             'end':endindex}
+                tsent.append(tword)
+        except ValueError:
+            print >> sys.stderr, "Error processing tags:",tagged
+            raise
+        sentence[self.wordarrayfield] = tsent
+    
+    def search_sentence_lemma(self, sentence):
+        '''
+        This is the main matching function that given a sentence searches
+        for target / source /cxn matches using regular expressions
+        '''
+        global GEI
+        # create match string where each word consists of lemma=pos=windex
+        # this is the string that regexp matching will apply to
+        rcode = 0
+        lposwords = []
+        index = -1
+        # whether to do matching on the lemma or directly on wordform is language
+        # specific
+        for tset in sentence[self.wordarrayfield]:
+            index += 1
+            try:
+                lposword = u'{0}={1}={2}'.format(tset[self.matchfield],tset[self.posfield],str(index))
+            except KeyError:
+                if self.posfield in tset:
+                    postag = tset[self.posfield]
+                else:
+                    postag = 'X'
+                if self.matchfield in tset:
+                    matchword = tset[self.matchfield]
+                else:
+                    matchword = tset['form']
+                lposword = u'{0}={1}={2}'.format(matchword,postag,str(index))
+            lposwords.append(lposword)
+        msent = u' '.join(lposwords)
+        sentence['mtext'] = msent
+        pstatus(u'Match sentence: {0}',msent)
+                
+        # do target list matching
+        lm_matches = []
+        tmatches = []
+        tmatchdupchecker = []
+        for (tw, twdomain, twregexp) in self.twlist:
+            try:
+                tms = twregexp.findall(msent)
+                for tm in tms:
+                    if type(tm) is tuple:
+                        tmatch = tm[0]
+                    else:
+                        tmatch = tm
+                    if tmatch:
+                        #pstatus(u'tmatch: {0}'.format(tmatch))
+                        # checks to see if tmatch is a substring of any previous tmatch
+                        for (pasttmatch,pastdomain) in tmatchdupchecker:
+                            if (re.search(u'\\b{0}\\b'.format(tmatch.replace(u'$',u'\\$')),
+                                          pasttmatch,re.U)) and (pastdomain==twdomain):
+                                #print >> sys.stderr, "Skipping T {0} because of {1}".format(tmatch,pasttmatch)
+                                tmatch = None
+                                break
+                    if tmatch:
+                        tmatchdupchecker.append((tmatch, twdomain))
+                        tmatches.append((tmatch, tw, twdomain))
+                        #pstatus(u'Tmatch: {0} from Tword: {1}',tmatch,tw)
+            except re.error:
+                print >> sys.stderr, u'Invalid target regex: {0} in {1}'.format(tw,twdomain)
+        for (tmatch, tw, twdomain) in tmatches:
+            #pstatus(u'Processing tmatch: {0}',tmatch)
+            # this target pattern matched!
+            smatches = []
+            swsearchlist = list(self.swlists[twdomain])
+            pstatus(u'Domain of target match {0} is {1}',tmatch,twdomain)
+            if (twdomain != GEI) and (GEI in self.swlists):
+                swsearchlist += self.swlists[GEI]
+
+            smatchdupchecker = []            
+            for (sw, swdomain, swregexp) in swsearchlist:
+                #pstatus(u'word: {0}',sw)
+                try:
+                    sms = swregexp.findall(msent)
+                    for sm in sms:
+                        if type(sm) is tuple:
+                            smatch = sm[0]
+                        elif sm:
+                            smatch = sm
+                        if smatch:
+                            # checks to see if tmatch is a substring of any previous tmatch
+                            for pastsmatch in smatchdupchecker:
+                                if re.search(u'\\b{0}\\b'.format(smatch.replace(u'$',u'\\$')),
+                                             pastsmatch,re.U):
+                                    #print >> sys.stderr, "Skipping S {0} because of {1}".format(smatch,pastsmatch)
+                                    smatch = None
+                                    break
+                        if smatch:
+                            smatchdupchecker.append(smatch)
+                            smatches.append((smatch, sw, swdomain))
+                            #pstatus(u'Smatch: {0} from pattern {1}',smatch,sw)
+                except re.error:
+                    print >> sys.stderr, u'Invalid source regex: {0} in {1}'.format(sw,swdomain)
+            for (smatch, sw, swdomain) in smatches:
+                #pstatus(u'Processing smatch: {0}',smatch)
+                # now we need to see if it is licensed by a construction
+                for cxn in self.cxns:
+                    #pstatus(u'Cxn: {0}',cxn)
+                    # turn the cxn into a pattern
+                    cpattern = self.get_pattern(cxn)
+                    # is target compatible w tmatch?
+                    cpatternparts = cpattern.split()
+                    tcheck = False
+                    scheck = False
+                    cxnpatternparts = []
+                    for cpatpart in cpatternparts:
+                        if cpatpart.startswith('@T@='):
+                            # this is the target pattern
+                            # add it and set tcheck if it doesn't care about POS
+                            # OR if the POS matches that of tmatch
+                            if (cpatpart==u'@T@={0}=\\d+'.format(ANYP)) or (re.match(ANYW+cpatpart[3:],tmatch,re.I|re.U)):
+                                cxnpatternparts.append(tmatch)
+                                tcheck = True
+                                continue
+                        elif cpatpart.startswith('@S@='):
+                            # this is the source pattern
+                            # see tcheck comment
+                            if (cpatpart==u'@S@={0}=\\d+'.format(ANYP)) or (re.match(ANYW+cpatpart[3:],smatch,re.I|re.U)):
+                                cxnpatternparts.append(smatch)
+                                scheck = True
+                        elif cpatpart.startswith('@W@') or cpatpart.startswith('@WNC@'):
+                            (wordspec,remainder) = cpatpart.split('=',1)
+                            if ':' in wordspec:
+                                numwords = int(wordspec.split(':')[1]) - 1
+                            else:
+                                numwords = 1
+                            if numwords < 1:
+                                numwords = 1
+                            if wordspec.startswith('@WNC@'):
+                                wpat = ANYWNC+u'='+remainder
+                            else:
+                                wpat = ANYW+u'='+remainder
+                            wordspattern = wpat+u'( '+wpat+u'){0,'+str(numwords)+u'}'
+                            cxnpatternparts.append(wordspattern)
+                        else:
+                            cxnpatternparts.append(cpatpart)
+                    if tcheck and scheck:
+                        # both target and source check out, run the pattern match
+                        # and escape $'s
+                        cxnpattern = u' '.join(cxnpatternparts).replace(u'$',u'\\$')
+                        #pstatus(u'Cxnpattern: {0}',cxnpattern)
+                        try:
+                            if re.search(u'\\b{0}\\b'.format(cxnpattern), msent,re.I|re.U):
+                                # Now this is an LM candidate, add to list
+                                lm_matches.append({'target':tmatch,
+                                                   'source':smatch,
+                                                   'cxn':cxn,
+                                                   'targetw':tw,
+                                                   'sourcew':sw,
+                                                   'targetwdomain':twdomain,
+                                                   'sourcewdomain':swdomain})
+                                # break out of cxn loop since match was found
+                                break
+                        except re.error:
+                            print >> sys.stderr, u'Invalid cxn regex: {0}'.format(cxnpattern)
+        # now need to retrieve spans from the sentence text
+        if lm_matches:
+            if 'lms' not in sentence:
+                sentence['lms'] = []
+            rcode = 1
+        dupe_lm_checker = set()
+        for lm_match in lm_matches:
+            lm = self.convert_lmmatch_to_lm(lm_match, sentence)
+            lmcompkey = self.gen_comparison_key(lm)
+            if lmcompkey in dupe_lm_checker:
+                continue
+            dupe_lm_checker.add(lmcompkey)
+            pstatus(u'Found LM: {0}',lm['name'])
+            sentence['lms'].append(lm)
+        return rcode
+    
+    def convert_lmmatch_to_lm(self, lm_match, sentence):
+        # deal with target
+        target = self.match_to_ts_elem(sentence, lm_match, 'target')
+        source = self.match_to_ts_elem(sentence, lm_match, 'source')
+        lm = {}
+        #print "mtext;",sentence['mtext']
+        #print "lm_match:",lm_match
+        #print "target:",target
+        #print "source:",source
+        lm['name'] = u'{0} {1}'.format(target['form'],source['form'])
+        lm['target'] = target
+        lm['source'] = source
+        lm['seed'] = u'None'
+        lm['cxn'] = lm_match['cxn']
+        lm['score'] = self.get_sws_lm_score(lm)
+        lm['extractor'] = 'SCMS'
+        return lm
+    
+    def gen_comparison_key(self, lm):
+        key = "%s %d %d %d %d %s" % (lm['name'],
+                                     lm['target']['start'],lm['target']['end'],
+                                     lm['target']['start'],lm['target']['end'],
+                                     lm['cxn'])
+        return key
+
+    def match_to_ts_elem(self, sentence, lmmatch, type):
+        '''
+        given a match dictionary structure, translates it into
+        a target/source json struction
+        '''
+        start = 9999999
+        end = 0
+        lemmalist = []
+        # compute the start and end positions of the span
+        for tpiece in lmmatch[type].split():
+            (nlemma,pos,index) = tpiece.split('=')
+            tset = sentence[self.wordarrayfield][int(index)]
+            lemmalist.append(tset[self.reportfield])
+            if tset['start'] < start:
+                start = tset['start']
+            if tset['end'] > end:
+                end = tset['end']
+        ts_elem = {}
+        ts_elem['lemma'] = u' '.join(lemmalist)
+        ts_elem['form'] = sentence['text'][start:end]
+        ts_elem['start'] = start
+        ts_elem['end'] = end
+        ts_elem['rel'] = "None"
+        ts_elem['mword'] = lmmatch[type+'w']
+        ts_elem['wdomain'] = lmmatch[type+'wdomain']
+        return ts_elem
+    
+    def rank_lms_of_sentence(self,lmlist):
+        '''
+        re-orders the lms in the lmlist according to decreasing rank
+        '''
+        index = -1
+        for lm in lmlist:
+            index += 1
+            
+    def get_sws_lm_score(self, lm):
+        score = self.get_cxn_score(lm['cxn']) + \
+            self.get_domain_score(lm['target']['wdomain'], lm['target']['wdomain']) + \
+            self.get_tword_score(lm['target']['mword'], lm['target']['wdomain']) + \
+            self.get_sword_score(lm['source']['mword'], lm['source']['wdomain'])
+        return score
+        
+    def get_cxn_score(self, cxn):
+        global CXN_VALUE
+        #print "searching for cxn",cxn," in ",self.cxn_rankings
+        if cxn in self.cxn_rankings:
+            score = self.cxn_rankings[cxn] * CXN_VALUE
+            #print "cxn score:", score
+            return score
+        else:
+            return 0.0
+    
+    def get_tword_score(self, tw, domain):
+        global TWORD_VALUE
+        #print "tw is ",tw,"domain is",domain
+        try:
+            length = float(len(self.twlists[domain]))
+            position = float(self.twlists[domain].index((tw,domain)))
+            #print "position",position,"length",length
+            score = ((length - position) / length) * TWORD_VALUE
+            #print "tword score:",score
+            return score
+        except:
+            return 0.0
+        return 0.0
+    
+    def get_tword_raw_score(self, tw):
+        global TWORD_RAW_VALUE
+        twordrank = self.tword_rank_by_lang[self.lang]
+        if tw in twordrank:
+            base = float(len(twordrank.keys()) + 1)
+            score = ((base - float(twordrank[tw])) / base) * TWORD_RAW_VALUE
+            #print "tword raw score:",score
+            return score
+        else:
+            return 0.0
+    
+    def get_sword_score(self, sw, domain):
+        global SWORD_VALUE
+        try:
+            length = float(len(self.swlists[domain]) + 1)
+            position = float(self.swlists[domain].index((sw,domain)))
+            score = ((length - position) / length) * SWORD_VALUE
+            #print "sword score:",score
+            return score
+        except:
+            return 0.0
+        return 0.0
+    
+    def get_domain_score(self, tdomain, sdomain):
+        global DOMAIN_VALUE
+        #print "comparing tdomain ",tdomain,' and sdomain ',sdomain
+        val = 0.0
+        if tdomain == sdomain:
+            val = 1.0
+            if (tdomain == GEI) or tdomain.startswith(u'GENERAL'):
+                val = 0.33
+        else:
+            val = 0.66
+        score = val * DOMAIN_VALUE
+        #print "domain score:",score
+        return score
+    
+    def get_pattern(self, wlword):
+        '''
+        given a wordlist word (either target or source), process it is regex
+        matching by adding a pos and word index component
+        '''
+        global ANYW, ANYP
+        wlparts = wlword.split()
+        pwlparts = []
+        # this loop is because each wordlist word can actually be a multiword
+        for w in wlparts:
+            # escape $ signs
+            w = w.strip().replace(u'$',u'\\$')
+            processed_w = w
+            # do some preprocessing
+            if self.lang=='en':
+                if w.endswith('.v'):
+                    w = w[:-2]+u'=V\\w*'
+                elif w.endswith('.n'):
+                    w = w[:-2]+u'=N\\w*'
+                elif w.endswith('.adv'):
+                    w = w[:-4]+u'=RB\\w*'
+                elif w.endswith('.a'):
+                    w = w[:-2]+u'=J\\w*'
+            if self.lang=='es':
+                if w.endswith('. v') or w.endswith('. V'):
+                    w = w[:-3]+u'=V\\w*'
+                elif w.endswith('.V pron'):
+                    w = w[:-7]+u'=V\\w*'
+                elif w.endswith('. n') or w.endswith('. N'):
+                    w = w[:-3]+u'=N\\w*'
+                
+            if '=' in w:
+                # in this case, a pos is specified.  But it is possible that
+                # only a POS is specified, so fill in whatever is missing with
+                # wildcards
+                (lemma, pos) = w.split('=')
+                if not lemma:
+                    lemma = ANYW
+                if not pos:
+                    pos = ANYP
+                processed_w = u'{0}={1}=\\d+'.format(lemma,pos)
+            else:
+                # assume only lemma is given
+                # handle the (word)? case
+                if w.startswith('(') and w.endswith(')?'):
+                    processed_w = u'({0}={1}=\\d+)?'.format(w[1:-2],ANYP)
+                else:
+                    processed_w = u'{0}={1}=\\d+'.format(w,ANYP)
+            pwlparts.append(processed_w)
+        return u' '.join(pwlparts)
+    
+    def search_sentence(self, sentence, twlist, swlist):
+        text = sentence['text']
+        targets = []
+        sources = []
+        for tw in twlist:
+            if (len(tw) < 4) or (u'|' in tw):
+                pattern = u'\\b{0}\\b'.format(tw)
+            else:
+                pattern = u'\\b{0}\\w*\\b'.format(tw)
+            m = re.search(pattern,text,re.U|re.I)
+            if m:
+                target = {}
+                target['lemma'] = m.group(0)
+                target['start'] = m.start(0)
+                target['end'] = m.end(0)
+                target['rel'] = "None"
+                targets.append(target)
+        for sw in swlist:
+            if (len(sw) < 4) or (u'|' in sw):
+                pattern = u'\\b{0}\\b'.format(sw)
+            else:
+                pattern = u'\\b{0}\\w*\\b'.format(sw)
+            m = re.search(pattern,text,re.U|re.I)
+            if m:
+                source = {}
+                source['lemma'] = m.group(0)
+                source['start'] = m.start(0)
+                source['end'] = m.end(0)
+                source['rel'] = "None"
+                sources.append(source)
+        if (sources) and (targets):
+            pstatus(u'Targets: {0}', u', '.join(map(lambda x:x['lemma'],targets)))
+            pstatus(u'Sources: {0}', u', '.join(map(lambda x:x['lemma'],sources)))
+            target = targets[0]
+            source = sources[0]
+            lm = {"name": u'{0} {1}'.format(source['lemma'],target['lemma']),
+                  "target" : target,
+                  "source" : source,
+                  "seed": "None"}
+            if 'lms' not in sentence:
+                sentence['lms'] = []
+            sentence['lms'].append(lm)
+            pstatus(u'Adding LM ({0})',lm["name"])
+            # return success code
+            return 1
+        return 0
+    
+def pstatus(msgbase, *args):
+    global VERBOSE
+    if VERBOSE:
+        print msgbase.format(*args)
+
+def main():
+    global VERBOSE, EXDIR
+    # parse command line
+    parser = argparse.ArgumentParser(
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+        description="Post processes the JSON output of the extractor.")
+    parser.add_argument("inputfile",help="Input file (JSON)")
+    parser.add_argument("outputfile",help="Output file (JSON")
+    parser.add_argument("-v","--verbose",help="Display verbose messages",
+                        action="store_true",dest="verbose")
+    parser.add_argument("-w","--wordlistdir",
+                        help="Override the default wordlists directory",
+                        default=None)
+    parser.add_argument("-c","--cxndir",
+                        help="Override the default cxn lists directory",
+                        default=None)
+    parser.add_argument("-e","--extractorbase",
+                        help="Location of extraction resources",
+                        dest="extdir",
+                        default=EXDIR)
+    cmdline = parser.parse_args()
+    VERBOSE = cmdline.verbose
+    # load up json, process, then dump json
+    idoc = json.load(file(cmdline.inputfile), encoding="UTF-8")
+    processor = SimpleConstructionMatchingSystem(cmdline.extdir,cmdline.wordlistdir,cmdline.cxndir)
+    odoc = processor.post_process(idoc)
+    ofile = codecs.open(cmdline.outputfile, "w", encoding="UTF-8")
+    json.dump(odoc, ofile, ensure_ascii=False, indent=2, encoding='UTF-8')
+    return 0
+
+if __name__ == '__main__':
+    sys.exit(main())

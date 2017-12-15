@@ -1,0 +1,9 @@
+../bijankhan/Result_bijankhan_001.json.gz
+../bijankhan/Result_bijankhan_002.json.gz
+../bijankhan/Result_bijankhan_003.json.gz
+../bijankhan/Result_bijankhan_004.json.gz
+../bijankhan/Result_bijankhan_005.json.gz
+../bijankhan/Result_bijankhan_006.json.gz
+../bijankhan/Result_bijankhan_007.json.gz
+../bijankhan/Result_bijankhan_008.json.gz
+../bijankhan/Result_bijankhan_009.json.gz

@@ -1,0 +1,52 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!-- 
+Ant build file for pyscripts subtree
+-->
+<project name = "pyscripts" default = "install" basedir = ".">
+
+  <property environment="env"/>
+  <property name="root.dir" location=".."/>
+  <property name="root.dist.dir" location="${root.dir}/dist"/>
+  <property name="root.dist.lib.dir" location="${root.dir}/dist/lib/python"/>
+  <property name="root.dist.bin.dir" location="${root.dir}/dist/bin"/>
+  <property name="root.dist.etc.dir" location="${root.dir}/dist/etc"/>
+
+  <property name="src.dir" location="./src"/>
+  <property name="bin.dir" location="./bin"/>
+  <property name="etc.dir" location="./etc"/>
+  <property name="test.dir" location="./test"/>
+
+
+  <target name="install"
+          description="Installs python scripts into root-level dist directory">
+    <!-- copy contents of src to dist/lib/python -->
+    <mkdir dir="${root.dist.lib.dir}"/>
+    <copy todir="${root.dist.lib.dir}">
+      <fileset dir="${src.dir}">
+        <exclude name="**/test/"/>
+      </fileset>
+    </copy>
+    <!-- copy bin and make executable -->
+    <mkdir dir="${root.dist.bin.dir}"/>
+    <copy todir="${root.dist.bin.dir}">
+      <fileset dir="${bin.dir}"/>
+    </copy>
+    <chmod dir="${root.dist.bin.dir}" perm="+x" includes="**"/>
+    <!-- copy etc -->
+    <mkdir dir="${root.dist.etc.dir}"/>
+    <copy todir="${root.dist.etc.dir}">
+      <fileset dir="${etc.dir}"/>
+    </copy>
+
+  </target>
+  <target name="clean"
+          description="Clean out generated files">
+    <delete>
+      <fileset dir=".">
+        <include name="**/*.pyc"/>
+        <include name="**/*.pyo"/>
+      </fileset>
+    </delete>
+  </target>
+
+</project>

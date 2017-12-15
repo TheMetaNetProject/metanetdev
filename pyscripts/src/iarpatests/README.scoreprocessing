@@ -1,0 +1,35 @@
+Score processing v.1
+I. Analyze data
+1. Use "xlsx2csv.py" on the excel spreadsheet from the government as:
+./xlsx2csv.py -i input.xlsx output.csv
+2. Use "compare.py" on the csv from 1 and our answers in xml format:
+./compare.py -g output.csv -i icsi.xml -o outputfile.csv
+3. To see recall and precision run "./analysis.py"
+./analysis.py outputfile.csv (can process an arbitrary number of csv files at once)
+3.a The output from compare.py should probably be analyzed by people and corrected as per instructions in "II" of this document.  If converted to excel (as will happen if using google drive) remember to convert the output back to csv.
+
+II. To analyze the score aligned spreadsheet please do the following:
+
+1. In columns C and D rows (ICSI Target ID and ICSI Source ID) that have a value of 0 indicate that ICSI didn't produce a guess in that column; skip these rows
+2. If columns C and D do contain non-0 results, please check make sure that K, L, and M (Target Match, Source Match, Both Match) correctly represent the data by:
+	 A. Verifying that if F(Gov Target) and I(ICSI Target) have a logically identical value, the score in K(Target Match) is 1.  
+	 B. If the score is incorrect in the spreadsheet, please update to 1 or 0 as is required.  
+	 C. If both K(Target Match) and L(Source Match) are valued at 1, then please update M(Both Match) to one, other wise M(Both Match) should be 0.
+3. Columns E(Gov Duplicated) and H(ICSI Duplicated) will contain a value of "y" if the alignment system needed to reproduce the row due to the other party (ICSI or Government) having multiple answers for that sentence.
+   Please carefully determine which of the rows best aligns with the other parties answers and remove the "y" from that row only, leaving the other as is.  For example:
+
+7	1	en007	1		poverty	dents	y	poverty	cycle	1	0	0	This is especially critical, as we look beyond the challenges of fluctuating monthly job reports and miniscule dents in child poverty and instead, build the collective will to address the structural inequities that have perpetuated the cycle of poverty for the past 50 years.
+7	1	en007	1		poverty	cycle	y	poverty	cycle	1	1	1	This is especially critical, as we look beyond the challenges of fluctuating monthly job reports and miniscule dents in child poverty and instead, build the collective will to address the structural inequities that have perpetuated the cycle of poverty for the past 50 years.
+
+   In this we see that the government has produced two answers T=Poverty S=Dents, and T=Poverty S=Cycle and ICSI has produced one T=Poverty S=Cycle.  To correct here, we would remove the "y" in the second of these two rows.  
+   It is possible for there to be two answers from both ICSI and the Government as in:
+
+45	6	en045	6	y	taxpayers	bracing	y	taxpayer	brace	1	0	0	Washington Governor Jay Inslee is bracing taxpayers for an onslaught of taxes next year.
+45	6	en045	6	y	taxpayers	bracing	y	tax	onslaught	1	0	0	Washington Governor Jay Inslee is bracing taxpayers for an onslaught of taxes next year.
+45	6	en045	6	y	taxes	onslaught	y	taxpayer	brace	0	0	0	Washington Governor Jay Inslee is bracing taxpayers for an onslaught of taxes next year.
+45	6	en045	6	y	taxes	onslaught	y	tax	onslaught	1	1	1	Washington Governor Jay Inslee is bracing taxpayers for an onslaught of taxes next year.
+
+   In this example we would remove both "y" entries from row 1 and row 4.  (Also note, in this example we would update the matches in the first column to 1 1 1.)
+   It isn't required to update match information for rows that are duplicate entries.
+
+

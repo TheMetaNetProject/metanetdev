@@ -1,0 +1,9 @@
+bin/
+*~
+*.log
+*.project
+.classpath
+.settings/
+
+
+EnglishMetaphors.owl

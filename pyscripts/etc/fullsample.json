@@ -1,0 +1,137 @@
+{
+    "encoding": "UTF-8",
+    "jsonschema": "https://metaphor.icsi.berkeley.edu/metaphor/ixjschema.json",
+    "lang": "en",
+    "documents": [
+        {
+            "corpus": "CNC",
+            "name": "CNC_A00",
+            "provenance": "CNC_A00",
+            "description": "A document in the CNC",
+            "lang": "en",
+            "size": 10000,
+            "type": "news"
+        },
+        {
+            "corpus": "CNC",
+            "name": "CNC_A01",
+            "provenance": "CNC_A01",
+            "description": "Another document in the CNC",
+            "lang": "en",
+            "size": 10001,
+            "type": "literature"
+        }
+   ],
+   "sentences": [
+        {
+            "id": "CNC_A00:1",
+            "idx": 0,
+            "text": "Tackling poverty is important.",
+            "mtext": "Tackling=tackle=VBG=0 poverty=poverty=NN=1 is=be=VBZ=2 important=important=JJ=3 .=.=SENT=4",
+            "word" : [
+                {
+                    "idx": 0,
+                    "n": "1",
+                    "form": "Tackling",
+                    "lem" : "tackle",
+                    "pos" : "VBG",
+                    "start": 0,
+                    "end": 8
+                },
+                {
+                    "idx": 1,
+                    "n": "2",
+                    "form": "poverty",
+                    "lem" : "poverty",
+                    "pos" : "NN",
+                    "start": 10,
+                    "end": 17
+                },
+                {
+                    "idx": 2,
+                    "n": "3",
+                    "form": "is",
+                    "lem" : "be",
+                    "pos" : "VBZ",
+                    "start": 19,
+                    "end": 21
+                },
+                {
+                    "idx": 3,
+                    "n": "4",
+                    "form": "important",
+                    "lem" : "important",
+                    "pos" : "JJ",
+                    "start": 23,
+                    "end": 31
+                },
+                {
+                    "idx": 4,
+                    "n": "5",
+                    "form": ".",
+                    "lem" : ".",
+                    "pos" : "SENT",
+                    "start": 33,
+                    "end": 34
+                }
+            ],
+            "dparse": [
+                {
+                    "grtype": "ncsubj",
+                    "head": "3",
+                    "dep": "2",
+                    "initgrtype": "_"
+                },
+                {
+                    "grtype": "xcomp",
+                    "head": "3",
+                    "dep": "4"
+                },
+                {
+                    "grtype": "ncsubj",
+                    "head": "1",
+                    "dep": "2",
+                    "initgrtype": "_"
+                },
+                {
+                    "grtype": "ncmod",
+                    "head": "2",
+                    "dep": "1"
+                }                    
+            ],
+            "lms": [
+                {
+                    "name": "poverty tackle",
+                    "extractor": "CMS",
+                    "cxn": "@S@ @T@",
+                    "score": 1001000.0,
+                    "seed": "None",
+                    "affect": -2,
+                    "target": {
+                        "form": "poverty",
+                        "lemma": "poverty",
+                        "mword": "poverty",
+                        "rel": "None",
+                        "start": 10,
+                        "end": 17,
+                        "wdomain": "POVERTY",
+                        "schema": "Poverty",
+                        "concept": "POVERTY"
+                    },
+                    "source": {
+                        "form": "Tackling",
+                        "lemma": "tackle",
+                        "mword": "tackl(e|es|ed|ing)",
+                        "rel": "None",
+                        "start": 0,
+                        "end": 8,
+                        "wdomain": "POVERTY",
+                        "schema": "Motion impediments",
+                        "concept": "PHYSICAL_HARM",
+                        "dimension": "PHYSICAL_HARM.Restraint"
+                    }
+                }
+            ]
+        }
+    ]
+}

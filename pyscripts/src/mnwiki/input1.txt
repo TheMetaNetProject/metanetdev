@@ -1,0 +1,15 @@
+{{Linguistic metaphor
+|Type=extracted
+|Seed=Linguistic metaphor:Confront problem
+|Source=address.v
+|Target=danger.n
+|Examples={{Example
+|Example.Text=The contemporary Soviet emphasis, therefore, is on more pragmatic, piecemeal negotiations on the Gulf and Indian Ocean which address the immediate dangers which the increased naval presence of the superpowers in this region entail.
+|Example.Annotation=address.v=pred(Source),danger.n=dobj(Target)
+|Example.Provenance=BNC
+|Example.Language=English
+}}
+|Comments=
+|Entered by=Metabot
+|Status=auto imported
+}}

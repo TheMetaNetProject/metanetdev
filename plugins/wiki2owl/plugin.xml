@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension id="menu.wikisubmenu"
+   		point="org.protege.editor.core.application.EditorKitMenuAction">
+   		<name value="Open from Metaphor Wiki"/>
+   		<toolTip value="Load an ontology from metanet wikis."/>
+   		<path value="org.protege.editor.core.application.menu.FileMenu/SlotAA-ZZ"/>
+   		<editorKitId value="OWLEditorKit"/>
+   </extension>
+   <extension
+   		id="loadenglishwiki"
+        point="org.protege.editor.core.application.EditorKitMenuAction">
+      <name value="English Wiki"/>
+      <path value="edu.berkeley.icsi.metanet.wiki2owl.menu.wikisubmenu/SlotA-A"/>
+      <toolTip value="Load metaphors and schemas from English wiki"/>
+      <class value="edu.berkeley.icsi.metanet.wiki2owl.LoadFromEnglishWiki"/>
+      <editorKitId value="any"/>
+   </extension>
+   <extension
+   		id="loadpersianwiki"
+        point="org.protege.editor.core.application.EditorKitMenuAction">
+      <name value="Persian Wiki"/>
+      <path value="edu.berkeley.icsi.metanet.wiki2owl.menu.wikisubmenu/SlotA-B"/>
+      <toolTip value="Load metaphors and schemas from Persian wiki"/>
+      <class value="edu.berkeley.icsi.metanet.wiki2owl.LoadFromPersianWiki"/>
+      <editorKitId value="any"/>
+   </extension>
+   <extension
+   		id="loadspanishwiki"
+        point="org.protege.editor.core.application.EditorKitMenuAction">
+      <name value="Spanish Wiki"/>
+      <path value="edu.berkeley.icsi.metanet.wiki2owl.menu.wikisubmenu/SlotA-C"/>
+      <toolTip value="Load metaphors and schemas from Spanish wiki"/>
+      <class value="edu.berkeley.icsi.metanet.wiki2owl.LoadFromSpanishWiki"/>
+      <editorKitId value="any"/>
+   </extension>
+   <extension
+   		id="loadrussianwiki"
+        point="org.protege.editor.core.application.EditorKitMenuAction">
+      <name value="Russian Wiki"/>
+      <path value="edu.berkeley.icsi.metanet.wiki2owl.menu.wikisubmenu/SlotA-D"/>
+      <toolTip value="Load metaphors and schemas from Russian wiki"/>
+      <class value="edu.berkeley.icsi.metanet.wiki2owl.LoadFromRussianWiki"/>
+      <editorKitId value="any"/>
+   </extension>
+   <extension
+   		id="loadtestwiki"
+        point="org.protege.editor.core.application.EditorKitMenuAction">
+      <name value="Test Wiki"/>
+      <path value="edu.berkeley.icsi.metanet.wiki2owl.menu.wikisubmenu/SlotA-E"/>
+      <toolTip value="Load metaphors and schemas from Test wiki"/>
+      <class value="edu.berkeley.icsi.metanet.wiki2owl.LoadFromTestWiki"/>
+      <editorKitId value="any"/>
+   </extension>
+</plugin>

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/repos/protege/!svn/ver/23187/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/names
+END
+NamingUtilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/repos/protege/!svn/ver/23187/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/names/NamingUtilities.java
+END
+IriNames.java
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/repos/protege/!svn/ver/22522/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/names/IriNames.java
+END
+CodeGenerationNames.java
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/repos/protege/!svn/ver/22522/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/names/CodeGenerationNames.java
+END
+AbstractCodeGenerationNames.java
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/repos/protege/!svn/ver/22514/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/java/org/protege/owl/codegeneration/names/AbstractCodeGenerationNames.java
+END

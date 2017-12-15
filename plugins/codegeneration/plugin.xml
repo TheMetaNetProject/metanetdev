@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+   
+    <extension id="menu.code.generateowlcode"
+               point="org.protege.editor.core.application.EditorKitMenuAction">
+        <name value="Generate Protege-OWL Java Code"/>
+        <class value="org.protege.editor.owl.codegeneration.GenerateProtegeOwlJavaCodeAction"/>
+        <toolTip value="Generate Protege-OWL Java Code"/>
+        <path value="org.protege.editor.owl.menu.tools/SlotH-A"/>
+        <editorKitId value="OWLEditorKit"/>
+    </extension>
+    
+</plugin>

@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:metam="http://www.iarpa.gov/Metaphor/MappingSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.iarpa.gov/Metaphor/MappingSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0" xml:lang="en">
+	<xs:annotation>
+		<xs:documentation>
+			IARPA Metaphor Program
+			XSD for the LM Mapping Test in OY2.
+			Primary Author: Richard Tong (IARPA-SETA)
+			Original Publication Date: 2014-05-03
+			Current Date: 2014-05-03
+			Current Version: 2.0
+		</xs:documentation>
+		<xs:documentation>
+			Based on the OY1 m4mapping schema, but Test Items now consist of multiple LM sentences and results can nominate up two Source concepts.
+		</xs:documentation>
+		<xs:documentation>
+			Change Log (from 2.0):
+			
+		</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="SourceType">
+		<xs:annotation>
+			<xs:documentation>Type that defines a predefined CM Source concept.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="id" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>ID of the Source Concept. Assigned by the Govt.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Name (in English) of the Source Concept. Specified by the Govt.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="SourceListType">
+		<xs:annotation>
+			<xs:documentation>Type that defines a list of Source concepts.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Source" type="metam:SourceType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A Source concept. There should be #count of them.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="count" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>The number of Source concepts in the list. Including the DEFAULT.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="TargetType">
+		<xs:annotation>
+			<xs:documentation>Type that defines a predefined CM Target concept.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="id" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>ID of the Target Concept. Assigned by the Govt.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Name (in English) of the Target Concept. Specified by the Govt.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="TargetListType">
+		<xs:annotation>
+			<xs:documentation>Type that defines a list of Target concepts.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Target" type="metam:TargetType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A Target concept. There should be #count of them.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="count" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>The number of Target concepts in the list. Including the DEFAULT.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="LogEntryType">
+		<xs:annotation>
+			<xs:documentation>Type that defines a log entry.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="StartTime" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Time at which processing of the Test Item started.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EndTime" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Time at which processing of the Test Item ended.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>ID of the Test Item for which this is the log entry.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="LogFileType">
+		<xs:annotation>
+			<xs:documentation>Type that defines a complete log file.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TestStartTime" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Timestamp for the overall test start.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TestEndTime" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Timestamp for the overall test end.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="testId" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>ID of the test set for which these are the log entries</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="teamId" use="required">
+			<xs:annotation>
+				<xs:documentation>ID of the Performer Team generating the results.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Albany"/>
+					<xs:enumeration value="ICSI"/>
+					<xs:enumeration value="USC-ISI"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="count" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>Number of Test Items in the test set.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="LmSentenceType" mixed="true">
+		<xs:annotation>
+			<xs:documentation>Type that defines an LM sentence. LM source and LM target are explicitly tagged.</xs:documentation>
+		</xs:annotation>
+		<xs:all>
+			<xs:element name="LmSource" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>The LM source text as defined by the Govt.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LmTarget" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>The LM target text as defined by the Govt.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+		<xs:attribute name="id" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Sentence ID assigned by the Govt.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="TestItemType">
+		<xs:annotation>
+			<xs:documentation>Type that defines a single Test Item.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LmSentence" type="metam:LmSentenceType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The LM sentences that comprise the Test Item. There should be #count of them.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Test Item ID assigned by the Govt.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="lang" use="required">
+			<xs:annotation>
+				<xs:documentation>Language of the Test Item text. One of en, es, ru, fa. </xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="en"/>
+					<xs:enumeration value="es"/>
+					<xs:enumeration value="ru"/>
+					<xs:enumeration value="fa"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="count" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>The number of sentences in the Test Item.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="TestSetType">
+		<xs:annotation>
+			<xs:documentation>Type that defines a set of Test Items.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="SourceList" type="metam:SourceListType">
+				<xs:annotation>
+					<xs:documentation>The list of CM Source concepts allowed. Defined by the Govt.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TargetList" type="metam:TargetListType">
+				<xs:annotation>
+					<xs:documentation>The list of CM Target concepts allowed. Defined by the Govt.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TestItem" type="metam:TestItemType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The Test Item. There should be #count of them.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="testId" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Test ID assigned by the Govt .</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="count" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>Number of Test Items in the test set.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ResultType">
+		<xs:annotation>
+			<xs:documentation>Type that defines an LM mapping assignment.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="SourceId" type="xs:positiveInteger" maxOccurs="2">
+				<xs:annotation>
+					<xs:documentation>The ID of the Source concept. Up to two sources can be nominated. Order is not important.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TargetId" type="xs:positiveInteger">
+				<xs:annotation>
+					<xs:documentation>The ID of the Target concept.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="testItemId" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The ID of the Test Item.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ResultSetType">
+		<xs:annotation>
+			<xs:documentation>Type that defines the set of results.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Result" type="metam:ResultType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Result for a single mapping assignment There should be #count of them.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="testId" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>ID of the test set for which these are the results.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="teamId" use="required">
+			<xs:annotation>
+				<xs:documentation>ID of the Performer Team generating the results</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Albany"/>
+					<xs:enumeration value="ICSI"/>
+					<xs:enumeration value="USC-ISI"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="count" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>Number of results in the results set.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<!--Top-level elements-->
+	<xs:element name="TestSet" type="metam:TestSetType"/>
+	<xs:element name="ResultSet" type="metam:ResultSetType"/>
+	<xs:element name="LogFile" type="metam:LogFileType"/>
+</xs:schema>

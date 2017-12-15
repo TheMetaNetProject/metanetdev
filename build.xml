@@ -1,0 +1,153 @@
+<!--
+    This is the Ant build file for the root directory which 
+    contains all of the MetaNet repository group's programming
+    projects.
+    It can be used to run a complete build of all the code.
+
+    Author: Jisup Hong <jhong@icsi.berkeley.edu>
+-->
+<project name="metanetdev" default="all" basedir=".">
+
+	<property file="build.properties" />
+    <property environment="env"/>    
+
+	<!-- top-level directories -->
+	<property name="root.dir" location="." />
+	<property name="base.dir" location="${root.dir}" />
+	<property name="build.dir" location="${base.dir}/build" />
+	<property name="dist.dir" location="${base.dir}/dist" />
+	<property name="docs.dir" location="${base.dir}/docs" />
+	<property name="lib.dir" location="${base.dir}/lib" />
+    <property name="plugin.dir" location="${base.dir}/plugins"/>
+    <property name="app.dir" location="${base.dir}/apps"/>
+    <property name="comp.dir" location="${base.dir}/components"/>
+    <property name="ext.dir" location="${base.dir}/ext"/>
+
+	<!-- install directories -->
+	<property name="share.dist.dir" location="${dist.dir}/share" />
+	<property name="docs.dist.dir" location="${dist.dir}/docs" />
+	<property name="lib.dist.dir" location="${dist.dir}/lib" />
+	<property name="etc.dist.dir" location="${dist.dir}/etc" />
+	<property name="bin.dist.dir" location="${dist.dir}/bin" />
+	<property name="conf.dist.dir" location="${dist.dir}/conf" />
+	<property name="deploy.dist.dir" location="${dist.dir}/deploy" />
+
+    <!-- list of subtrees under base.dir to build by default -->
+    <property name="default.subtrees" value="components,apps"/>
+
+    <!-- for each subtree named by the property, list of subdirs to build -->
+    <property name="components" value="wikiapi,mwtemplateparser"/>
+    <property name="plugins" value="lmtocmlinker,wiki2owl"/>
+    <property name="apps" value="owl2sql,neo4jwikiloader"/>
+    
+    <!--
+        All references to Protege should use the env.PROTEGE_HOME
+        property assuming you have <property environment="env">
+        somewhere at the top of your build file
+    -->
+
+	<!-- **************** Standard Build Targets ******************* -->
+
+	<target name="all"
+            description="Runs the install target"
+            depends="install" />
+
+    <target name="init"
+            description="initialize steps">
+      <!-- use antcontrib tasks -->
+      <taskdef resource="net/sf/antcontrib/antlib.xml"/>
+    </target>
+
+    <target name="install"
+            description="Runs build of parts that are not dependent on protege"
+            depends="init">
+      <ant dir="${base.dir}/pyscripts" target="install" inheritAll="false"/>
+      <ant dir="${base.dir}/wiki" target="install" inheritAll="false"/>
+      <for list="${default.subtrees}" param="subtree">
+        <sequential>
+          <for list="${@{subtree}}" param="subdir">	
+            <sequential>
+              <ant dir="${base.dir}/@{subtree}/@{subdir}" target="install" inheritAll="false"/>
+            </sequential>
+          </for>
+        </sequential>
+      </for>
+    </target>
+
+    <target name="installplugins"
+            description="Installs protege plugins"
+            depends="init">
+      <!-- build codegeneration plugin, which metanet api depends on -->
+      <ant dir="${base.dir}/plugins/codegeneration" target="install" inheritAll="false"/>
+      <!-- build metanetapi and metaphorQuery component -->
+      <ant dir="${base.dir}/components/metanetapi" target="install" inheritAll="false"/>
+      <!-- build plugins -->
+      <for list="${plugins}" param="subdir">
+        <sequential>
+          <ant dir="${base.dir}/plugins/@{subdir}" target="install" inheritAll="false"/>
+        </sequential>
+      </for>
+    </target>
+
+	<target name="clean"
+            description="Erases all generated files in the project"
+            depends="init">
+      <ant dir="${base.dir}/pyscripts" target="clean" inheritAll="false"/>
+	  <ant dir="${base.dir}/wiki" target="clean" inheritAll="false"/>
+      <for list="${default.subtrees}" param="subtree">
+        <sequential>
+          <for list="${@{subtree}}" param="subdir">
+            <sequential>
+              <ant dir="${base.dir}/@{subtree}/@{subdir}" target="clean" inheritAll="false"/>
+            </sequential>
+          </for>
+        </sequential>
+      </for>
+      <delete dir="${dist.dir}" />
+	</target>
+  
+    <target name="javadoc">
+    </target>
+
+    <target name="cleanplugins"
+            description="Cleans out protege plugins"
+            depends="init">
+      <ant dir="${base.dir}/plugins/codegeneration" target="clean" inheritAll="false"/>
+      <ant dir="${base.dir}/components/metanetapi" target="clean" inheritAll="false"/>
+      <for list="${plugins}" param="subdir">
+        <sequential>
+          <ant dir="${base.dir}/plugins/@{subdir}" target="clean" inheritAll="false"/>
+        </sequential>
+      </for>
+    </target>
+	
+    <target name="docs" />
+	<target name="test" />
+	<target name="noop" />
+
+    <target name="installprotege" depends="protege.check"
+            unless="protege.exists">
+      <ant dir="${ext.dir}/protege4" target="install" inheritAll="false"/>
+    </target>
+
+    <target name="cleanprotege" unless="env.PROTEGE_HOME">
+      <ant dir="${ext.dir}/protege4" target="clean" inheritAll="false"/>
+    </target>
+
+    <target name="installpywiki"
+            description="Installs pywikipedia into dist">
+      <copy todir="${dist.dir}/pywikipedia">
+        <fileset dir="${base.dir}/ext/pywikipedia" includes="**"/>
+      </copy>
+    </target>
+
+    <target name="protege.check">
+      <condition property="protege.exists">
+        <or>
+          <available file="${dist.dir}/protege" type="dir"/>
+          <isset property="${env.PROTEGE_HOME}"/>
+        </or>
+      </condition>
+    </target>
+
+</project>

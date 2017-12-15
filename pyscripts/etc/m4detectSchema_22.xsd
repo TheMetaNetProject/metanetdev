@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:metad="http://www.iarpa.gov/Metaphor/DetectSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.iarpa.gov/Metaphor/DetectSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.2" xml:lang="en">
+	<xs:annotation>
+		<xs:documentation>
+			IARPA Metaphor Program
+			XSD for the LM Detection Test in OY2.
+			Primary Author: Richard Tong (IARPA-SETA)
+			Original Publication Date: 2013-03-17
+			Current Date: 2014-05-03
+			Current Version: 2.2
+		</xs:documentation>
+		<xs:documentation>
+			Change Log (from 2.1):
+			2014-05-03 [rmt]:	Administrative change to the enumerated list of teams.
+										Eliminates LogEntryType. It was optional.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="LogFileType">
+		<xs:annotation>
+			<xs:documentation>Type that defines a complete log file. Now only records test start and end times. Leave open the option of adding other information.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TestStartTime" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Timestamp for the overall test start.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TestEndTime" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Timestamp for the overall test end.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="testId" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>ID of the test set for which these are the log entries</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="teamId" use="required">
+			<xs:annotation>
+				<xs:documentation>ID of the Performer Team generating the results.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Albany"/>
+					<xs:enumeration value="ICSI"/>
+					<xs:enumeration value="USC-ISI"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="count" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>Number of of Test Items in the test set.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="TestItemType">
+		<xs:annotation>
+			<xs:documentation>Type that defines a Test Item</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="S" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The sentences that constitute the Test Item text. There should be #count of them.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="id" type="xs:positiveInteger" use="required">
+								<xs:annotation>
+									<xs:documentation>Sentence ID assigned by the Govt. A positive integer.</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Test Item ID assigned by the Govt.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="lang" use="required">
+			<xs:annotation>
+				<xs:documentation>Language of the Test Item text. One of en, es, ru, fa. </xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="en"/>
+					<xs:enumeration value="es"/>
+					<xs:enumeration value="ru"/>
+					<xs:enumeration value="fa"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="count" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>The number of sentences in the Test Item text.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="TestSetType">
+		<xs:annotation>
+			<xs:documentation>Type that defines a set of Test Items.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TestItem" type="metad:TestItemType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The Test Item. There should be #count of them.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="testId" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Test ID assigned by the Govt .</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="count" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>Number of Test Items in the test set.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ResultType">
+		<xs:annotation>
+			<xs:documentation>Type that defines a detected LM result.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LmTargetText" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Span of text that contains the target of the LM..</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LmSourceText" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Span of text that contains the source of the LM.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="testItemId" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The ID of the Test Item in which the LM occurs</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="sentenceId" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>The ID of the sentence in the Test Item in which the LM occurs.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ResultSetType">
+		<xs:annotation>
+			<xs:documentation>Type that defines the set of results.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Result" type="metad:ResultType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Result for a single detected LM There should be #count of them.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="testId" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>ID of the test set for which these are the results.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="teamId" use="required">
+			<xs:annotation>
+				<xs:documentation>ID of the Performer Team generating the results.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Albany"/>
+					<xs:enumeration value="ICSI"/>
+					<xs:enumeration value="USC-ISI"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="count" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>Number of results in the results set.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<!--Top-level elements-->
+	<xs:element name="TestSet" type="metad:TestSetType"/>
+	<xs:element name="ResultSet" type="metad:ResultSetType"/>
+	<xs:element name="LogFile" type="metad:LogFileType"/>
+</xs:schema>

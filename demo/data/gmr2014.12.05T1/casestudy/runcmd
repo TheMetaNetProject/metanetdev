@@ -1,0 +1,5 @@
+m4detect --mode gmr.case -v --cms-twcache-only -j ../../case1015/christine_blogs_pro_gun_control_08_07_0.json.gz
+for infile in `/bin/ls ./case-*`
+do
+sbatch -c 3 --mem-per-cpu=12000 --mem=36000 --partition=ai m4detect --mode gmr.case -v --parallel 3 $infile
+done

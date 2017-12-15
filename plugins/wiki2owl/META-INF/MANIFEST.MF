@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Wiki2owl
+Bundle-SymbolicName: edu.berkeley.icsi.metanet.wiki2owl;singleton:=true
+Bundle-Category: protege
+Bundle-Description: Plugin that adds menu items for loading OWL from the wikis
+Bundle-Version: 1.0.0
+Bundle-ClassPath: .,lib/wikiapi.jar,lib/commons-lang3-3.1.jar
+Update-Url: https://metaphor.icsi.berkeley.edu/metaphor/protege/wiki2owl/update.properties
+Import-Package: org.osgi.framework,
+ org.xml.sax,
+ org.xml.sax.helpers,
+ javax.xml.parsers,
+ javax.security.auth.login,
+ javax.swing
+Require-Bundle: org.eclipse.equinox.registry,
+ org.eclipse.equinox.common,
+ org.protege.editor.core.application,
+ org.protege.editor.owl,
+ org.semanticweb.owl.owlapi

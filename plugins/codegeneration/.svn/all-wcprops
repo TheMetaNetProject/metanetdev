@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/protege/!svn/ver/26052/protege4/plugins/org.protege.editor.owl.codegeneration/trunk
+END
+local.properties.template
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/protege/!svn/ver/23017/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/local.properties.template
+END
+README.INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/protege/!svn/ver/22934/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/README.INSTALL
+END
+pom.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/protege/!svn/ver/23806/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/pom.xml
+END
+plugin.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/protege/!svn/ver/22593/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/plugin.xml
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/protege/!svn/ver/23798/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/build.xml
+END
+log4j.xml
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/protege/!svn/ver/22611/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/log4j.xml
+END

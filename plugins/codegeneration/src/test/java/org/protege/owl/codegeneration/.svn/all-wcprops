@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/repos/protege/!svn/ver/26052/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/test/java/org/protege/owl/codegeneration
+END
+TestStdCodeGeneration.java
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/repos/protege/!svn/ver/25937/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/test/java/org/protege/owl/codegeneration/TestStdCodeGeneration.java
+END
+TestAs.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/repos/protege/!svn/ver/25937/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/test/java/org/protege/owl/codegeneration/TestAs.java
+END
+TestInferredCodeGeneration.java
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/repos/protege/!svn/ver/25937/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/test/java/org/protege/owl/codegeneration/TestInferredCodeGeneration.java
+END
+TestListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/repos/protege/!svn/ver/25937/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/test/java/org/protege/owl/codegeneration/TestListener.java
+END
+TestSimpleInference.java
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/repos/protege/!svn/ver/25937/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/test/java/org/protege/owl/codegeneration/TestSimpleInference.java
+END
+TestUtilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/repos/protege/!svn/ver/26052/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/test/java/org/protege/owl/codegeneration/TestUtilities.java
+END

@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/protege/!svn/ver/25018/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/resources
+END
+implementation.data.property
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/repos/protege/!svn/ver/23794/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/resources/implementation.data.property
+END
+interface.header
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/repos/protege/!svn/ver/23686/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/resources/interface.header
+END
+interface.tail
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repos/protege/!svn/ver/22514/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/resources/interface.tail
+END
+interface.object.property
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/repos/protege/!svn/ver/23709/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/resources/interface.object.property
+END
+interface.data.property
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/repos/protege/!svn/ver/23709/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/resources/interface.data.property
+END
+vocabulary.owlclass
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/repos/protege/!svn/ver/23794/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/resources/vocabulary.owlclass
+END
+factory.owlclass
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/repos/protege/!svn/ver/23794/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/resources/factory.owlclass
+END
+vocabulary.header
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/repos/protege/!svn/ver/23687/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/resources/vocabulary.header
+END
+factory.header
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repos/protege/!svn/ver/25018/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/resources/factory.header
+END
+vocabulary.tail
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/repos/protege/!svn/ver/22523/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/resources/vocabulary.tail
+END
+vocabulary.object.property
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/repos/protege/!svn/ver/23794/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/resources/vocabulary.object.property
+END
+factory.tail
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/protege/!svn/ver/22514/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/resources/factory.tail
+END
+vocabulary.data.property
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/repos/protege/!svn/ver/23794/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/resources/vocabulary.data.property
+END
+implementation.header
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/repos/protege/!svn/ver/23700/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/resources/implementation.header
+END
+implementation.tail
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/repos/protege/!svn/ver/22514/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/resources/implementation.tail
+END
+implementation.object.property
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/repos/protege/!svn/ver/23794/protege4/plugins/org.protege.editor.owl.codegeneration/trunk/src/main/resources/implementation.object.property
+END

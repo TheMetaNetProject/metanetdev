@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/protege/!svn/ver/25924/protege4/plugins/edu.berkeley.icsi.metanet.metaphorQuery/trunk/src/org/protege/editor/owl/rdf/repository
+END
+BasicSparqlReasoner.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/repos/protege/!svn/ver/25924/protege4/plugins/edu.berkeley.icsi.metanet.metaphorQuery/trunk/src/org/protege/editor/owl/rdf/repository/BasicSparqlReasoner.java
+END
+GraphQueryHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/repos/protege/!svn/ver/25924/protege4/plugins/edu.berkeley.icsi.metanet.metaphorQuery/trunk/src/org/protege/editor/owl/rdf/repository/GraphQueryHandler.java
+END
+BasicSparqlReasonerFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/repos/protege/!svn/ver/24126/protege4/plugins/edu.berkeley.icsi.metanet.metaphorQuery/trunk/src/org/protege/editor/owl/rdf/repository/BasicSparqlReasonerFactory.java
+END
+TupleQueryHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/repos/protege/!svn/ver/25924/protege4/plugins/edu.berkeley.icsi.metanet.metaphorQuery/trunk/src/org/protege/editor/owl/rdf/repository/TupleQueryHandler.java
+END
+Util.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/repos/protege/!svn/ver/25924/protege4/plugins/edu.berkeley.icsi.metanet.metaphorQuery/trunk/src/org/protege/editor/owl/rdf/repository/Util.java
+END

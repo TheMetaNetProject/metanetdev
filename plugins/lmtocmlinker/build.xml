@@ -1,0 +1,47 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!-- 
+      Build file for LM to CM Linker Plugin
+  -->
+<project name = "LM to CM Linker" default = "install" basedir = ".">    
+
+  <property name="plugin" value="edu.berkeley.icsi.metanet.lmtocmlinker"/>
+  <property name="plugin.name" value="lmtocmlinker"/>
+  <property name="plugin.desc" value="MetaNet LM to CM Linker"/>
+
+  <!-- common plugin build properties and targets -->
+  <import file="../pluginbuild.xml"/>
+
+  <property file="version.properties"/>
+  <property name="major.version" value="1"/>
+  <property name="minor.version" value="0"/>
+  <property name="micro.version" value="1"/>
+
+  <!--
+      Override the build target checklibs to allow for a custom
+      list of libraries
+  -->
+ 
+   <target name = "checklibs">
+     <condition property="libs.found">
+       <and>
+         <available file="${root.lib.dir}/${commons.cli.lib}" type="file"/>
+         <available file="${root.lib.dir}/${commons.lang3.lib}" type="file"/>
+         <available file="${root.lib.dir}/${swingx.lib}" type = "file"/>
+         <available file="${root.dist.lib.dir}/${metanetapi.lib}" type = "file"/>
+         <available file="${root.dist.lib.dir}/${wikiapi.lib}" type = "file"/>
+       </and>
+     </condition>
+     <path id = "project.classpath">
+       <filelist dir="${root.lib.dir}">
+         <file name="${swingx.lib}"/>
+         <file name="${commons.cli.lib}"/>
+         <file name="${commons.lang3.lib}"/>
+       </filelist>
+       <filelist dir="${root.dist.lib.dir}">
+         <file name="${metanetapi.lib}"/>
+         <file name="${wikiapi.lib}"/>
+       </filelist>
+     </path>
+   </target>
+
+</project>

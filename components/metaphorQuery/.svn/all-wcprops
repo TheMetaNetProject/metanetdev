@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/protege/!svn/ver/25946/protege4/plugins/edu.berkeley.icsi.metanet.metaphorQuery/trunk
+END
+viewconfig.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/protege/!svn/ver/24152/protege4/plugins/edu.berkeley.icsi.metanet.metaphorQuery/trunk/viewconfig.xml
+END
+plugin.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/protege/!svn/ver/24735/protege4/plugins/edu.berkeley.icsi.metanet.metaphorQuery/trunk/plugin.xml
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/protege/!svn/ver/24614/protege4/plugins/edu.berkeley.icsi.metanet.metaphorQuery/trunk/build.xml
+END

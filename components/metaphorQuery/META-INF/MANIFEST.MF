@@ -1,0 +1,47 @@
+Manifest-Version: 1.0
+Export-Package: edu.berkeley.icsi.metanet.metaphorQuery;version="1.0.0.2013_01_11_0553";
+  uses:="org.protege.editor.owl.ui.view,
+   edu.berkeley.icsi.metanet.repository,
+   javax.swing.table,
+   org.semanticweb.owlapi.model",
+ edu.berkeley.icsi.metanet.metaphorQuery.repository;version="1.0.0.2013_01_11_0553";
+  uses:="edu.berkeley.icsi.metanet.metaphorQuery,
+   org.openrdf.rio,
+   org.openrdf.query,
+   edu.berkeley.icsi.metanet.repository,
+   org.protege.owl.rdf.api,
+   org.semanticweb.owlapi.model,
+   org.openrdf.model"
+Built-By: redmond
+Bundle-Category: protege
+Tool: Bundlor 1.1.0.M05
+Bundle-Name: Metaphor Query API
+Bundle-ContactAddress: p4-feedback@lists.stanford.edu
+Bundle-Version: 1.0.0.2013_01_11_0553
+Bundle-ManifestVersion: 2
+Bundle-Description: Simple SPARQL Plugin
+Bundle-SymbolicName: org.protege.editor.owl.rdf;singleton:="true"
+Bundle-DocURL: http://protege.stanford.edu
+Bundle-ClassPath: .
+Import-Package: javax.swing,
+ javax.swing.table,
+ org.openrdf.model,
+ org.openrdf.query,
+ org.openrdf.repository,
+ org.openrdf.rio,
+ org.protege.editor.core,
+ org.protege.editor.core.ui.error,
+ org.protege.editor.owl,
+ org.protege.editor.owl.model,
+ org.protege.editor.owl.ui,
+ org.protege.editor.owl.ui.renderer,
+ org.protege.editor.owl.ui.table,
+ org.protege.editor.owl.ui.view,
+ org.protege.owl.rdf,
+ org.protege.owl.rdf.api,
+ org.semanticweb.owlapi.model,
+ org.semanticweb.owlapi.util
+Require-Bundle: org.protege.editor.owl.codegeneration;bundle-version="1.0.0",
+ org.protege.editor.owl;bundle-version="4.2.0",
+ org.semanticweb.owl.owlapi;bundle-version="3.4.2"
+

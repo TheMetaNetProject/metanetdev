@@ -1,0 +1,14 @@
+K 10
+svn:ignore
+V 109
+.ant-targets-build.xml
+.classpath
+.project
+.settings
+build
+build.eclipse
+build.properties
+target
+test-output
+
+END

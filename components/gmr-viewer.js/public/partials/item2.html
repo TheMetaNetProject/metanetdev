@@ -1,0 +1,88 @@
+<div>
+
+ <div class="col-xs-6">
+  <div class="panel panel-default">
+   <div class="panel-heading">
+    <h1 class="panel-title">Dependency Tree</h1>
+   </div>
+   <div class="panel-body">
+    <div dagre-dep-tree bar-height="20" bar-padding="5"></div>
+   </div>
+  </div>
+ </div>
+
+ <div class="col-xs-6">
+  <div class="panel panel-default" ng-show="doc.lms">
+
+   <div class="panel-heading">
+    <h1 class="panel-title">Linguistic Metaphors</h1>
+   </div>
+
+   <ul class="list-group" ng-repeat="lm in highest(doc.lms.filter(match))">
+
+    <li class="list-group-item highlight">
+     <h2 class="label label-primary">{{lm.name}}</h2>
+    </li>
+
+    <li class="list-group-item">
+     <h4 class="list-group-item-heading">Source LU</h4>
+     <dl class="dl-horizontal">
+      <dt>Lemma:</dt>
+      <dd>{{lm.source.lemma}}</dd>
+      <dt>form:</dt>
+      <dd>{{lm.source.form}}</dd>
+      <dt>POS:</dt>
+      <dd>{{lm.source.lpos}}</dd>
+      <dt>Schema(s):</dt>
+      <dd>{{lm.source.schemanames | elements}}</dd>
+      <dt>Concept(s):</dt>
+      <dd>{{lm.source.concepts | elements}}</dd>
+      <dt>Concept score:</dt>
+      <dd>{{lm.source.concept | split | elements}}</dd>
+      <dt>Map method:</dt>
+      <dd>{{lm.source.smapmethod}}</dd>
+     </dl>
+    </li>
+
+    <li class="list-group-item">
+     <h4 class="list-group-item-heading">Target LU</h4>
+     <dl class="dl-horizontal">
+      <dt>Lemma:</dt>
+      <dd>{{lm.target.lemma}}</dd>
+      <dt>Form:</dt>
+      <dd>{{lm.target.form}}</dd>
+      <dt>Schema:</dt>
+      <dd>{{lm.target.schemaname || '(none)'}}</dd>
+      <dt>Concept:</dt>
+      <dd>{{lm.target.concept}}</dd>
+      <dt>Concept group:</dt>
+      <dd>{{lm.target.congroup || '(none)'}}</dd>
+     </dl>
+    </li>
+
+    <li class="list-group-item">
+
+     <h4 class="list-group-item-heading">Extraction</h4>
+
+     <dl class="dl-horizontal">
+      <dt>Construction:</dt>
+      <dd>{{lm.cxn}}</dd>
+      <dt>Score:</dt>
+      <dd>{{lm.score}}</dd>
+      <dt>Scoring metric:</dt>
+      <dd>{{lm.scorecom | split:':' | elements }}</dd>
+      <dt>Extractor:</dt>
+      <dd>{{lm.extractor}}</dd>
+      <dt>Seed:</dt>
+      <dd>{{lm.seed}}</dd>
+      <dt>CMs:</dt>
+      <dd>{{lm.cms | elements:'#\\w+Metaphor_'}}</dd>
+     </dl>
+    </li>
+
+   </ul>
+
+  </div>
+ </div>
+
+</div>

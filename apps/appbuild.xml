@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    This is an ant build file to be imported by the build.xml file
+    of metanet app projects.  Note that all relative
+    paths are inpreted relative to the importing project!!
+
+    Author: Jisup Hong <jhong@icsi.berkeley.edu>
+-->
+<project name="appbuild">
+
+  <!-- common file/path properties -->
+
+  <property name = "root.dir"           location = "../.."/>
+  <property name = "root.dist.dir"      location = "${root.dir}/dist"/>
+  <property name = "root.lib.dir"       location = "${root.dir}/lib"/>
+  <property name = "root.dist.etc.dir"  location = "${root.dist.dir}/etc"/>
+  <property name = "root.dist.lib.dir"  location = "${root.dist.dir}/lib"/>
+  <property name = "root.dist.bin.dir"  location = "${root.dist.dir}/bin"/>
+  <property name = "src.dir"            location = "./src"/>  
+  <property name = "build.dir"          location = "./build"/>
+  <property name = "classes.dir"        location = "${build.dir}/classes"/>
+  <property name = "dist.dir"           location = "./dist"/>
+  <property name = "dist.bin.dir"       location = "./dist/bin"/>
+  <property name = "dist.lib.dir"       location = "./dist/lib"/>
+  <property name = "dist.etc.dir"       location = "./dist/etc"/>
+  <property name = "test.dir"           location = "./test"/>
+  <property name = "manifest"           location = "${build.dir}/manifest.mf"/>
+
+  <property name = "app.jar" value="${app}.jar"/>
+
+  <!-- common library files -->
+  <property name = "commons.cli.lib" value = "commons-cli-1.2.jar"/>
+  <property name = "owl.api.lib"     value = "org.semanticweb.owl.owlapi.jar"/>
+  <property name = "mysql.lib" value = "mysql-connector-java-5.1.22-bin.jar"/>
+  <property name = "neo4j.kernel.lib" value = "neo4j-kernel-2.2.2.jar"/>
+
+  <!-- common targets -->
+
+  <target name="init"
+          description="initialization">
+    <!-- use antcontrib tasks -->
+    <taskdef resource="net/sf/antcontrib/antlib.xml"/>
+    <mkdir dir = "${build.dir}"/>
+    <mkdir dir = "${classes.dir}"/>
+    <mkdir dir = "${dist.dir}"/>
+    <mkdir dir = "${dist.bin.dir}"/>
+    <mkdir dir = "${dist.lib.dir}"/>
+    <mkdir dir = "${dist.etc.dir}"/>
+  </target>
+
+  <target name="install"
+          description="build everything and install into root dist dir"
+          depends="jar,installscripts,installother">
+    <mkdir dir="${root.dist.dir}"/>
+    <mkdir dir="${root.dist.bin.dir}"/>
+    <mkdir dir="${root.dist.etc.dir}"/>
+    <mkdir dir="${root.dist.lib.dir}"/>
+    <copy todir="${root.dist.bin.dir}">
+      <fileset dir="${dist.bin.dir}">
+        <include name="**"/>
+      </fileset>
+    </copy>
+    <!-- ant's copy doesn't preserve persmissions, for now
+         just assume that everything in bin should be executable -->
+    <chmod perm="+x" dir="${root.dist.bin.dir}" includes="**"/>
+    <copy todir="${root.dist.lib.dir}">
+      <fileset dir="${dist.lib.dir}">
+        <include name="**"/>
+      </fileset>
+    </copy>
+    <copy todir="${root.dist.lib.dir}">
+      <path refid="project.classpath"/>
+    </copy>
+    <copy todir="${root.dist.etc.dir}">
+      <fileset dir="${dist.etc.dir}">
+        <include name="**"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <!-- this target should be overridden in the main build file -->
+  <target name = "checklibs">
+    <!-- example
+     <condition property="libs.found">
+       <and>
+         <available file="${root.lib.dir}/${commons.cli.lib}" type="file"/>
+         <available file="${root.lib.dir}/${commons.lang3.lib}" type="file"/>
+         <available file="${root.lib.dir}/${swingx.lib}" type = "file"/>
+         <available file="${root.dist.lib.dir}/${metanetapi.lib}" type = "file"/>
+         <available file="${root.dist.lib.dir}/${wikiapi.lib}" type = "file"/>
+       </and>
+     </condition>
+     <path id = "project.classpath">
+       <filelist dir="${root.lib.dir}">
+         <file name="${swingx.lib}"/>
+         <file name="${commons.cli.lib}"/>
+         <file name="${commons.lang3.lib}"/>
+       </filelist>
+       <filelist dir="${root.dist.lib.dir}">
+         <file name="${metanetapi.lib}"/>
+         <file name="${wikiapi.lib}"/>
+       </filelist>
+     </path>
+    -->
+  </target>
+
+  <target name = "compile" depends = "init,checklibs">
+    <javac srcdir = "${src.dir}"
+           source = "1.7"
+           destdir = "${classes.dir}" 
+           debug="on"
+           includeAntRuntime="false">
+      <classpath refid = "project.classpath"/>
+    </javac>
+  </target>
+
+  <target name = "jar" depends = "compile,use.existing.manifest">
+    <jar jarfile = "${dist.lib.dir}/${app.jar}"
+         basedir = "${classes.dir}" 
+         manifest = "${manifest}"/>
+  </target>
+
+  <target name="use.existing.manifest" depends="init">
+    <copy tofile="${manifest}" 
+          file="META-INF/MANIFEST.MF" overwrite="true"/>
+    <manifest file="${manifest}" 
+              mode = "update">
+      <attribute name="Built-By" value = "${user.name}"/>
+    </manifest>
+  </target>
+
+  <target name="installother"
+          description="build other stuff--to be overridden"
+          depends="init"/>
+
+  <target name="installscripts"
+          description="build and install scripts"
+          depends="init">
+    <!-- install any python scripts -->
+    <foreach target="installpy" param="foreach.file">
+      <fileset dir="${src.dir}">
+        <include name="*.py"/>
+      </fileset>
+    </foreach>
+    <!-- install any shell scripts -->
+    <foreach target="installsh" param="foreach.file">
+      <fileset dir="${src.dir}">
+        <include name="*.sh"/>
+      </fileset>
+    </foreach>
+  </target>
+
+  <target name="installpy"
+          description="install a python script, called from a foreach loop">
+    <basename property="script.base" file="${foreach.file}" suffix=".py"/>
+    <copy tofile="${dist.bin.dir}/${script.base}"
+          file="${foreach.file}"/>
+    <replace file="${dist.bin.dir}/${script.base}"
+             token="@@@DISTDIR@@@" value="${root.dist.dir}"/>
+    <chmod perm="+x" file="${dist.bin.dir}/${script.base}"/>
+  </target>
+
+  <target name="installsh"
+          description="install a shell script, called from a foreach loop">
+    <basename property="script.base" file="${foreach.file}" suffix=".sh"/>
+    <copy tofile="${dist.bin.dir}/${script.base}"
+          file="${foreach.file}"/>
+    <replace file="${dist.bin.dir}/${script.base}"
+             token="@@@DISTDIR@@@" value="${root.dist.dir}"/>
+    <chmod perm="+x" file="${dist.bin.dir}/${script.base}"/>
+  </target>
+
+  <target name="clean"
+          description="delete all build outputs and intermediates">
+    <delete dir = "${build.dir}"/>
+    <delete dir = "${dist.dir}"/>
+  </target>
+
+</project>
